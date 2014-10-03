@@ -1,0 +1,1942 @@
+>!Help File for Accounts+ Version 1.30
+Released 20th July 1995
+-----------------------------------------------------------------------------
+
+All code is copyright Stephen Fryatt, 1995.
+This is the second release version of the Accounts+ Software.
+(C) Stephen Fryatt, 1995
+
+Please read 'Section G: Technical Details and Copyright' before use.
+This software requires RISC OS 3.11 or later to work correctly.
+
+Accounts+ is NOT FREEWARE.
+
+It MAY NOT be copied without my permission.
+
+-----------------------------------------------------------------------------
+Interactive Help for use with Acorn's !Help, or any other suitable
+application (for example 'Bubble Help') is provided.  If it is turned off,
+see 'Section F: The Preferences' for more details on how to turn it on.
+-----------------------------------------------------------------------------
+This !Help File can be viewed in a number of ways from Accounts+.  Select
+'App. '!Accounts+':Help' from the filer menu when outside the program.  If
+Accounts+ is loaded, either select 'Help' from the icon-bar menu, click on
+the Help icon in the bottom right of the edit-bar, or press Ctrl-F1.
+----------------------------------------------------------------------------- 
+
+
+Contents
+========
+
+     Section A:    Introducing Accounts+
+                   A.1: What is Accounts+?
+                   A.2: Loading Accounts+
+                   A.3: The Transaction Window
+                   A.4: The Menus
+                   A.5: Saving and Loading Accounts Files
+                   A.6: Importing Files
+
+     Section B:    Bank Accounts
+                   B.1: Creating and Editing Accounts
+                   B.2: Viewing Accounts
+                   B.3: Exporting Accounts
+                   B.4: Printing Accounts
+                   B.5: Controlling the Printer
+
+     Section C:    Headers
+                   C.1: What Are Headers?
+                   C.2: Creating Headers
+                   C.3: Viewing Headers
+                   C.4: Exporting Headers
+                   C.5: Printing Headers
+
+     Section D:    Transactions
+                   D.1: Entering Transactions
+                   D.2: Editing Transactions
+                   D.3: Copying Transactions
+                   D.4: Deleting and Removing Transactions
+                   D.5: Automatic Transactions
+                   D.6: Viewing Forthcoming Automatic Transactions
+                   D.7: Exporting Transactions
+                   D.8: Printing Transactions
+
+     Section E:    Miscellaneous Features
+                   E.1: Searching
+                   E.2: Goto
+                   E.3: Sorting By Date
+                   E.4: User Title
+                   E.5: Clear File
+                   E.6: Viewing Balances
+                   E.7: Initial Balances
+                   E.8: Updating Transactions
+                   E.9: Keyboard Shortcuts
+                   E.0: Dates
+
+     Section F:    The Preferences
+
+     Section G:    Technical Details and Copyright
+
+
+Section A: Introducing Accounts+
+================================
+
+
+A.1: What is Accounts+?
+-----------------------
+
+Accounts+ is an accounting program that can be used to keep track of home
+accounts, over up to 10 bank accounts.  Details are entered as transactions
+between two places, and the software builds up 'bank statements' (see 'B.2:
+Viewing Accounts'), which can be viewed.  Standing orders can be
+automatically controlled (see 'D.5: Automatic Transactions'), and income from
+or expenditure to certain places can be calculated (see 'Section C:
+Headers').
+
+The most 'important' features are:
+
+  * Support for up to 10 interconnected bank accounts, between which
+    transfers of money can take place.
+  * Up to 30 transactions which can take place automatically, at any time
+    interval specified.
+  * Up to 30 expense headers definable, over any period of time required, to
+    calculate income or expenditure.
+  * Full integration of date information, allowing transactions to be ordered
+    by date quickly and easily.
+  * Support for import of CSV, TSV and Account files, maintaining
+    compatibility with other software.
+  * Export in any of CSV, TSV, ASCII, and Account formats, allowing data to
+    be used in other packages.
+  * Direct support for printers, allowing account details to be printed out
+    quickly in a neat, 'draft' format.
+  * Full, on-line, interactive help provided for all dialogue boxes and
+    windows.
+
+
+A.2: Loading Accounts+
+----------------------
+
+To load Accounts+, double-click on the !Accounts+ icon in a directory viewer.
+This loads Accounts+, and installs its icon on the right hand side of the
+icon-bar.  Click on this icon to open the Transaction Window (see 'A.3: The
+Transaction Window').
+
+The loading window will open, and remain on screen until you click the mouse.
+
+
+A.3: The Transaction Window
+---------------------------
+
+This is the main window of the program, in which all the editing is done. 
+Along the top of the window is a toolbar showing the status of the software
+and optionally giving access to features through a 'button-bar' (see 'Section
+F: The Preferences').  Along the bottom is an editing bar, allowing editing
+of individual transactions.
+
+From left to right, the buttons on the button-bar (if visible) are:
+
+     Edit Accounts            (see 'B.1: Creating and Editing Accounts')
+     View Accounts            (see 'B.2: Viewing Accounts')
+     View Balances            (see 'E.6: Viewing Balances')
+     Standing Orders          (see 'D.5: Automatic Transactions')
+     Headers                  (see 'Section C: Headers')
+     Save File                (See 'A.5: Saving and Loading Accounts Files')
+     Goto                     (see 'E.2: Goto Line')
+     Search                   (see 'E.1: Searching')
+     Clear Selection          (see 'D.2: Editing Transactions')
+     Delete Transaction       (see 'D.4: Deleting and Removing Transactions')
+
+On the far right of the toolbar is the name of the accounts that are being
+edited (see 'E.4: User Title'), and to the left of this the total balance in
+all the accounts.  Finally, in the centre the current date - as used by
+standing orders (see 'D.5: Automatic Transactions', and 'E.0: Dates') - is
+displayed.
+
+If the button-bar is not displayed, then a status-bar is shown instead.  This
+shows information about the selected transaction and other operations.  See
+'Section F: The Preferences' for more information on how to select these
+features.
+
+The editing bar is explained in 'D.2: Editing Transactions'.
+
+Clicking MENU over the Transaction window will display the main menu.
+
+
+A.4: The Menus
+--------------
+
+Accounts+ contains a selection of menus.  These are outlined below, with
+references to where the relevant information can be found in this file.
+
+
+The Icon Bar menu
+-----------------
+
+The Icon Bar menu is accessed by clicking MENU over the Accounts+ icon on the
+icon bar.  It contains items relating to the program.
+
+  +----------------------+
+  |      Accounts+       |
+  +----------------------+
+  |  Info...            ‰|  Leads to the Program Information Box
+  |- - - - - - - - - - - |
+  |  Preferences...      |  See 'Section F: The Preferences'
+  |  Printer... ‹^PRINT  |  See 'B.5: Controlling the Printer'
+  |  Help...        ^F1  |  Opens the !Help Viewer (this window)
+  |- - - - - - - - - - - |
+  |  Quit                |  Quits Accounts+
+  +----------------------+
+
+
+The Main Menu
+-------------
+
+The Main Menu can be accessed by clicking MENU over the Transaction window
+(see 'A.3: The Transaction Window').  The items it contains relate to the
+file being edited.  Virtually every option can be accessed from here.
+
+  +----------------+
+  |   Accounts+    |
+  +----------------+
+  |  Misc         ‰|  Leads to the Misc Menu (see below)
+  |  Save      F3 ‰|  See 'A.5: Saving and Loading Accounts Files'
+  |  Transactions ‰|  Leads to the Transactions Menu (see below)
+  |  Accounts     ‰|  Leads to the Accounts Menu (see below)
+  |  S.Orders     ‰|  Leads to the Standing Orders Menu (see below)
+  |  Headers      ‰|  Leads to the Headers Menu (see below)
+  |  Edit         ‰|  Leads to the Edit Menu (see below)
+  |  Selection    ‰|  Leads to the Selection Menu (see below)
+  +----------------+
+
+
+The Misc Menu
+-------------
+
+This is a sub-menu of the main menu, and contains options that do not really
+fit elsewhere.
+
+  +--------------------+
+  |        Misc        |
+  +--------------------+
+  |  Info...          ‰|  Leads to the Program Information Box
+  |  File info... ‹F1 ‰|  Leads to the File Information Box
+  |  User title    ^T ‰|  See 'E.4: User Title'
+  |  Set Date         ‰|  See 'E.0: Dates'
+  |- - - - - - - - - - |
+  |  Clear file        |  See 'E.5: Clear File'
+  +--------------------+
+
+
+The Transactions Menu
+---------------------
+
+The Transactions menu is a sub-menu of the main menu, and contains options
+which concern items in the Transaction window (see 'A.3: The Transaction
+Window').
+
+  +--------------------------+
+  |       Transactions       |
+  +--------------------------+
+  |  Search & replace... F4 ‰|  See 'E.1: Searching'
+  |  Goto transaction    F5 ‰|  See 'E.2: Goto'
+  |  Sort by dates       F6  |  See 'E.3: Sort By Date'
+  |  Update transactions     |  See 'E.8: Updating Transactions'
+  |- - - - - - - - - - - - - |
+  |  Export                 ‰|  See 'D.7: Exporting Transactions'
+  |  Print           ^PRINT  |  See 'D.8: Printing Transactions'
+  +--------------------------+
+
+
+The Accounts Menu
+-----------------
+
+This menu is a sub-menu of the main menu, and concerns the individual
+accounts.
+
+  +-----------------------+
+  |       Accounts        |
+  +-----------------------+
+  |  View account        ‰|  See 'B.2: Viewing Accounts'
+  |  View balances... F7  |  See 'E.6: Viewing Balances'
+  |  Edit...         ‹F7  |  See 'B.1: Creating and Editing Accounts'
+  |- - - - - - - - - - - -|
+  |  Export              ‰|  See 'B.3: Exporting Accounts'
+  |  Print...      PRINT ‰|  See 'B.4: Printing Accounts'
+  +-----------------------+
+
+
+The Standing Orders Menu
+------------------------
+
+This sub-menu of the main menu contains options relating to standing orders.
+
+  +----------------------+
+  |       S.Orders       |
+  +----------------------+
+  |  Edit...        ‹F6  |  See 'D.5: Automatic Transactions'
+  |  Forthcoming... ^F6  |  See 'D.6: Viewing Forthcoming Automatic
+  |- - - - - - - - - - - |       Transactions'
+  |  Update              |  See 'D.5: Automatic Transactions'
+  +----------------------+
+
+
+The Headers Menu
+----------------
+
+The Headers menu is a sub-menu of the main menu.  It contains the options
+that deal with headers.
+
+  +---------------------------+
+  |          Headers          |
+  +---------------------------+
+  |  Edit...             ‹F8  |  See 'C.2: Creating Headers'
+  |  View transactions... F8  |  See 'C.3: Viewing Headers'
+  |- - - - - - - - - - - - - -|
+  |  Export                  ‰|  See 'C.4: Exporting Headers'
+  |  Print...         ‹PRINT  |  See 'C.5: Printing Headers'
+  +---------------------------+
+
+
+The Edit Menu
+-------------
+
+The Edit menu, which is a sub-menu of the main menu, allows you to enter
+transactions into the Transaction window (see 'A.3: The Transaction Window').
+
+  +------------------------+
+  |          Edit          |
+  +------------------------+
+  |  Add to end        F1  |  See 'D.1: Entering Transactions'
+  |- - - - - - - - - - - - |
+  |  Insert above ‹INSERT  |  See 'D.2: Editing Transactions'
+  |  Insert below  INSERT  |  See 'D.2: Editing Transactions'
+  +------------------------+
+
+
+The Selection Menu
+------------------
+
+The Selection sub-menu is only available when there is a selected line in the
+Transaction Window (see 'A.3: The Transaction window' and 'D.2: Editing
+Transactions').
+
+  +------------------------+
+  |       Selection        |
+  +------------------------+
+  |  Cut selection     ^X  |  See 'D.3: Copying Selections'
+  |  Copy selection    ^C  |  See 'D.3: Copying Selections'
+  |  Replace selection ^V  |  See 'D.2: Editing Transactions'
+  |- - - - - - - - - - - - |
+  |  Delete selection  ^K  |  See 'D.4: Deleting and Removing Transactions'
+  |  Remove transactions   |  See 'D.4: Deleting and Removing Transactions'
+  |- - - - - - - - - - - - |
+  |  Clear selection   ^Z  |  See 'D.2: Editing Transactions'
+  +------------------------+
+
+
+The Export Menus
+----------------
+
+There are two export menus available, one for exporting accounts (see 'B.3:
+Exporting Accounts') and one for exporting transactions and headers (see
+'D.7: Exporting Transactions' and 'C.4: Exporting Headers').
+
+The export accounts menu:  +------------------+
+                           |      Export      |
+                           +------------------+
+                           |  Account    ‹F3 ‰|
+                           |  CSV        ^F3 ‰|
+                           |  TSV       ‹^F3 ‰|
+                           |  ASCII Text     ‰|
+                           +------------------+
+
+The export headers and transactions menu:  +--------------+
+                                           |    Export    |
+                                           +--------------+
+                                           |  CSV        ‰|
+                                           |  TSV        ‰|
+                                           |  ASCII Text ‰|
+                                           +--------------+
+
+The options available in these menus are self-explanatory.
+
+
+The Account Menu
+----------------
+
+This menu is accessed by clicking MENU over the View Account window (see
+'B.2: Viewing Accounts').  It contains the options relating to this window.
+
+  +------------------------+
+  |        Account         |
+  +------------------------+
+  |  Initial balance      ‰|  See 'E.7: Initial Balances'
+  |  Goto line        ‹F5 ‰|  See 'E.2: Goto'
+  |- - - - - - - - - - - - |
+  |  View account         ‰|  See 'B.2: Viewing Accounts'
+  |  View balances...  F7  |  See 'E.6: Viewing Balances'
+  |  Edit accounts... ‹F7  |  See 'B.1: Creating and Editing Accounts'
+  |- - - - - - - - - - - - |
+  |  Export               ‰|  See 'B.3: Exporting Accounts'
+  |  Print...       PRINT  |  See 'B.4: Printing Accounts'
+  +------------------------+
+
+
+Other Menus
+-----------
+
+Accounts+ contains some other menus: there is the View Accounts menu, which
+is available from several places and allows you to view the different
+accounts, and the Accounts menu which contains the different account names
+for entering into writable fields.  There are also lists of headers available
+for the same purpose.
+
+
+A.5: Saving and Loading Accounts Files
+--------------------------------------
+
+To save Accounts files, select 'Save' from the main menu.  Type in a
+filename, and drag the icon to a directory viewer to save.  If a full
+pathname is present, click on 'OK', select 'Save', or press RETURN to save. 
+Pressing F3 can either open the save box, or save the file to the last
+pathname: see 'Section F: The Preferences' for more details.
+
+The full pathname of a file is shown in the title-bar of the Transaction
+Window (see 'A.3: The Transaction Window'), or '<Untitled>' if the file has
+not been saved.  If any modifications have not been saved, the file name is
+followed by an '*'.
+
+To load files, drag their icons to the Accounts+ icon on the icon-bar, or
+double-click on them in the filer window.  If Accounts+ is not yet loaded, it
+will load itself automatically.  Only one file can be loaded at any one time.
+
+The Save box can also be accessed from the 'Save File' button on the
+button-bar of the Transaction Window (see 'A.3: The Transaction Window').
+
+
+A.6: Importing Files
+--------------------
+
+Accounts+ can load data in from other file formats as well as its own:
+Account Files (from !Accounts), CSV files, and TSV files.  To import a file,
+drag its icon to the Accounts+ icon on the icon-bar, or to the Transaction
+Window (see 'A.3: The Transaction Window').  The transactions contained in
+the file are always added to the end of those already entered: after a file
+has been imported, it may be necessary to re-sort the transactions (see 'E.3:
+Sorting By Date').
+
+
+CSV Files
+---------
+
+CSV Files are used to transfer data from other applications (both on Acorn
+machines and on PCs) into Accounts+.  Most applications such as databases and
+spreadsheets can produce CSV Files easily.
+
+On dragging a CSV file to Accounts+, the Import CSV window will open.  This
+window contains two sections: one controlling how the file is loaded, the
+other how the fields are mapped across.
+
+Import as controls how the file is loaded.  Select 'Transactions' to treat
+each line of the CSV file as one transaction from the Transaction Window. 
+Select 'Account' to treat each line a one line from an account.  Enter the
+account to which you wish to add the file into the box on the right by
+clicking SELECT on the menu icon and choosing an account name from the list.
+
+To be treated as transactions, CSV files must usually have the following
+fields (although not necessarily in this order - see below):
+
+  "23/09/83","Account 1","Account 2",23.87,"A Transaction"
+       \          \          \         \           \
+        Date       From       To        Amount      Description
+
+To be treated as part of an account, the fields must be like this (although
+again not necessarily in this order):
+
+  "23/09/83","Account 1",0,23.87,"A Transaction"
+       \          \       \     \         \
+        Date       From/To Debit Credit    Description
+
+Accounts+ will take this line and insert the name of the account as set in
+the Import CSV window into the relevant 'From' or 'To' field (depending on
+whether the line is a debit or a credit).  Although it may not be immediately
+obvious, lines loaded to an account will end up in the Transaction Window
+anyway; but they will always have one account in common.
+
+Any valid names of headers and other accounts (which must be case specific as
+usual) will be converted as they are loaded; all other text will become a
+standard entry.
+
+Once the Import as section is set up, the Map Fields section must also be set
+up.  This changes depending on whether 'Transactions' or 'Account' is set,
+and shows which field of the CSV file is loaded into which field of the
+transaction.  The fields of a CSV file are as shown here:
+
+  "23/09/83","Account 1","Account 2",23.87,"A Transaction"
+       \          \          \          \          \
+        Field 1    Field 2    Field 3    Field 4    Field 5
+
+To set the fields, click on the up and down arrows to the right of the boxes. 
+If a field is set to 'None' then either a null string '', or zero '0' will be
+entered as appropriate instead.  Note that text can either be in double
+quotes "line this", or on its own like this.
+
+Once the widow is set up, click on 'Import' to load the transactions, or
+'Cancel' to cancel the import.
+
+
+TSV Files
+---------
+
+TSV Files are used to transfer data from other applications (both on Acorn
+machines and on PCs) into Accounts+.  Most applications such as databases and
+spreadsheets can produce TSV Files easily, even if they cannot produce CSV
+files.
+
+On dragging a TSV file to Accounts+ (which will have a Text file type), the
+Import TSV window will open.  This window operated in much the same way as
+the CSV window described above.
+
+A line from a TSV file may well look like this (where [09] is a tab
+character:
+
+  23/09/83[09]Account 1[09]Account 2[09]23.87[09]A Transaction
+       \          \           \           \          \
+        Field 1    Field 2     Field 3     Field 4    Field 5
+
+Note that, unlike CSV files, TSV files do not usually have their text inside
+double quotes.
+
+Once the widow is set up, click on 'Import' to load the transactions, or
+'Cancel' to cancel the import.
+
+
+Account Files
+-------------
+
+Account files provide a means of loading files created in the !Accounts
+software.  When an Account file is dragged to Accounts+, the Import Account
+window will open.
+
+Account files can only be loaded into one account within Accounts+.  Choose
+this account in the field at the top of the window: click SELECT on the menu
+icon and select an account from the list.  As with CSV files, new lines will
+be added to the end of the account, but subsequent sorting may rearrange
+this.
+
+If your file contains some dates within the descriptions in the Accounts
+date formats, setting 'Extract dates' will remove them and insert them into
+the 'Date' field within Accounts+.  The rest of the description will be
+placed in the 'From/To' field.  The formats are:
+
+  DD/MM/YY    (eg. 03/11/75)
+  DD Mmm YY   (eg. 03 Nov 75)
+  Mmm DD YY   (eg. Nov 03 75)
+
+If one of these dates cannot be found, then the 'Date' field will be left
+blank.  These transactions will be sorted to the start of the list if the
+transactions are sorted.
+
+Account files also contain an initial balance.  Initial Balance controls how
+this is dealt with.  The default 'Ignore new' will simply ignore the new
+balance, leaving the balance in Accounts+ intact.  'Replace old' on the other
+hand, will replace the initial balance in Accounts+ with the one from the
+Account file.  'Add old and new together' will add the two balances together.
+'Insert transaction' will insert a special transaction with the 'From/To'
+text of 'Merged account' (a standard entry) and a description of 'Initial
+Balance', containing the amount of the new initial balance.  Enter the date
+that you wish this transaction to occur on into the Date box, in the usual
+format.
+
+When the window is set up correctly, click on 'Import' to begin the importing
+process, or click 'Cancel' to cancel the operation.
+
+
+Section B: Bank Accounts
+========================
+
+
+B.1: Creating and Editing Accounts
+----------------------------------
+
+Accounts can be created, deleted, or their names edited from the Account
+Names window.  Select 'Accounts:Edit...' from the main menu,
+select 'Edit accounts...' from the account menu, click on the 'Edit Accounts'
+button in the button-bar in either the Transaction Window (see 'A.3: The
+Transaction Window') or the Account Window (see 'B.2: Viewing Accounts'), or
+press Shift-F7.
+
+Initially, this window will contain only one account, called 'Untitled'.  To
+edit the name of the account, click on its name, and use the Name field in
+the Edit Account Name window to change the name.  Click on 'OK' to register
+the change, 'Cancel' to forget the change, or 'Delete' to delete the account.
+Note that it is not possible to delete an account used in a transaction.
+
+To create a new account, click on 'Add'.  This will create a new account
+called 'Untitled', assuming there are less than 10 accounts already present. 
+Click on 'OK' to close the Account Names window.
+
+
+B.2: Viewing Accounts
+---------------------
+
+To view one of the accounts, the Account window is used.  Select the name of
+the account from the 'Accounts:View accounts:' sub-menu of the main menu,
+from the 'View accounts:' sub menu of the account menu, or from the 'View
+Accounts' button in the button-bar of either the Transaction Window (see
+'A.3: The Transaction Window') or the Account Window (see below).
+
+A 'bank-statement' window will open, showing all the transactions concerning
+the account.  The 'From/To' column contains the names of the sources and
+destinations of the transactions (see 'D.1: Entering Transactions').
+
+The button-bar (if visible) contains the following buttons from left to
+right:
+
+     Edit Accounts          (see 'B.1: Creating and Editing Accounts')
+     View Accounts          (see below)
+     View Balances          (see 'E.6: Viewing Balances')
+     Initial Balance        (see 'E.7: Initial Balance')
+     Expense Headers        (see 'Section C: Headers')
+     Export File            (see 'B.3: Exporting Accounts')
+     Goto                   (see 'E.2: Goto Line')
+     Print                  (see 'B.4: Printing Accounts')
+
+There may also be two more options available: this depends on whether
+selctions can be made and edited from the Account Window (see 'Section F: The
+Preferences').  These are:
+
+     Clear Selection        (see 'D.2: Editing Transactions')
+     Delete Transaction     (see 'D.4: Deleting and Removing Transactions')
+
+At the right hand side is the user title (see 'E.4: User Title'), and to the
+left of this, the total balance currently in the account shown.  If the
+button-bar is not displayed, then a status-bar is shown instead.  This shows
+information about the selected transaction and other operations.  See
+'Section F: The Preferences' for more information on how to select these
+features.
+
+Negative numbers are shown in the highlight colour so that they stand out,
+and they are also, of course, prefixed by a minus sign ('-').
+
+Only one account can be viewed at any one time.  If there are too many
+transactions for an account to handle (over 500), then you will be warned of
+this.  The last displayed transaction will be displayed in the highlight
+colour (usually red, see 'Section F: The Preferences' for details on how to
+change this colour), to indicate that there are more transactions not shown. 
+To solve this problem, remove some old transactions from the start of the
+file (see 'D.4: Deleting and Removing Transactions').
+
+Clicking MENU over the Account Window will display the account menu.
+
+
+B.3: Exporting Accounts
+-----------------------
+
+Accounts+ allows you to export account information in four formats: Plain
+ASCII text, Comma Separated Variable, Tab Separated Variable, and Account
+format: for use in Accounts.  To export an account, open the Account Window
+for the account that you wish to export, and then open the relevant save box.
+(see also 'A.6: Importing Files').
+
+
+Account Files
+-------------
+
+Account files are used for loading into the older !Accounts software. 
+Account files can also be loaded back into Accounts+, but some data will be
+lost in the process.
+
+Either select 'Accounts:Export:Account' from the main menu; 'Export:Account'
+from the account menu; click SELECT on the 'Export File' button in the
+Account Window button-bar; or press Shift-F3 to open the Export Account
+window.
+
+A save window will open showing an Account file icon.  Enter a file name as
+usual, and drag the file icon to a directory viewer.  If you enter a full
+path-name, you can click on 'OK' or press RETURN.  The name of the account to
+be exported is shown blow.  'Dates' turns the exporting of dates on and off
+(see below).
+
+Due to the limitations of the Account file format, the data is treated
+rather strangely.  Since the fields do not match those used by Accounts
+files, the information is treated as follows.  If 'Dates' is set, the
+contents of the 'From/To' field is truncated to 12 characters, and the date
+added to the end in the Accounts 'DD/MM/YY' format, to make up the 20
+character Accounts description. This allows the date to be updated in
+Accounts with the Ctrl-T date operation.  If 'Dates' is unset, the full 20
+characters of the 'From/To' field is exported.  Credits, payments, and
+balances are placed in the relevant columns.  Since there is nowhere for it
+to go, the description from Accounts+ is ignored.  This system if far from
+ideal (!), but there does not appear to be a better alternative.
+
+
+CSV Files
+---------
+
+CSV files are used for transferring data to other software such as
+spreadsheets, databases, and word processors; both on Acorn machines and on
+other platforms.  These files can be loaded back into Accounts+
+
+Either select 'Accounts:Export:CSV' from the main menu; 'Export:CSV' from the
+account menu; click SELECT on the 'Export File' button in the Account Window
+button-bar; or press Ctrl-F3 to open the Export CSV window.
+
+The usual save window will open, type a file name into the box, and drag the
+icon to a directory viewer to save; alternatively, type in a full pathname,
+and press RETURN or click 'OK'.  The name of the account to be exported is
+shown in the window.
+
+'Line numbers' toggles the line numbers on and off; 'Headings' toggles on and
+off the column headings: which will be saved as the first line if requested. 
+'Quotes' determines whether or not text is enclosed in double quotes "like
+this".
+
+A typical line from a CSV file with 'Quotes' on may look like this:
+
+  1,"04/07/1965","Access",20.00,0,1453.98,"Fuel"
+   \         \     \       \     \      \     \
+    Line No.  Date  From/To \     Credit \     Description
+                             Debit        Balance
+Without 'Quotes':
+
+  1,04/07/1965,Access,20.00,0,1453.98,Fuel
+   \        \     \       \  \      \    \
+    Line No. Date  From/To \  Credit \    Description
+                            Debit     Balance
+
+Some applications require all text to be enclosed in quotation marks to be
+able to understand the file.
+
+
+TSV Files
+---------
+
+TSV Files are used for transferring data to other applications which cannot
+read CSV files, especially word processors (such as Impression); both on
+Acorn machines and other platforms.  The files can be loaded back into
+Accounts+.
+
+Either select 'Accounts:Export:TSV' from the main menu; 'Export:TSV' from the
+account menu; or press Shift-Ctrl-F3 to open the Export TSV window.
+
+The usual save window will open, type a file name into the box, and drag the
+icon to a directory viewer to save; alternatively, type in a full pathname,
+and press RETURN or click 'OK'.  The name of the account to be exported is
+shown in the window.
+
+'Line numbers' toggles the line numbers on and off; 'Headings' toggles on and
+off the column headings: which will be saved as the first line if requested.
+
+A typical line of a TSV file may look like this:
+
+  1[09]17/12/1978[09]D. Jones[09]0[09]27.98[09]132.37[09]Items
+   \        \           \         \      \       \         \
+    Line No. Date        From/To   Debit  Credit  Balance   Description
+
+Note that the '[09]' specifies the ASCII code 9 (it would be shown like this
+in some text editors), and is the Tab code.
+
+
+ASCII Text Files
+----------------
+
+ASCII Text  Files are used for saving formatted data to other applications. 
+The data is tabulated using a fixed space font (such as the System font, or
+Corpus).
+
+Either select 'Accounts:Export:ASCII Text' from the main menu; or
+'Export:ASCII Text' from the account menu to open the Export ASCII Text
+window.
+
+The usual save window will open, type a file name into the box, and drag the
+icon to a directory viewer to save; alternatively, type in a full pathname,
+and press RETURN or click 'OK'.  The name of the account to be exported is
+shown in the window.
+
+'Line numbers' toggles the line numbers on and off; 'Headings' toggles on and
+off the column headings: which will be saved as the first line if requested. 
+'Date & File' will save the date and file in the following format at the top
+of the file:
+
+     File: SF Accounts
+  Account: Abbey National
+     Date: 14/05/1995
+
+A whole example may well look like this:
+
+     File: SF Accounts
+  Account: Abbey National
+     Date: 14/05/1995
+
+     Date    From/To             Debits   Credits   Balance Description
+  11/04/1994 Payment                       500.00    500.00 Account Opened 
+  01/04/1995 Withdrawal           21.59              478.41 
+
+
+B.4: Printing Accounts
+----------------------
+
+Accounts can be printed out to provide a paper record of the transactions. 
+To print, open the Account Window for the account that you wish to print, and
+then select either 'Accounts:Print...' from the main menu, 'Print...' from
+the account menu, click SELECT on the 'Print' button in the Account Window
+button-bar (see 'B.2: Viewing Accounts'), or press PRINT.  The Print
+Account window will open.
+
+At the top of this window is the name of the account to be printed.  Select
+the lines that you wish to print from the Print section: 'All' for all the
+lines, or 'From #¹ To #²' to print only the lines from line #¹ to line #²
+inclusive.  The Margins section controls the space around the printed page,
+in either lines or columns.  'Page length' is the overall length of the page,
+including margins.  This is usually set to 62 or 64 for dot-matrix printers. 
+'Top' is the number of lines left at the top of the page, and 'Base' the
+number of lines left below.  Together, these calculate 'Lines', which is the
+resulting number of printable lines.  'Left' is the left margin, while
+'Right' is the right margin.  These values are updated to reflect the choices
+made in the Options section.
+
+Options contains options on how the page is printed.  'Line numbers' turns
+the line numbers on the left of the page on and off, while 'Headings'
+controls the column headings ('Date', 'From/To', 'Description', etc.).  Turn
+on 'Page numbers' to print the number of each page at the bottom.  'File &
+Account name' shows the User Title (see 'E.4: User Title') and the account
+name at the top of each page, and 'Date' will include the date as well.
+
+When these values are set, click on 'Print' to print the page, or 'Set
+values' to store them.  'Save values' will save the values as the defaults. 
+Click on 'Cancel' to forget any changes made to the settings.
+
+An example page containing the full works may look like this:
+
+       File: Accounts                           Account: Current Account
+                       Date printed: 02/06/1987
+                                                   
+         Date    From/To        Debits  Credits  Balance Description
+    1 07/04/1987 Savings                 200.00   567.98 Transfer in
+    2 10/04/1987 Cheque          35.76            541.22 Food
+    3 21/04/1987 Simon           11.76            529.46
+    .     .        .               .        .        .       .
+    .     .        .               .        .        .       .
+    .     .        .               .        .        .       .
+   59 31/05/1987 Wages                  1000.00  1387.14
+   60 01/05/1987 Cheque          58.98           1328.16 Widgets
+   
+                                  Page 1
+
+
+B.5: Controlling the Printer
+----------------------------
+
+Accounts+ uses its own printer control system, to allow high speed printouts
+to be achieved.  For this reason, it does not use the standard RISC OS
+printer drivers.  To set up Accounts+, use the Printer Control window.  Click
+on 'Control...' in the Print window, click ADJUST on the 'Print' button in
+the Account Window button-bar (see 'B.2: Viewing Accounts'), select
+'Printer...' from the icon-bar menu, or press Shift-Ctrl-PRINT.  This window
+contains a list of control codes that are sent to the printer to access its
+features.  The codes required can be found in your printer's manual.
+
+Codes are entered into the white boxes.  To send an ASCII code, simply enter
+its value; to send a string, enclose it in double quotes, "like this".  Items
+in this list are separated by commas.  For example, the IBM proprinter code
+to print a pound sign ('£') is 'ESC ^ 156'.  This means send the ESC code
+(ASCII 27), followed by a '^', followed by ASCII 156.  To enter this into the
+Control window, you would use '27,"^",156'.  Similarly, to turn underline on
+on the IBM proprinter, the sequence 'ESC - 1' is needed.  This would
+translate to '27,"-","1"'.  Note that the ASCII codes for '^', '-', and '1'
+(94, 45, and 49 respectively) could have been used instead, but their textual
+equivalents are easier to remember.  An example:
+
+   27,"^","-",156
+   /   \   \   \
+ESC    '^' '-'  ASCII Code 156
+
+The codes required are as follows.  Any codes left blank will not be sent to
+the printer, meaning that their effects will not appear on paper.
+
+Start Print Job  This is the first code sent to the printer, at the start of
+                 a print.  It can be used to swap emulation, reset the
+                 printer, or carry our any other tasks that may need to be
+                 done.
+
+End Print Job    This is the very last code that is sent to the printer,
+                 after all the printing has been finished.  It can be used to
+                 clear the printer, swap emulation, or carry out any other
+                 task.
+
+Pica Pitch On    This is the second to last code to be sent to the printer,
+                 and is used to reset the pitch to Pica, which is the default
+                 on dot-matrix printers.  THIS CODE MUST ALWAYS BE INCLUDED
+                 IN THE CONTROL LIST.
+
+Elite Pitch On   This is the second code that is sent to the printer, and is
+                 used to select Elite pitch, to allow all the columns to fit
+                 onto a page.  THIS CODE MUST ALWAYS BE INCLUDED IN THE
+                 CONTROL LIST.
+
+Bold On          These codes are sent to the printer to turn bold print on
+Bold Off         and off.
+
+Italic On        These codes are sent to the printer to turn italic print on
+Italic Off       and off.
+
+Underline On     These codes are sent to the printer to turn underline on and
+Underline Off    off.
+
+Line Feed        This code is sent to the printer at the end of each line,
+                 and must move the print head down one line, and over to the
+                 left margin.  IT MUST ALWAYS BE INCLUDED IN THE CONTROL
+                 LIST.
+
+Form Feed        This code moves the print head to the end of a page.  IT
+                 MUST ALWAYS BE INCLUDED IN THE CONTROL LIST.
+
+'£' Mapping      Because ASCII is an American standard, the pound sign ('£')
+                 does not have a standard code number, and is left to the
+                 printer and computer manufacturers to decide upon.  This
+                 means that each printer has a different code to print a '£'. 
+                 Use this box to enter a code sequence to print a '£', if it
+                 varies from the Epson '163' as used by Acorn computers. 
+                 This code often involves switching character sets, printing
+                 the '£', and then switching back again.
+
+Once the codes have been set, click on 'OK' to store them, or 'Save' to save
+them as defaults.  Click on 'Cancel' to forget any changes.
+
+
+Section C: Headers
+==================
+
+
+C.1: What Are Headers?
+----------------------
+
+Headers are a means of keeping track of how you spend and receive money. 
+They can be used in transactions, in the same way as accounts, as either a
+source or destination for money.  The total amount of money paid to a header
+is noted, as well as the amount of money received from one.  The total
+balance of these payments is also calculated.  Headers can be set to be only
+payments, only credits, or both.  For example, a header called 'Wages' could
+be defined only to be a credit, and would show how much money you have
+received from wages over a given time; or a header called 'Computer related'
+could show how much you have spent on your computer over time.  If an area is
+intended to be self-sustaining, setting a header for both credits and
+payments would show how much it is making - or losing - you over a certain
+period.
+
+Headers are entered into the 'From' and 'To' fields of transactions in the
+usual way.
+
+
+C.2: Creating Headers
+---------------------
+
+Headers can be created and edited from the Headers window.  Select
+'Headers:Edit...' from the main menu, click ADJUST on the 'Expense Headers'
+button in the button-bar in either the Transaction Window (see 'A.3: The
+Transaction Window'), or the Account Window (see 'B.2: Viewing Accounts'),
+or press Shift-F8.  This opens the Headers window, containing a scrolling
+list of headers.
+
+To add a new header, click on 'Add', and a new header called 'Untitled' will
+be added to the end of the list.  Only 30 headers can be defined.  To edit
+this header, click on its name, and the Edit Header window will open.  The
+name of the header can be set in the Name field.
+
+The Type field controls the type of header.  Select 'In (From)' to allow the
+header to be used in the 'From' field as a a payment into an account; or 'Out
+(To)' to allow it to be used in the 'To' field as a payment out of an
+account.  Both these options can be selected together, allowing a header to
+appear in both fields.
+
+Between Dates sets the range of dates for which that particular header is
+calculated: for example, all the expenditure on the car for three months. 
+Date from is the date on or after which the header is used, while date to is
+the date on or before which it is used.  Obviously, if the date from is after
+the date to, the header will never be used.  Enter the dates in the form
+'DD.MM.YYYY', depending on how the preferences are set (see 'Section F: The
+Preferences').  If a field is left blank, then no limit is set.
+
+Click on 'OK' to save the changes, or 'Cancel' to forget them.  'Delete' will
+delete the header.  All references to it within the file are converted to
+standard entries (see 'D.1: Entering Transactions').  If this results in two
+standard entries in a transaction, then the transaction becomes meaningless.
+
+After new headers have been added, it may be necessary to update the file
+(see 'E.8: Updating Transactions').  This will make sure that any standard
+entries matching the new headers' names will be made into headers.
+
+
+C.3: Viewing Headers
+--------------------
+
+To view the values of the headers defined, open the Header Transactions
+window, either by selecting 'Headers:View transactions...' from the main
+menu, clicking SELECT on the 'Expense Headers' button in the button-bar in
+either the Transaction Window (see 'A.3: The Transaction Window'), or the
+Account Window (see 'B.2: Viewing Accounts'), or pressing F8.
+
+This window shows a table of all the headers.  The name is shown on the left,
+followed by the type.  This can either be 'In' for credits, 'Out' for
+payments, or 'I/O' if both flags are set.  'Date From' and 'Date To' show the
+dates between which the header is calculated, while 'In' and 'Out' show the
+credits and payments of that header respectively.  'Balance' shows the
+overall balance of the header (which can be negative).
+
+
+C.4: Exporting Headers
+----------------------
+
+If you wish to use the information displayed in the headers Header
+Transactions window in another application, then the information can be
+exported.  Three formats are supported: CSV files, TSV files, and ASCII text
+files.
+
+
+CSV Files
+---------
+
+CSV files are used for transferring data to other software such as
+spreadsheets, databases, and word processors; both on Acorn machines and on
+other platforms.
+
+To export the header information as a CSV file, select 'Headers:Export:CSV'
+from the main menu.  The usual save window will open, and you can type a file
+name into the box, then drag the icon to a directory viewer to save;
+alternatively, type in a full pathname, and press RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings: which will be saved as the
+first line if requested.  'Quotes' determines whether or not text is enclosed
+in double quotes "like this".
+
+A typical line from a CSV file with 'Quotes' on may look like this:
+
+  "Counter Credit","In","04/02/86","23/11/91",376.99,0,376.00
+     \               \      \          \         \    \    \
+      Header Name     Type   Date from  Date to   Amounts   Balance
+
+Without 'Quotes':
+
+  Counter Credit,In,04/02/86,23/11/91,376.99,0,376.00
+     \            \     \         \       \   \    \
+      Header Name  Type  Date from Date to Amounts  Balance
+
+Some applications require all text to be enclosed in quotation marks to be
+able to understand the file.
+
+
+TSV Files
+---------
+
+TSV files are used for transferring data to other software such as
+spreadsheets and word processors (for example Pipedream); both on Acorn
+machines and on other platforms.
+
+To export the header information as a TSV file, select 'Headers:Export:TSV'
+from the main menu.  The usual save window will open, and you can type a file
+name into the box, then drag the icon to a directory viewer to save;
+alternatively, type in a full pathname, and press RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings: which will be saved as the
+first line if requested.  A typical line from a TSV file may look like this
+(where [09] is a tab character):
+
+  Counter Credit[09]In[09]04/02/86[09]23/11/91[09]376.99[09]0[09]376.00
+     \               \      \          \         \    \    \
+      Header Name     Type   Date from  Date to   Amounts   Balance
+
+
+ASCII Text
+----------
+
+ASCII Text files are used to export the header information in a formatted
+way.  The columns are tabbed out using spaces, and will appear correctly if
+used with a monospaced font such as Corpus.
+
+To export the header information as an ASCII Text file, select
+'Headers:Export:ASCII Text' from the main menu.  The usual save window will
+open, and you can type a file name into the box, then drag the icon to a
+directory viewer to save; alternatively, type in a full pathname, and press
+RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings.  'Date & File' turns on
+and off the date and file name, which are printed at the start of the file
+in the following format if requested:
+
+  File: SF Accounts
+  Date: 20/09/1992
+
+A typical file may look like this, with 'Date & File' selected:
+
+       File: SF Accounts
+       Date: 20/09/1992
+
+  Counter Credit   In  04/02/86 23/11/91   376.99     0.00   376.00
+  Withdrawal       Out 07/05/90              0.00   498.44  -498.44
+
+
+C.5: Printing Headers
+---------------------
+
+Headers can be printed out to provide a paper record of their values.  To
+print, select 'Headers:Print...' from the main menu, or press Shift-PRINT. 
+The Print Headers window will open.
+
+The Margins section of this window controls the space around the printed
+page, in either lines or columns.  'Page length' is the overall length of the
+page, including margins.  This is usually set to 62 or 64 for dot-matrix
+printers.  'Top' is the number of lines left at the top of the page, and
+this will calculate 'Base', the number of lines left below.  Together, these
+calculate 'Lines', which is the resulting number of printable lines.  'Left'
+is the left margin, while 'Right' is the right margin; which is calculated
+from 'Left'.  These values are updated to reflect the choices made in the
+Options section.
+
+Options contains options on how the page is printed.  'Headings' controls the
+column headings ('Date From', 'Type', 'Balance', etc.).  'File & Account
+name' shows the User Title (see 'E.4: User Title') and the account name at
+the top of each page, and 'Date' will include the date as well.
+
+When these values are set, click on 'Print' to print the page, or 'Set
+values' to store them.  'Save values' will save the values as the defaults. 
+Click on 'Cancel' to forget any changes made to the settings.
+
+An example page containing the full works may look like this:
+
+                            File: Accounts
+                       Date printed: 02/06/1987
+                                                   
+   Header      Tpe Date From   Date To         In       Out  Balance
+   Withdrawal  Out 07/02/1990                        587.99   587.99
+   Connect     Out 07/02/1990                        235.23   235.23
+   Cheque      I/O 07/02/1990                         79.03    79.03
+      .         .      .          .           .         .        .
+      .         .      .          .           .         .        .
+      .         .      .          .           .         .        .
+   Bonus       In             07/06/1992    33.17             -33.17
+   Interest    In  07/02/1990              172.99            -172.99 
+
+
+Section D: Transactions
+=======================
+
+
+D.1: Entering Transactions
+--------------------------
+
+To enter transactions, the edit bar at the bottom of the Transaction Window
+(see 'A.3: The Transaction Window') is used.  This shows the same fields as
+the Transaction Window itself, and information can be typed into it.  To put
+the caret into the bar, click in one of the white boxes.  TAB can be used to
+move the caret forward through the boxes, and Shift-TAB to move it back.
+
+The 'Date' field contains the date of the transaction.  These are entered in
+the form 'DD.MM.YYYY', depending on how the preferences are set (see 'Section
+F: The Preferences').  To use the current date (as shown in the tool bar -
+see 'A.3: The Transaction Window'), select 'Today's date', and the date field
+will disappear.  Whenever the line is used, the current date will be
+substituted instead.
+
+The 'From' column indicates the source of the transaction.  This can be an
+account, a header (see 'C.1: What Are Headers?'), or a standard entry. 
+Standard entries are entries that are not used in any calculation - ie. they
+are not account or header names - and can be any text up to 20 characters in
+length.  Only one of the two entries of a transaction (either 'From' or 'To')
+can be a standard entry: either one or both must be a valid account or
+header.  Standard entries are often used for one off payments, for which a
+header cannot be justified.  The money will be transferred from the source
+specified by this field.
+
+'To' is the opposite of 'From' - the money will be transferred to this
+destination.  Again it can be an account, a header, or a standard entry.  To
+enter account names quickly into either the 'From' or 'To' fields, click
+SELECT on the menu button button below the field, and select an account name
+to be inserted.  To use a header, click ADJUST on the same button; only the
+appropriate  headers are shown below each field.  Header and account names
+can be typed into the fields by hand, but note that they are case sensitive. 
+If an inappropriate header is typed into a field (a 'From' header into the
+'To' field or vice versa), then the entry is made into a standard entry.
+
+'Amount' carries the amount of money transferred.  This can be entered in the
+form 123.45 (for £123.45) or 123 (for £123).  The 'Description' field
+contains a textual description of the transaction, useful if both 'From' and
+'To' are either accounts or headers.
+
+To add the transaction to the end of the list, select 'Edit:Add to end' from
+the main menu, click on the 'Add To End Of Transaction List' button in the
+edit-button-bar (see 'D.2: Editing Transactions'), or press F1.  Pressing
+RETURN after entering data into the fields will move the caret along the
+line, and pressing RETURN in the last 'Description' field can also add the
+transaction (see 'Section F: The Preferences').  The transaction will be
+added, and the transfer of money from the source in the 'Form' field to the
+destination in the 'To' field will be noted.  There can be up to 5000
+transactions in the file.
+
+
+D.2: Editing Transactions
+-------------------------
+
+To edit transactions, use is made of the edit bar, below the Transaction
+Window (see 'A.3: The Transaction Window').  This includes the edit-tool-bar
+on the bottom right.  This contains the following buttons from left to right:
+
+     Clear Edit Line                   (see below)
+     Cut Selection                     (see 'D.3: Copying Transactions')
+     Copy Selection                    (see 'D.3: Copying Transactions')
+     Replace Selection                 (see below)
+     Insert Above Selection            (see below)
+     Insert Below Selection            (see below)
+     Add To End Of Transaction List    (see 'D.1: Entering Transactions')
+
+On the bottom left is a single icon.  This is the Help Icon, and clicking it
+will let you view the !Help File.  It also provides information to
+Interactive Help applications.
+
+To select a transaction, click on it in the Transaction Window.  It will
+appear highlighted, both in the Transaction Window and in the Account Window
+(see 'Section F: Preferences' for more details about this).  This makes the
+'greyed-out' menu items and buttons in the button-bars available.
+
+Selecting 'Edit:Insert above' from the main menu, clicking on the 'Insert
+Above Selection' button in the edit-button-bar (see above), or pressing
+Shift-INSERT will insert the contents of the edit-bar above the selected
+transaction in the Transaction Window.  To insert the line below the selected
+transaction, either select 'Edit:Insert below' from the main menu, click on
+the 'Insert Above Selection' button in the edit-button-bar (see above), or
+press INSERT.  If the order of dates is not correct, then the transactions
+can be sorted into date order (see 'E.3: Sorting By Date').
+
+It is possible to replace the contents of the selected transaction with the
+contents of the edit-bar.  Selecting 'Select:Replace selection' in the main
+menu, clicking on the 'Replace Selection' button in the edit-button-bar (see
+above), or pressing Ctrl-V will replace the transaction.  This becomes useful
+when copying transactions (see 'D.3: Copying Transactions').
+
+To clear the selection, select 'Selection:Clear selection' from the main
+menu, click on the 'Clear Selection' button in the button-bar in the
+Transaction Window (see 'A.3: The Transaction Window'), the 'Clear Selection'
+button in the button-bar in the Account Window if present (see 'B.2: Viewing
+Accounts', and 'Section F: The PReferences'), or press Ctrl-Z.
+
+
+D.3: Copying Transactions
+-------------------------
+
+In order to edit a transaction, it must first be either cut or copied to the
+edit-bar (see 'D.1: Entering Transactions').  To cut a selection, select
+'Selection:Cut selection' from the main menu, or click on the 'Cut Selection'
+button in the edit-button-bar.  This will copy the selection to the edit-bar,
+and delete it from the Transaction Window.  To copy the selection, leaving it
+in the Transaction Window, either choose 'Selection:Copy selection' from the
+main menu, click on the 'Copy Selection' button in the edit-button-bar, or
+press Ctrl-C.
+
+Copying makes it possible to amend transactions.  Select the transaction, and
+copy it to the edit-bar.  Then amend it, and replace it to the Transaction
+Window using the replace function (see 'D.2: Editing Transactions').
+
+
+D.4: Deleting and Removing Transactions
+---------------------------------------
+
+To delete a transaction totally from the list, select it, and then choose
+'Selection:Delete selection' from the main menu, click on the 'Delete
+Selection' icon in the button-bar in the Transaction Window (see 'A.3: The
+Transaction Window'), the 'Delete Selection' button in the button-bar in the
+Account Window if present (see 'B.2: Viewing Accounts', and 'Section F: The
+PReferences'), or press Ctrl-X.  The accounts will be recalculated after the
+line is deleted.
+
+If the number of transactions becomes too large (Accounts+ can only handle
+5000 transactions in total, and 500 per account), it is possible to remove
+transactions from the start of the file.  Select the transaction up to and
+including which you wish to remove, and choose 'Selection:Remove
+transactions' from the main menu.  After the lines have been removed, the
+appropriate balances will be inserted into each account's initial balance
+(see 'E.7: Initial Balance'), so that, unlike deleting lines, the account
+balances remain correct.
+
+
+D.5: Automatic Transactions
+---------------------------
+
+If your accounts involve transactions that occur on a regular basis - for
+example standing orders or direct debits - then Accounts+ can enter these
+transactions into your accounts on the correct days.  Up to 30 such automatic
+transactions can be defined.
+
+To edit the automatic transactions, open the Standing Orders window: either
+by selecting 'S.Orders:Edit...' from the main menu, by clicking SELECT on the
+'Standing Orders' button in the button-bar in the Transaction Window (see
+'A.3: The Transaction Window'), or by pressing Shift-F6.  This window shows a
+list of all the transactions currently defined: initially it will be empty.
+
+To add a new transaction, click on 'Add', and one called 'Untitled' will
+appear at the end of the list.  To edit this, click on its name, and the Edit
+Standing Order window will open.  This window contains four sections.
+
+Name contains the name of the transaction: this can be up to 20 characters
+long, and will be used to identify the transaction; as well as being inserted
+into the 'Description' field when the transaction is used.  Type specifies
+how the interval between transactions is calculated.  'Every # months' will
+insert the transaction every # months (for example, on the 2nd day every 3
+months - the day is derived from the start date: see below).  'Every # days'
+will leave an interval of # days between each transaction.  Up to 2 digits
+can be entered into each box.
+
+Transfer describes the transaction that will take place.  Enter into the '£'
+box the amount of money to be transferred (as '123.45' or '123').  In From,
+enter the source of the transaction (the 'From' field), and in To the
+destination (the 'To' field).  Clicking SELECT on the two menu buttons will
+allow account names to be entered, clicking ADJUST will allow headers to be
+entered.
+
+Finally, Next Transaction contains the date when the transaction will next
+occur.  Enter the first date in the form 'DD.MM.YYYY', depending on how the
+preferences are set (see 'Section F: The Preferences').  When editing an
+existing transaction, this field will show the next date.  If the date is set
+behind the current date, the next time the automatic transactions are
+updated, transactions will repeatedly be added to bring the date up to the
+present day.  If the field is left blank, then the transaction will be
+ignored (so this can be used to disable an automatic transaction without
+deleting it).
+
+Click on 'OK' to record the changes, or 'Cancel' to forget any changes made. 
+Click 'Delete' to delete the definition from the list.  When editing is
+complete, click 'OK' on the Standing Orders window to close it.
+
+The automatic transactions can be updated automatically when Accounts+ is
+loaded, or at midnight - if the software is running at that time.  The
+transactions can also be brought up to date by selecting 'S.Orders:Update'
+from the main menu, or clicking ADJUST on the 'Standing Orders' button in the
+button-bar in the Transaction Window (see 'A.3: The Transaction Window'). 
+Depending on the preferences, you will be warned when standing orders are
+added (automatically or not), and the transactions will be sorted into date
+order again.  It is also possible to have Accounts+ confirm if more than a
+certain number of transactions are added: this saves locking up the machine,
+and filling your file up if you enter a start date wrongly.  See 'Section F:
+The Preferences' for more details on these features.
+
+
+D.6: Viewing Forthcoming Automatic Transactions
+-----------------------------------------------
+
+If you wish to find out what transactions were added last time your file was
+updated, or you wish to know what transactions are due to hit you bank
+account in the next few days, select 'S.Orders:Forthcoming...' from the main
+menu, or press Ctrl-F6.  This opens the Forthcoming Standing Orders window,
+which lists all those standing orders which were added last, and all those
+which will be added in the near future.  Those which have been added are
+shown highlighted (see 'Section F: The Preferences').
+
+See 'Section F: The Preferences' for more details on this feature.
+
+
+D.7: Exporting Transactions
+---------------------------
+
+If you wish to use the Transactions in another application, then the
+information can be exported.  Three formats are supported: CSV files, TSV
+files, and ASCII text files.
+
+
+CSV Files
+---------
+
+CSV files are used for transferring data to other software such as
+spreadsheets, databases, and word processors; both on Acorn machines and on
+other platforms.  These files can be loaded back into Accounts+.
+
+To export the transactions as a CSV file, select 'Transactions:Export:CSV'
+from the main menu.  The usual save window will open, and you can type a file
+name into the box, then drag the icon to a directory viewer to save;
+alternatively, type in a full pathname, and press RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings: which will be saved as the
+first line if requested.  'Quotes' determines whether or not text is enclosed
+in double quotes "like this".
+
+A typical line from a CSV file with 'Quotes' on may look like this:
+
+  "04/02/86","Barclays","Counter Credit",376.99,"A Transaction"
+       \          \             \           \           \
+        Date       From          To          Amount      Description
+
+Without 'Quotes':
+
+  04/02/86,Barclays,Counter Credit,376.99,A Transaction
+      \        \           \           \         \
+       Date     From        To          Amount    Description
+
+Some applications require all text to be enclosed in quotation marks to be
+able to understand the file.
+
+
+TSV Files
+---------
+
+TSV files are used for transferring data to other software such as
+spreadsheets and word processors (for example Pipedream); both on Acorn
+machines and on other platforms.  These files can be loaded back into
+Accounts+.
+
+To export the transactions as a TSV file, select 'Transactions:Export:TSV'
+from the main menu.  The usual save window will open, and you can type a file
+name into the box, then drag the icon to a directory viewer to save;
+alternatively, type in a full pathname, and press RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings: which will be saved as the
+first line if requested.  A typical line from a TSV file may look like this
+(where [09] is a tab character):
+
+  04/02/86[09]Barclays[09]Counter Credit[09]376.99[09]A Transaction
+      \           \              \             \            \
+       Date        From           To            Amount       Description
+
+
+ASCII Text
+----------
+
+ASCII Text files are used to export the header information in a formatted
+way.  The columns are tabbed out using spaces, and will appear correctly if
+used with a monospaced font such as Corpus.
+
+To export the transactions as an ASCII Text file, select
+'Transactions:Export:ASCII Text' from the main menu.  The usual save window
+will open, and you can type a file name into the box, then drag the icon to a
+directory viewer to save; alternatively, type in a full pathname, and press
+RETURN or click 'OK'.
+
+'Headings' toggles on and off the column headings.  'Date & File' turns on
+and off the date and file name, which are printed at the start of the file
+in the following format if requested:
+
+  File: SF Accounts
+  Date: 20/09/1992
+
+A typical file may look like this, with 'Date & File' selected:
+
+       File: SF Accounts
+       Date: 20/09/1992
+
+  04/08/1992 My Bank        The Garage        27.03 Service
+  05/08/1992 Fred Co.       My Bank          200.00 My Commission
+
+
+D.8: Printing Transactions
+--------------------------
+
+The details of the transactions can be printed out to provide a permanent
+record.  To do this, select 'Transactions:Print...' from the main menu, or
+press Ctrl-PRINT.  The Print Transactions window will open.
+
+At the top of this window is the Print section.  Select 'All' to print all
+the transactions, or 'From #¹ to #²' to print all the transactions from #¹ to
+#².  Enter the required values into the boxes.  The Margins section controls
+the space around the page.  Use the up and down arrows to adjust the values. 
+'Top' is the number of lines left at the top of each page, and 'Base' the
+number of lines left below.  'Left' and 'Right' are the columns left to the
+left and right of the page respectively (these may change if 'Transaction
+numbers' is selected.  'Page length' is the total number of lines on a sheet
+of paper, and 'Lines' is the number of lines left, excluding the margins.
+
+The Options section controls what is printed on a page.  'Transaction
+numbers' will print these numbers on the left of each line, while 'Headings'
+prints the column headings ('From', 'To', 'Date', etc) at the top of each
+page.  'Date' and 'File name' print the current date and the User title (see
+'E.4: User Title') at the top of each page, and 'Page number' will print the
+page number at the bottom.
+
+When ready, click on 'Print' or press RETURN to print.  'Set values' will
+store the current settings in memory, while 'Save values' will save them to
+disc for future use.  'Cancel' will cancel the printing.
+
+
+Section E: Miscellaneous Features
+=================================
+
+
+E.1: Searching
+--------------
+
+The search function allows you to search for a piece of text within the
+'From', 'To', and 'Description' fields.  Select 'Transactions:Find...' from
+the main menu, click on the 'Search' button in the button-bar in the
+Transaction Window (see 'A.3: The Transaction Window'), or press F4 to open
+the Search and Replace Window.
+
+Enter the string that you wish to search for into the Search for box.  To
+enter an account or a header, click on the menu button to the right of the
+field.  If you wish to replace the matches with something else, then enter
+this into the Replace with box, otherwise leave it blank.  Again, the menu
+button to the right allows accounts and headers to be entered.
+
+Search Options controls how the search will take place.  Select 'Whole
+string' to search only for a complete match, or 'Sub string' to search for a
+match within text: for example, 'in' would match 'mind'.  'Case sensitive'
+toggles case sensitivity on and off: determining whether the case of the
+letters is taken into account.  Select the fields to search from the Search
+Columns section.  Toggle the 'From', 'To', and 'Descriptions' fields on and
+off as required.
+
+To start the search by finding the first match, click on 'Find First'.  To
+simply replace all occurrences, click on 'Replace All'.  Click 'Cancel' to
+cancel the search.
+
+If 'Find First' was chosen, and a match is found, the Match Found window will
+open.  This shows the actual text found, the text to replace the match with,
+the field it was found in ('From', 'To', etc.), and the line (transaction)
+matched.  The transaction will be selected.  To move on to the next match,
+click on 'Find Next'.  Clicking on 'Replace' will replace the text found with
+the replace text (if 'Sub string' was selected, then only the part matched
+will be replaced: for example, if 'in' was matched by 'mind', and the replace
+string was 'owe', then the result would be 'mowed'), while 'Replace All' will
+replace all the occurrences from the current line onwards to the end of the
+file.  Click on 'Cancel' to cancel the search.
+
+
+E.2: Goto
+---------
+
+Goto allows you to jump to any transaction either in the Transaction Window,
+or in the Account Window.  To go to a transaction in the Transaction Window,
+either select 'Transactions:Goto transaction' from the main menu, click on
+the 'Goto' button in the button-bar in the Transaction Window (see 'A.3: The
+Transaction Window'), or press F5, and the Goto Line window will open.  Type
+the line number into the box, and click on 'OK' or press RETURN, and the
+Transaction Window will jump to the transaction entered.
+
+To go to a line in the Account Window, select 'Goto line' from the account
+menu, click on the 'Goto' button in the button-bar in the Account Window (see
+'B.2: Viewing Accounts'), or press Shift-F5 to open the Goto Line window. 
+Type in the line number, and click on 'OK' or press RETURN to jump to the
+line entered.
+
+To go to the currently selected line or transaction in either the Transaction
+Window or the Account Window, click ADJUST on the 'Goto' button in the
+relevant button-bar.  Assuming a transaction is selected, and that it is
+shown in the Accounts Window (if you wish to go to a line), then the window
+will scroll to the selection.
+
+E.3: Sorting By Date
+--------------------
+
+If the transactions in the Transaction Window are not in date order, it is
+possible to sort them.  Select 'Transactions:Sort by dates' from the main
+menu, or press F6.  This can be useful if new transactions have been added to
+the end of the file, out of sequence.  If a date has been left blank, it will
+be sorted to the beginning of the file.
+
+Note that it is possible to sort the file automatically after standing orders
+have been added: see 'Section F: The Preferences' for more details.
+
+
+E.4: User Title
+---------------
+
+The User Title is a name of up to 20 characters which appears both in the
+Transaction window (see 'A.3: The Transaction Window'), and in the Account
+Window (see 'B.2: Viewing Accounts').  To change this (it is initially set as
+'Untitled'), select 'Misc:User title' from the main menu, or press Ctrl-T. 
+Enter a new name into the box, click on 'OK' or press RETURN, and the new
+title will be displayed.
+
+
+E.5: Clear File
+---------------
+
+To clear the program back to the state it was when it was first loaded: 1
+account, no headers, transactions, etc, select 'Misc:Clear file'.  Use this
+with caution, since you can not retrieve the data once it has been cleared.
+
+
+E.6: Viewing Balances
+---------------------
+
+To view the balances of all the accounts, as well as the total overall
+balance, use the Account Balances window.  Either select 'Accounts:View
+balances...' from the main menu, select 'View Balances...' from the account
+menu, click on the 'View Balances' button in the button-bar in either the
+Transaction Window (see 'A.3: The Transaction Window') or the Account Window
+(see 'B.2: Viewing Accounts'), or press F7.
+
+
+E.7: Initial Balance
+--------------------
+
+The initial balance of an account is the balance used to start the account,
+from which all the other balances are calculated.  It is shown in the top
+line of the Account Window (with the description 'Initial Balance').  The
+initial balance is zero to begin with, but can be changed, either by the
+user, or when lines are removed (see 'D.4: Deleting and Removing
+Transactions').
+
+To set the initial balance, select 'Initial balance' from the account menu,
+or click on the 'Initial Balance' button in the button-bar of the Account
+Window (see 'B.2: Viewing Accounts').  Type the new amount into the box (as
+123.45 for £123.45, or 123 for £123), and click on 'OK' or press RETURN to
+set the new initial balance.
+
+
+E.8: Updating Transactions
+--------------------------
+
+When new headers are added, or other changes made, it may be necessary to
+update the file to make sure all the transactions recognise the new headers
+or accounts.  For example, if a standard entry (see 'D.1: Entering
+Transactions') is called 'cheque', and subsequently a header called 'cheque'
+is defined, then it will not update the standard entry.  To do this, select
+'Transactions:Update transactions' from the main menu.  It will go through
+the file, replacing standard entries where necessary.
+
+E.9: Keyboard Shortcuts
+-----------------------
+
+The following keyboard shortcuts are used by Accounts+.  Note that if another
+application has input focus, then the hotkeys may not work.  In this case,
+give Accounts+ input focus, by clicking in the edit bar to give it the caret.
+
+           F1 ..  ..  ..  .. Add Transaction to End
+     Shift-F1 ..  ..  ..  .. View File Information
+      Ctrl-F1 ..  ..  ..  .. Display Help (this file)
+      Ctrl-F2 ..  ..  ..  .. Close Main Windows
+           F3 ..  ..  ..  .. Save
+     Shift-F3 ..  ..  ..  .. Export Account
+      Ctrl-F3 ..  ..  ..  .. Export CSV File
+Shift-Ctrl-F3 ..  ..  ..  .. Export TSV File
+           F4 ..  ..  ..  .. Find Text
+           F5 ..  ..  ..  .. Goto Transaction (in Transaction Window)
+     Shift-F5 ..  ..  ..  .. Goto Line (in Account Window)
+           F6 ..  ..  ..  .. Sort by Dates
+     Shift-F6 ..  ..  ..  .. Edit Standing Orders
+      Ctrl-F6 ..  ..  ..  .. View Forthcoming Standing Orders
+           F7 ..  ..  ..  .. View Account Balances
+     Shift-F7 ..  ..  ..  .. Edit Accounts
+           F8 ..  ..  ..  .. View Header Transactions
+     Shift-F8 ..  ..  ..  .. Edit Headers
+           INSERT ..  ..  .. Insert Transaction Below Selection
+     Shift-INSERT ..  ..  .. Insert Transaction Above Selection
+           PRINT  ..  ..  .. Print Account
+     Shift-PRINT  ..  ..  .. Print Headers
+      Ctrl-PRINT  ..  ..  .. Print Transactions
+Shift-Ctrl-PRINT  ..  ..  .. Set Printer Control
+      Ctrl-C  ..  ..  ..  .. Copy Selection
+      Ctrl-D  ..  ..  ..  .. Insert Today's Date
+      Ctrl-E  ..  ..  ..  .. Clear Edit Line
+      Ctrl-K  ..  ..  ..  .. Delete Selection
+      Ctrl-T  ..  ..  ..  .. Set User Title
+      Ctrl-V  ..  ..  ..  .. Replace Selection
+      Ctrl-X  ..  ..  ..  .. Cut Selection
+      Ctrl-Z  ..  ..  ..  .. Clear Selection
+
+
+E.0: Dates
+----------
+
+Dates obviously form an integral part of Accounts+.  The date used as the
+current date is shown in the toolbar of the Transaction Window (see 'A.3: The
+Transaction Window'), in the form 'Sat, 27th June 1965'.  This is the date
+used throughout the application.  The date is obtained from the System
+Clock, and can be set using the !Alarm application supplied with the
+computer.  If, for any reason, the date is not available, or is set to a
+totally unrealistic value (as deemed by Accounts+), then the text 'No Date'
+will appear instead in the Transaction Window.  If this is the case, then any
+dates added to the file will be incorrect, and standing orders will not
+operate automatically.
+
+The date can also be set by the user - click SELECT on the date field, or
+select 'Misc:Set date' from the main menu to do this.  Select 'USe system
+date' for the dates to work as described above; select 'Other date' and enter
+a date in the box in the usual format to use another date.  This date will be
+shown in the Transaction window in the form '27/06/1965', to indicate that it
+is a user date.  It is advisable to turn off automatic standing orders (see
+'Section F: The Preferences') when altering the date in this way.
+
+See 'Section F: The Preferences' for more details on how dates work.
+
+
+Section F: The Preferences
+==========================
+
+The preferences allow Accounts+ to be set up to operate in the way you want. 
+To open the Preferences Window, select 'Preferences...' from the icon-bar
+menu.  This window contains a scrolling list of options, divided into
+sections.  These are described below.
+
+When the preferences have been changed, click on 'OK' to set them, or 'Save'
+to save them to disc as defaults.  Click on 'Cancel' to forget the changes.
+
+
+Display
+-------
+
+This controls the display in the main windows: the Transaction Window (see
+'A.3: The Transaction Window'), the Account Window (see 'B.2: Viewing
+Accounts'), the Account Balances window (see 'E.6: Viewing Balances'), and
+the Header Transactions Window (see 'C.3: Viewing Headers').
+
+'Use outline font' determines whether an outline font is used to display the
+text.  Turn the option off to use the System font - for speed.  If your
+computer is fast enough, then an outline font is neater.
+
+If Accounts+ is running on a Risc PC, then the 'Desktop font' option will
+become available when 'Use outline font' is selected.  this option will cause
+Accounts+ to display text in the outline font used on the desktop, updating
+itself when required by the WIMP. 
+
+The font used by Accounts+ if 'Desktop font' is not selected can be specified
+by setting the system variable <Accounts+$Font>.  This is best set in the
+!Run file as follows:
+
+Shift-Double-Click on the !Accounts+ icon in a directory viewer to open the
+!Accounts+ application directory.  Load the file called '!Run' into a text
+editor: Shift-Double-Click to load it into !Edit.  The line
+
+  Set Account+$Font Homerton.Medium
+
+can be changed to use any outline font in your system.  The spaces in the
+line must be left intact.  Save the !Run file back to where it came from, and
+close the directory viewers.  The next time Accounts+ is loaded, the new font
+will be used.
+
+Another example might be:
+
+  Set Account+$Font Trinity.Bold.Italic
+
+'Show grid' toggles the grid on and off in these windows.
+
+The colours can be set to change the appearance of the four windows.  To set
+a colour, click either on the menu button to the left of the coloured box, or
+over the coloured box itself, and select the desired colour from the menu. 
+The colours are as follows:
+
+     Grid colour        The colour of the grid shown in the windows (only
+                        available if 'Show grid' is on).
+     Text colour        The colour of the text.
+     Background colour  The colour of the window background.
+     Selection colour   The highlight (background) colour of the selected
+                        line in the Transaction Window.
+     Repeat colour      The highlight (background) colour of the selected
+                        line in the Account Window (if shown, see below).
+     Highlight colour   The colour used to highlight items (not select them)
+                        in the main windows.
+
+Button-bars
+-----------
+
+This controls the appearance of the button-bars in the windows.  If the bars
+are turned off, then a status bar will appear in their place.  'Button-bar
+over transaction window' controls the Transaction Window's button-bar, while
+'Button-bar over account window' controls the button-bar in the Account
+Window.
+
+See 'A.3: The Transaction Window' and 'B.2: Viewing Accounts' for more
+information.
+
+
+Confirmation
+------------
+
+Confirmation allows you to specify which actions you wish to be warned about.
+All those included involve some data loss.  If an option is set, a message
+will appear before the action can be carried out.  The subjects are fairly
+obvious.
+
+
+Standing Orders
+---------------
+
+This section controls the operation of the automatic transactions (or
+standing orders).  'Automatic standing orders' turns the automatic update on
+and off.  When on, standing orders are updated, and transactions added to the
+file, when Accounts+ is loaded, and at midnight.  When off, the user must
+update standing orders automatically, using 'S.Orders:Update' in the main
+menu.  If 'Warn of new standing orders' is set, a message will indicate how
+many transaction have been added to the file.
+
+Setting 'Sort after new standing orders' will sort the file into date order
+after standing orders have been added.  If this is off, it may be necessary
+to sort the file manually, by selecting 'Misc:Sort by dates' from the main
+menu, or pressing F6.
+
+Set 'Confirm excess additions' to force Accounts+ to stop and check for
+confirmation if too many standing orders are added.  This is useful, since it
+stops the machine 'hanging' while it adds transactions.  This may happen if a
+date in entered incorrectly, for example.  If the standing orders are
+correct, then the user may simply ask to continue.  The 'After # additions'
+sets the number of transactions added before this confirmation takes place.
+
+Setting 'Show additions in forthcoming list' will show those transactions last
+added in the Forthcoming Sanding Orders window.  'Display # days ahead'
+specifies how many days into the future this list goes.  It can be set to 0
+to show only those orders just added.
+
+See 'D.5: Automatic Transactions' and 'D.6: Viewing Forthcoming Automatic
+Transactions' for more information.
+
+
+Dates
+-----
+
+Set 'Use system date' to use the date from the system clock - this is the
+usual method of operation.  Select 'Other date' to use a different date - as
+entered in the box.
+
+The rest of Dates allows control over the way dates are entered and
+displayed.  'Display full century' will display dates in the form DD.MM.YYYY
+in the windows and boxes when on, and in the form DD.MM.YY when off.  This
+does not affect the entering of dates, which is controlled by 'Expand from
+decade'.  If this is set, then a date entered as 20.09.76 would be expanded
+to 20.09.1976 (or to whichever century was specified, see below).  When
+turned off, the date would remain as 20.09.76 (the year 76 AD.).  Entering
+dates in the form DD.MM.YYYY is always permissible.
+
+'Expand from' sets the century to which dates are expanded.  The first year
+of the century is entered (ie. 1900 to expand 64 to 1964).
+
+Note that none of this affects the day and month.  The date 7th April 1981
+could be entered as 07.04.1981 or even 7.4.1981.
+
+'Separation' indicates the separator used between the parts of the date: in
+02/05/77 the separator is '/'.  This can be set to the following
+characters: ':', '-', '.', and '/'.  Note that the symbol chosen must be used
+when entering dates.
+
+Note that this section affects dates everywhere in Accounts+, including when
+saving and printing files.
+
+See 'E.0: Dates' for more information.
+
+
+Miscellaneous
+-------------
+
+Miscellaneous contains options which would not fit in anywhere else.  'Return
+caret on adding' will move the caret back to the left of the enter bar when
+the transaction is added.  This can speed up data entry.
+
+When set, 'F3 performs quicksave' will cause pressing F3 to save the file to
+the current file name (as shown in the title-bar.  If this shows
+'<Untitled>', then this will not work.  When not selected, pressing F3 will
+open the save box.
+
+'Beep for message window' will cause a beep when the message window opens. 
+'Provide interactive help' will cause Accounts+ to support the !Help
+application (or any others that imitate it, for example 'Bubble Help'). 
+'Show selection in account window' will highlight the selected line in the
+Account Window (when relevant).
+
+If 'Show selection account window' is chosen, then 'Select from account
+window' will become available.  When ticked, clicking over a line in the
+Account Window will select that line (it will also be selected in the
+Transactions Window).  Two extra options will appear in the button-bar of the
+Account Window: allowing you to delete the selected line, and clear the
+selection.
+
+
+Section G: Technical Details and Copyright
+==========================================
+
+
+RISC OS 3 and The Risc PC
+-------------------------
+
+Accounts+ requires RISC OS 3.11 or later to work correctly.  It will not work
+under the older RISC OS 2 operating system.  Accounts+ was developed on RISC
+OS 3.5, and is consequently Risc PC compatible.
+
+
+File Types
+----------
+
+Currently, Accounts+ uses a file type from end-user area.  This means that
+there is a chance that it may clash with other software that you use.  If you
+wish to change the filetype, then this is possible.  You must edit the
+!RunImage file (access this by Shift-Double-Clicking on !Accounts+ in a
+directory viewer, then Shift-Double-Clicking on !RunImage).  Change the line
+
+  file_type_accounts%=&0AD
+
+that appears close to the top of the file (about 4 or 5 lines down) so that
+the '0AD' on the end is the new file type, and re-save the file.  DO NOT
+ALTER ANYTHING ELSE.
+
+You must now edit the !Sprites file, so that the sprites 'file_0ad' and
+'small_0ad' also use the new file type.  This is so that the icons are shown
+correctly.  Save the !Sprites file again.
+
+Finally, load the !Boot and !Run files into a text editor (again,
+Shift-Double-Click on them), and find the lines
+
+  Set Alias$@RunType_0AD Run <Obey$Dir>.!Run %%*0
+  Set File$Type_0AD Accounts
+
+You must change the 0AD in each line to the new file type.  Again DO NOT
+CHANGE ANYTHING ELSE.  Save both files, and close the !Accounts+ directory. 
+If you have already saved some Accounts files, you must change their file
+types now.  This can be done by clicking menu over them (you can select
+several together) and choosing 'Files:Set type'.  Type 'Accounts' into the
+field, and click on it.
+
+Now load !Accounts+, and the change will be complete.
+
+
+My 'Wish List' for the Future
+-----------------------------
+
+One of the problems of coding a program like Accounts+ is that you can always
+think of more things that you would like it to do.  The major obstacles in
+the way of implementing any more features are time, and the size of the
+program - 180Kb is very large for a piece of BASIC code.  However, I will
+continue to develop Accounts+, and try and remove any bugs that are still
+hiding within the code.
+
+Some ideas that I am currently considering are listed below.  I cannot
+guarantee that any of them make their way into BASIC, and some of them are
+obviously impractical.  Still, there's always a chance...
+
+  * Printing accounts and headers using the RISC OS Printer Manager.  This
+    would allow for the use of the Outline Font Manager, and for some degree
+    of page control.  The code should not be difficult, but can I justify it?
+
+  * Some form of graphing capability would be a possibility.  It would be
+    nice to be able to create and view graphs of your accounts, without
+    having to rely on exporting to other packages.  In this way, the graphs
+    could also be dynamic with the data.
+
+  * The ability to view several accounts at once would be an advantage, but
+    this would require a large amount of internal restructuring.  Multiple
+    file editing would be, I should think, impossible.
+
+I would also like to further optimise the screen redraw, which is still
+fairly sluggish, especially with outline fonts; and I will, of course,
+continue to correct any bugs that come to light.
+
+
+Other Points
+------------
+
+Accounts+ was coded in BASIC V on a Risc PC, with an ARM 610 processor, and
+so may feel sluggish on older machines (especially ARM 2 and ARM 250 A30x0
+ones).  If this is a problem, use the System font for screen display.
+
+Accounts+ is under development, and so may not correspond exactly with the
+descriptions given in this file (this may also be due to the size of this
+file - writing 85K of help text is very tedious!).
+
+-----------------------------------------------------------------------------
+I offer no guarantee as to the suitability of Accounts+ or any related
+software for any purpose, and will not be held responsible for any loss or
+damage caused indirectly or directly from the use of the software.  I do not
+offer any guarnantee as to the stability of Accounts+, or to the accuracy of
+its results.
+-----------------------------------------------------------------------------
+
+The code for Accounts+ retains my copyright.  With my permission, it may be
+freely distributed, so long as all the files included are also copied
+unaltered - including this help file.  IT IS NOT FREEWARE, and may NOT be
+distributed for a profit!
+
+The code may not be altered in any way.
+
+(C) Stephen Fryatt, 1995

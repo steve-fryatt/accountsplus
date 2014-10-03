@@ -1,0 +1,756 @@
+REM >HelpLib
+REM For Accounts+ V1.29
+DEF PROChelp
+LOCAL window%,icon%,h$,s,t$,s1%,s2%,s3%,s4%,x%,y%,y$
+IF b%!32=pane2% AND b%!36=17 THEN
+ IF FNpreference(15) THEN
+  PROCsend_help("Click SELECT to view help text.")
+ ELSE
+  PROCsend_help("Click SELECT to view help text.|MTurn interactive help on by selecting 'Provide interactive help' from the Miscellaneous section of the Preferences Window.|MSelect 'Preferences...' from the icon-bar menu.")
+ ENDIF
+ t$="e"
+ENDIF
+IF t$="e" THEN ENDPROC
+IF NOT FNpreference(15) THEN PROCsend_help("Interactive help for Accounts+ is turned off.") : ENDPROC
+window%=b%!32
+icon%=b%!36
+!q%=window%
+SYS "Wimp_GetWindowState",,q%
+x%=(b%!20-q%!4)+q%!20
+y%=(q%!26-b%!24)+q%!24
+s=FNicon_selected(window%,icon%)
+IF FNpreference(20) THEN y$=" or DD"+date_sep$+"MM"+date_sep$+"YY" ELSE y$=""
+CASE window% OF
+ WHEN -2 : h$="This is the Accounts+ icon, a bank account manager.|MClick SELECT to open the transaction window.|MClick MENU to open the icon-bar menu.|MDrag a file to this icon to load it."
+ WHEN main% : h$="This window shows all the transactions made between the accounts.|M"
+  IF x%<=76 THEN h$+="This column shows the transaction number."
+  IF x%>76 AND x%<=248 THEN h$+="This column shows the date that the transaction was made."
+  IF x%>248 AND x%<=620 THEN h$+="This column shows the place that the transaction was debited from."
+  IF x%>620 AND x%<=992 THEN h$+="This column shows the place that the transaction was debited to."
+  IF x%>992 AND x%<=1154 THEN h$+="This column shows the amount of money that was transferred."
+  IF x%>1154 THEN h$+="This column contains a description of the transaction."
+  h$+="|MClick SELECT to select a transaction."
+ WHEN welcome% : h$="This is the Accounts+ Loading Window.|MIt will close when you start to use the computer."
+ WHEN pane%
+  CASE icon% OF
+   WHEN 0  : h$="This window shows all the transactions made between the accounts.|MThis column shows the date that the transaction was made."
+   WHEN 1  : h$="This window shows all the transactions made between the accounts.|MThis column shows the place that the transaction was debited from."
+   WHEN 2  : h$="This window shows all the transactions made between the accounts.|MThis column shows the place that the transaction was debited to."
+   WHEN 3  : h$="This window shows all the transactions made between the accounts.|MThis column shows the amount of money that was transferred."
+   WHEN 4  : h$="This window shows all the transactions made between the accounts.|MThis column contains a description of the transaction."
+   WHEN 5  : h$="This is the name of the accounts that are being edited."
+   WHEN 6  : h$="This is the overall balance of all the accounts loaded."
+   WHEN 7  : h$="Click SELECT to view the total balances of each account.|MClick ADJUST to add new accounts, delete old ones, or change thier names."
+   WHEN 8  : h$="Click SELECT to view the statement of an account."
+   WHEN 9  : h$="Click SELECT to clear the current selection."
+   WHEN 10 : h$="Click SELECT to delete the currently selected transaction."
+   WHEN 11 : h$="This is today's date.|MClick SELECT to set the current date."
+   WHEN 12 : h$="Click SELECT to print the transactions.|MClick ADJUST to edit the print control codes."
+   WHEN 13 : h$="Click SELECT to view the forthcoming standing orders.|MClick ADJUST to edit the standing orders."
+   WHEN 14 : h$="Click SELECT to save the accounts.|MClick ADJUST to export the transactions as a CSV file."
+   WHEN 15 : h$="Click SELECT to view the header transactions.|MClick ADJUST to edit the headers."
+   WHEN 16 : h$="This shows the information about the current status of the software."
+   WHEN 17 : h$="Click SELECT to save move to a different transaction.|MClick ADJUST to move to the selected transaction."
+   WHEN 18 : h$="Click SELECT to search for some text."
+   WHEN 19 : h$="This window shows all the transactions made between the accounts.|MThis column shows the transaction number."
+   OTHERWISE : h$="This window shows all the transactions made between the accounts."
+   ENDCASE
+ WHEN pane2%
+  CASE icon% OF
+   WHEN 0  : h$="Enter dates here, in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 1  : h$="Enter the sources of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 2  : h$="Enter the destinations of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 3  : h$="Enter the amount of money here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 4  : h$="Enter a description here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 5  : h$="Click SELECT to add the transaction above to the end of the list."
+   WHEN 6  : IF s THEN h$="Click SELECT to allow dates to be entered in the box above." ELSE h$="Click SELECT to use today's date instead of the date entered above."
+   WHEN 7,8  : h$="Click SELECT to get a list of accounts that can be entered in the box above.|MClick ADJUST to get a list of headers that can be entered in the box above."
+   WHEN 9  : h$="Click SELECT to insert the line above below the currently selected line."
+   WHEN 10 : h$="Click SELECT to replace the currently seleced line with the line above."
+   WHEN 11 : h$="Click SELECT to copy the currently selected line to the line above."
+   WHEN 12 : h$="Click SELECT to move the currently selected line to the line above."
+   WHEN 13 : h$="Click SELECT to clear the line above."
+   WHEN 14 : h$="Click SELECT to insert the line above above the currently selected line."
+   OTHERWISE : h$="This window shows all the transactions made between the accounts."
+   ENDCASE
+ WHEN acc_view% : h$="This window shows the transactions with one account.|M"
+  IF x%<=76 THEN h$+="This column shows the line numbers."
+  IF x%>76 AND x%<=248 THEN h$+="This column shows the date that the transaction was made."
+  IF x%>248 AND x%<=620 THEN h$+="This column shows either the source or the destination of the transaction."
+  IF x%>620 AND x%<=782 THEN h$+="This column shows amounts debited from the account."
+  IF x%>782 AND x%<=944 THEN h$+="This column shows amounts credited to the account."
+  IF x%>944 AND x%<=1106 THEN h$+="This column shows the overall balance of the account."
+  IF x%>1106 THEN h$+="This column contains a description of the transaction."
+  IF FNpreference(27) THEN h$+="|MClick SELECT to select a line."
+ WHEN apane%
+  CASE icon% OF
+   WHEN 0  : h$="This window shows the transactions with one account.|MThis column shows the date that the transaction was made."
+   WHEN 1  : h$="This window shows the transactions with one account.|MThis column shows either the source or the destination of the transaction."
+   WHEN 2  : h$="This window shows the transactions with one account.|MThis column shows amounts debited from the account."
+   WHEN 3  : h$="This window shows the transactions with one account.|MThis column contains a description of the transaction."
+   WHEN 4  : h$="This overall balance in the account."
+   WHEN 5  : h$="This is the name of the accounts that are being edited."
+   WHEN 6  : h$="This window shows the transactions with one account.|MThis column shows the overall balance of the account."
+   WHEN 7  : h$="This window shows the transactions with one account.|MThis column shows amounts credited to the account."
+   WHEN 8  : h$="Click SELECT to view the statement of another account."
+   WHEN 9  : h$="Click SELECT to view the total balances of each account.|MClick ADJUST to add new accounts, delete old ones, or change thier names."
+   WHEN 10 : h$=""
+   WHEN 11 : h$="Click SELECT to change the initial balance of this account."
+   WHEN 12 : h$="This shows the information about the current status of the software."
+   WHEN 13 : h$="Click SELECT to export a CSV file.|MClick ADJUST to export an Account file."
+   WHEN 14 : h$="Click SELECT to goto another line in the account.|MClick ADJUST to goto the selected line."
+   WHEN 15 : h$="Click SELECT to print the account.|MClick ADJUST to edit the print control codes."
+   WHEN 16 : h$="Click SELECT to view the header transactions.|MClick ADJUST to edit the headers."
+   WHEN 17  : h$="This window shows the transactions with one account.|MThis column shows the line numbers."
+   WHEN 18  : h$="Click SELECT to clear the current selection."
+   WHEN 19 : h$="Click SELECT to delete the currently selected line."
+   OTHERWISE  : h$="This window shows the transactions with one account."
+   ENDCASE
+ WHEN goto_wind%
+  CASE icon% OF
+   WHEN 0 : CASE g_type% OF
+             WHEN 1 : h$="Enter the transaction number here.|MClick SELECT to gain the caret."
+             WHEN 2 : h$="Enter the line number here.|MClick SELECT to gain the caret."
+             ENDCASE
+   WHEN 1 : CASE g_type% OF
+             WHEN 1 : h$="Click SELECT to go to the transaction shown."
+             WHEN 2 : h$="Click SELECT to go to the line shown."
+             ENDCASE
+   OTHERWISE : CASE g_type% OF
+                WHEN 1 : h$="This window will move the transaction window to a particular transaction."
+                WHEN 2 : h$="This window will move the account window to a particular line."
+               ENDCASE
+   ENDCASE
+ WHEN save%
+  CASE icon% OF
+   WHEN 0 : h$="Drag the file icon onto a directory display to save the file into that directory."
+   WHEN 1 : h$="Enter the filename, then drag the icon into a directory, or enter the full pathname and press Return."
+   WHEN 2 : h$="Click SELECT to save the file via the full pathname indicated."
+   OTHERWISE : h$="This window allows you to save the accounts."
+   ENDCASE
+ WHEN exp_wind%
+  CASE d_type% OF
+   WHEN 1 : t$="n Account"
+   WHEN 2,7,10 : t$="n ASCII Text"
+   WHEN 3,5,8 : t$=" CSV"
+   WHEN 4,6,9 : t$=" TSV"
+   ENDCASE
+  CASE icon% OF
+   WHEN 0 : h$="Drag the file icon onto a directory display to save the file into that directory."
+   WHEN 1 : h$="Enter the filename, then drag the icon into a directory, or enter the full pathname and press Return."
+   WHEN 2 : h$="Click SELECT to save the file via the full pathname indicated."
+   WHEN 5,6
+    CASE d_type% OF
+     WHEN 1,2,3,4 : h$="This shows the account which is to be exported."
+     WHEN 5,6,7,8,9,10 : h$="This shows the type of data to be exported."
+     ENDCASE
+   WHEN 7
+    CASE d_type% OF
+     WHEN 1 : IF s THEN h$="Click SELECT to export the From/To column without the date." ELSE h$="Click SELECT to include the date with the From/To column."
+     WHEN 2,3,4,8,9,10 : IF s THEN h$="Click SELECT to turn line numbers off in the exported file." ELSE h$="Click SELECT to include line numbers in the exported file."
+     WHEN 5,6,7 : IF s THEN h$="Click SELECT to turn the column headings off in the exported file." ELSE h$="Click SELECT to include the column headings in the exported file."
+     ENDCASE
+   WHEN 8
+    CASE d_type% OF
+     WHEN 2,3,4,8,9,10 :  IF s THEN h$="Click SELECT to turn the column headings off in the exported file." ELSE h$="Click SELECT to include the column headings in the exported file."
+     WHEN 5 : IF s THEN h$="Click SELECT to not enquote text in the exported file." ELSE h$="Click SELECT to enquote text in the exported file."
+     WHEN 7 : IF s THEN h$="Click SELECT to no not include the date and file name in the exported file." ELSE h$="Click SELECT to include the date and file name in the exported file."
+     ENDCASE
+   WHEN 9
+    CASE d_type% OF
+     WHEN 2,10 : IF s THEN h$="Click SELECT to no not include the date, file, and account name in the exported file." ELSE h$="Click SELECT to include the date, file, and account name in the exported file."
+     WHEN 3,8 : IF s THEN h$="Click SELECT to not enquote text in the exported file." ELSE h$="Click SELECT to enquote text in the exported file."
+     ENDCASE
+   OTHERWISE
+    CASE d_type% OF
+     WHEN 1,2,3,4 : h$="This window allows you to export this account as a"+t$+" file."
+     WHEN 5,6,7 : h$="This window allows you to export the header details as a"+t$+" file."
+     WHEN 8,9,10 : h$="This window allows you to export the transactions as a"+t$+" file."
+     ENDCASE
+   ENDCASE
+ WHEN sl_wind%
+  CASE icon% OF
+   WHEN 1 : h$="Click SELECT to add another standing order."
+   WHEN 2 : h$="Click SELECT to close the window."
+   OTHERWISE : h$="This window shows a list of all the standing orders currently defined."
+   ENDCASE
+ WHEN spane%
+  IF icon%>=0 THEN
+   IF $FNindirection(spane%,icon%)<>"" THEN
+    h$="This window shows a list of all the standing orders currently defined.|MClick SELECT to edit the '"+$FNindirection(spane%,icon%)+"' standing order."
+   ELSE
+    h$="This window shows a list of all the standing orders currently defined."
+   ENDIF
+  ELSE
+   h$="This window shows a list of all the standing orders currently defined."
+  ENDIF
+ WHEN so_wind%
+  CASE icon% OF
+   WHEN 0,6 : h$="This section defines how the interval is calculated."
+   WHEN 1,5 : h$="This section contains the standing order name.|MIt will be used as a description in the transactions."
+   WHEN 2 : h$="This section contains the standing order name.|MIt will be used as a description in the transactions.|MClick SELECT to gain the caret."
+   WHEN 4,25 : h$="Select this option to insert the transaction every n months."
+   WHEN 8 : h$="Select this option to insert the transaction every n months.|MEnter the number of days here.|MClick SELECT to gain the caret."
+   WHEN 24,9 : h$="Selct this option to insert the transaction every n days."
+   WHEN 3 : h$="Selct this option to insert the transaction every n days.|MEnter the number of months here.|MClick SELECT to gain the caret."
+   WHEN 10,11,12,14,16 : h$="This section defines the transaction that takes place."
+   WHEN 13 : h$="Enter the amount of money here.|MClick SELECT to gain the caret."
+   WHEN 15 : h$="Enter the source of the money here.|MClick SELECT to gain the caret."
+   WHEN 17 : h$="Enter the destination of the money here.|MClick SELECT to gain the caret."
+   WHEN 18 : h$="Click SELECT to see a list of accounts which can be used for the source."
+   WHEN 19 : h$="Click SELECT to see a list of accounts which can be used for the destination."
+   WHEN 7,27,26 : h$="This section defines when the next transaction will take place."
+   WHEN 23 : h$="Enter the date of the next transaction here in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   WHEN 20 : h$="Click SELECT to delete this standing order."
+   WHEN 21 : h$="Click SELECT to forget any changes made to this standing order."
+   WHEN 22 : h$="Click SELECT to act on this standing order."
+   OTHERWISE : h$="This window allows standing orders to be edited."
+   ENDCASE
+ WHEN bal_wind% : h$="This window shows the balances of all the accounts.|M"
+  IF x%<=366 THEN h$+="This column shows the name of the account."
+  IF x%>366 AND x%<=528 THEN h$+="This column shows the balance in the account."
+  IF x%>528 AND x%<=700 THEN h$+="This column shows the date from which entries will be shown."
+  IF x%>700 THEN h$+="This column shows the date before which entries will be shown."
+ WHEN bpane%
+  CASE icon% OF
+   WHEN 0 : h$="This window shows the balances of all the accounts.|MThis column shows the name of the account."
+   WHEN 1 : h$="This window shows the balances of all the accounts.|MThis column shows the balance in the account."
+   ENDCASE
+ WHEN acc_wind%
+  CASE icon% OF
+   WHEN 1,2,3,4,5,6,7,8,9,10
+    IF $FNindirection(acc_wind%,icon%)<>"" THEN
+     h$="This window shows a list of all the accounts currently defined.|MClick SELECT to edit the '"+$FNindirection(acc_wind%,icon%)+"' account."
+    ELSE
+     h$="This window shows a list of all the accounts currently defined."
+    ENDIF
+   WHEN 20 : h$="Click SELECT to close the window."
+   WHEN 21 : h$="Click SELECT to add a new account."
+   OTHERWISE : h$="This window shows a list of all the accounts currently defined."
+   ENDCASE
+ WHEN ed_acc%
+  CASE icon% OF
+   WHEN 0,5 : h$="This section contains the account name."
+   WHEN 1 : h$="This section contains the account name.|MClick SELECT to gain the caret."
+   WHEN 2 : h$="Click SELECT to forget any changes made."
+   WHEN 3 : h$="Click SELECT to delete the account."
+   WHEN 4 : h$="Click SELECT to change the account name."
+   WHEN 6,7 : h$="This section contains the dates between which transactions will be included in the account view."
+   WHEN 8 : h$="This is the date after which the transactions will be included."
+   WHEN 9 : h$="This is the date after which the transactions will be included.|MEnter the date here in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   WHEN 10 : h$="This is the date before which the transactions will be included."
+   WHEN 11 : h$="This is the date before which the transactions will be included.|MEnter the date here in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   OTHERWISE : h$="This window allows the account details to be altered."
+   ENDCASE
+ WHEN inb_wind%
+  CASE icon% OF
+   WHEN 1 : h$="Enter the balance here.|MClick SELECT to gain the caret."
+   WHEN 2 : h$="Click SELECT to change the balance."
+   OTHERWISE : h$="This window is used to set a new initial balance."
+   ENDCASE
+ WHEN info% : h$="This window displays information about Accounts+"
+ WHEN finfo_wind% : h$="This window displays infromation about the current file."
+ WHEN set_title%
+  CASE icon% OF
+   WHEN 0 : h$="Enter the title here.|MClick SELECT to gain the caret."
+   WHEN 1 : h$="Click SELECT to set the new title."
+   OTHERWISE : h$="This window is used to set the title for the accounts."
+   ENDCASE
+ WHEN head_wind%
+  CASE icon% OF
+   WHEN 1 : h$="Click SELECT to add another header."
+   WHEN 2 : h$="Click SELECT to close the window."
+   OTHERWISE : h$="This window shows all the headers currently defined."
+   ENDCASE
+ WHEN hpane%
+  IF icon%>=0 THEN
+   IF $FNindirection(hpane%,icon%)<>"" THEN
+    h$="This window shows a list of all the headers currently defined.|MClick SELECT to edit the '"+$FNindirection(hpane%,icon%)+"' header."
+   ELSE
+    h$="This window shows a list of all the headers currently defined."
+   ENDIF
+  ELSE
+   h$="This window shows a list of all the headers currently defined."
+  ENDIF
+ WHEN hel_wind% : h$="This window shows the details of the Expense Headers curently defined.|M"
+  IF x%<=372 THEN h$+="This column shows the name of the header."
+  IF x%>372 AND x%<=482 THEN h$+="This column shows the type of header:|M'In'coming, 'Out'going, or 'I/O' for both."
+  IF x%>482 AND x%<=654 THEN h$+="This column shows the date on or after which the header has been calculated."
+  IF x%>654 AND x%<=826 THEN h$+="This column shows the date on or before which the header has been calculated."
+  IF x%>826 AND x%<=988 THEN h$+="This column shows the amount of money recieved from this source."
+  IF x%>988 AND x%<=1150 THEN h$+="This column shows the amount of money paid out to this expense."
+  IF x%>1150 THEN h$+="This column shows the ovarall balance of this header."
+ WHEN search_wind%
+  CASE icon% OF
+   WHEN 2 : h$="This field contains the text to search for.|MClick SELECT to gain the caret."
+   WHEN 3 : h$="This field contains the text to replace matched with.|MClick SELECT to gain the caret."
+   WHEN 4,5 : h$="This section controls the way the search is carried out."
+   WHEN 6 : h$="Select this option to search for exact matches."
+   WHEN 7 : h$="Select this option to search for the text within fields."
+   WHEN 8 : IF s THEN h$="Click SELECT to make the search case sensitive." ELSE h$="Click SELECT to ignore the case of letters."
+   WHEN 9 : h$="Click SELECT to cancel the search."
+   WHEN 10 : h$="Click SELECT to replace all the matches."
+   WHEN 11 : h$="Click SELECT to find the first match."
+   WHEN 12,13 : h$="This section specifies which fields to search."
+   WHEN 14 : IF s THEN h$="Click SELECT to ignore the 'From' field." ELSE h$="Click SELECT to include the 'From' field in the search."
+   WHEN 15 : IF s THEN h$="Click SELECT to ignore the 'To' field." ELSE h$="Click SELECT to include the 'To' field in the search."
+   WHEN 16 : IF s THEN h$="Click SELECT to ignore the 'Description' field." ELSE h$="Click SELECT to include the 'Description' field in the search."
+   WHEN 17 : h$="Click SELECT to get a list of accounts for the search field.|MClick ADJUST to get a list of headers."
+   WHEN 18 : h$="Click SELECT to get a list of accounts for the replace field.|MClick ADJUST to get a list of headers."
+   OTHERWISE : h$="This window allows you to search for text within the 'From', 'To' and 'Description' fields."
+   ENDCASE
+ WHEN found_wind%
+  CASE icon% OF
+   WHEN 2 : h$="This is the actual text that was found."
+   WHEN 3 : h$="This is the text that you will replace the match with."
+   WHEN 5 : h$="This is the line that the match was found in."
+   WHEN 7 : h$="This is the field that the match was found in."
+   WHEN 8 : h$="Click SELECT to cancel the search."
+   WHEN 9 : h$="Click SELECT to replace all the matches from the current one."
+   WHEN 10 : h$="Click SELECT to find the next match."
+   WHEN 11 : h$="Click SELECT to replace the current match and find the next."
+   OTHERWISE : h$="This window reports a match"
+   ENDCASE
+ WHEN lpane%
+  CASE icon% OF
+   WHEN 0 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the amount of money paid out to this expense."
+   WHEN 1 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the name of the header."
+   WHEN 2 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the amount of money recieved from this source."
+   WHEN 3 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the ovarall balance of this header."
+   WHEN 4 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the type of header:|M'In'coming, 'Out'going, or 'I/O' for both."
+   WHEN 5 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the date on or after which the header has been calculated."
+   WHEN 6 : h$="This window shows the details of the Expense Headers curently defined.|MThis column shows the date on or before which the header has been calculated."
+   ENDCASE
+ WHEN he_wind%
+  CASE icon% OF
+   WHEN 0,1 : h$="This section contains the account name."
+   WHEN 2,3 : h$="This section shows the type of header."
+   WHEN 4 : h$="This section contains the account name.|MClick SELECT to gain the caret."
+   WHEN 5 : h$="Click SELECT to delete this header."
+   WHEN 6 : h$="Click SELECT to forget any changes made."
+   WHEN 7 : h$="Click SELECT to change the header details."
+   WHEN 8 : IF s THEN h$="Click SELECT to prevent this header from applying to transactions from an account or source." ELSE h$="Click SELECT to allow this header to apply to transactions from an account or source."
+   WHEN 9 : IF s THEN h$="Click SELECT to prevent this header from applying to transactions to an account or destination." ELSE h$="Click SELECT to allow this header to apply to transactions to an account or destination."
+   WHEN 10,11 : h$="This section allows a limit to be set on when the header is used."
+   WHEN 12 : h$="This shows the date on or after which the header will be calculated."
+   WHEN 13 : h$="This shows the date on or after which the header will be calculated.|MEnter dates in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   WHEN 14 : h$="This shows the date on or before which the header will be calculated."
+   WHEN 15 : h$="This shows the date on or before which the header will be calculated.|MEnter dates in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   OTHERWISE : h$="This window allows header details to be defined."
+   ENDCASE
+ WHEN pref_wind%
+  CASE icon% OF
+   WHEN 1 : h$="Click SELECT to save the changes to disc for future use.|MClick ADJUST to leave the window open."
+   WHEN 2 : h$="Click SELECT to use the changes made.|MClick ADJUST to leave the window open."
+   WHEN 3 : h$="Click SELECT to cancel the changes made."
+   OTHERWISE : h$="This window allows you to set up Accounts+ in the way you like it."
+   ENDCASE
+ WHEN ppane%
+  CASE icon% OF
+   WHEN 0,1 : h$="This section determines the display features in the main windows."
+   WHEN 2  : IF s THEN h$="Click SELECT to display the lists in the system font." ELSE h$="Click SELECT to display the lists in an outline font."
+   WHEN 3  : IF s THEN h$="Click SELECT to turn off the grid." ELSE h$="Click SELECT to display the grid."
+   WHEN 4,5 : h$="This section contains miscellaneous options."
+   WHEN 6,7 : h$="This section specifies when confirmation is requested."
+   WHEN 8  : IF s THEN h$="Click SELECT to delete lines without confirmation." ELSE h$="Click SELECT to request confirmation before deleting lines."
+   WHEN 9  : IF s THEN h$="Click SELECT to cut lines without confirmation." ELSE h$="Click SELECT to request confirmation before cutting lines."
+   WHEN 10 : IF s THEN h$="Click SELECT to remove lines without confirmation." ELSE h$="Click SELECT to request confirmation before removing lines."
+   WHEN 11 : IF s THEN h$="Click SELECT to quit Accounts+ without confirmation." ELSE h$="Click SELECT to request confirmation before quitting Accounts+."
+   WHEN 12,13 : h$="This section controls standing orders."
+   WHEN 14 : IF s THEN h$="Click SELECT to add standing orders only on request." ELSE h$="Click SELECT to add standing orders automatically."
+   WHEN 15 : IF s THEN h$="Click SELECT to add new standing orders without warning." ELSE h$="Click SELECT to warn of any new standing orders."
+   WHEN 16 : IF s THEN h$="Click SELECT to sort the transactions by date after adding standing orders." ELSE h$="Click SELECT to leave the standing orders unsorted at the end of the file."
+   WHEN 17 : IF s THEN h$="Click SELECT to delete standing orders without confirmation." ELSE h$="Click SELECT to request confirmation before deleting standing orders."
+   WHEN 18 : IF s THEN h$="Click SELECT to delete accounts without confirmation." ELSE h$="Click SELECT to request confirmation before deleting accounts."
+   WHEN 19 : IF s THEN h$="Click SELECT to clear files without confirmation." ELSE h$="Click SELECT to request confirmation before clearing files."
+   WHEN 20 : IF s THEN h$="Click SELECT to leave the caret in the last column of the edit line on adding." ELSE h$="Click SELECT to return the caret to the first column of the edit line on adding."
+   WHEN 21 : IF s THEN h$="Click SELECT to open a save box on pressing F3." ELSE h$="Click SELECT to save the file immediately on pressing F3."
+   WHEN 22 : IF s THEN h$="Click SELECT to open message windows silently." ELSE h$="Click SELECT to beep when opening message windows."
+   WHEN 23  : IF s THEN h$="Click SELECT to ignore !Help." ELSE h$="Click SELECT to provide interactive help."
+   WHEN 24,25 : h$="This section determines the button-bars."
+   WHEN 26 : IF s THEN h$="Click SELECT to show a status bar above the transaction window." ELSE h$="Click SELECT to show a button-bar above the transaction window."
+   WHEN 27 : IF s THEN h$="Click SELECT to show a status bar above the account window." ELSE h$="Click SELECT to show a button-bar above the account window."
+   WHEN 28 : IF s THEN h$="Click SELECT to show the selection only in the transaction window." ELSE h$="Click SELECT to show the selection in the account window and the transaction window."
+   WHEN 29,30 : h$="This section controls the dates."
+   WHEN 31 : IF s THEN h$="Click SELECT to display only the decade." ELSE h$="Click SELECT to display the full year."
+   WHEN 32 : IF s THEN h$="Click SELECT to leave dates as entered." ELSE h$="Click SELECT to expand decades to full centuaries."
+   WHEN 33 : IF s THEN h$="Click SELECT to add any number of standing orders without confirmation." ELSE h$="Click SELECT to confirm standing orders if more than "+$FNindirection(ppane%,35)+" are added."
+   WHEN 34 : IF s THEN h$="Click SELECT to delete headers without confirmation." ELSE h$="Click SELECT to request confirmation before deleting headers."
+   WHEN 35 : h$="This sets how many standing orders must be added before confirmation is requested.|MClick SELECT to gain the caret."
+   WHEN 36,37 : h$="This sets how many standing orders must be added before confirmation is requested."
+   WHEN 38 : h$="This shows the colour of the grid.|MClick SELECT to choose a colour."
+   WHEN 39 : h$="This shows the colour of the grid."
+   WHEN 40 : h$="Click SELECT to choose a colour for the grid."
+   WHEN 41 : h$="This shows the colour of the text.|MClick SELECT to choose a colour."
+   WHEN 42 : h$="This shows the colour of the text."
+   WHEN 43 : h$="Click SELECT to choose a colour for the text."
+   WHEN 44 : h$="This shows the colour of the background.|MClick SELECT to choose a colour."
+   WHEN 45 : h$="This shows the colour of the background."
+   WHEN 46 : h$="Click SELECT to choose a colour for the background."
+   WHEN 47 : h$="This shows the colour of the selected line in the transaction window.|MClick SELECT to choose a colour."
+   WHEN 48 : h$="This shows the colour of the selected line in the transaction window."
+   WHEN 49 : h$="Click SELECT to choose a colour for the selected line in the transaction window."
+   WHEN 50 : h$="This shows the colour of the selected line in the account window.|MClick SELECT to choose a colour."
+   WHEN 51 : h$="This shows the colour of the selected line in the account window."
+   WHEN 52 : h$="Click SELECT to choose a colour for the selected line in the account window."
+   WHEN 53 : h$="This shows the colour used to highlight text.|MClick SELECT to choose a colour."
+   WHEN 54 : h$="This shows the colour used to highlight text."
+   WHEN 55 : h$="Click SELECT to choose a colour for highlighting text."
+   WHEN 55 : h$="This shows the number of days ahead that standing orders are shown.|MClick SELECT to gain the caret"
+   WHEN 57 : h$="This shows the century to which decades are expanded."
+   WHEN 58 : h$="This is the date to be used as the current date.|MEnter dates in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   WHEN 59 : h$="This shows the separator used in the dates."
+   WHEN 60 : IF s THEN h$="Click SELECT to overwrite unsaved files without confirmation." ELSE h$="Click SELECT to request confirmation before overwriting unsaved files."
+   WHEN 61 : IF s THEN h$="Click SELECT to shutdown with unsaved files without confirmation." ELSE h$="Click SELECT to request confirmation before shutdown with unsaved files."
+   WHEN 62 : IF s THEN h$="Click SELECT to show only the forthcoming standing orders in the list." ELSE h$="Click SELECT to show both the forthcoming standing orders, and those last added."
+   WHEN 63 : h$="This shows the century to which decades are expanded.|MClick SELECT to gain the caret."
+   WHEN 64,65 : h$="This shows the number of days ahead that standing orders are shown."
+   WHEN 66 : IF s THEN h$="Click SELECT to use the outline font specified by Accounts+." ELSE h$="Click SELECT to use the desktop font."
+   WHEN 67 : IF s THEN h$="Click SELECT to allow selections to be made and edited only in the transaction window." ELSE h$="Click SELECT to allow selections to be made and edited both in the transaction window and in the account window."
+   WHEN 68 : IF s THEN h$="Click SELECT to show only the initial balance in the account window." ELSE h$="Click SELECT to show the initial balance and any balance offset in the account window."
+   WHEN 69 : h$="Click SELECT to use the current date from the system clock."
+   WHEN 70 : h$="Click SELECT to use another date for the current date."
+   WHEN 71 : h$="This shows the separator used in the dates.|MClick SELECT to gain the caret."
+   OTHERWISE : h$="This window allows you to set up Accounts+ in the way you like it."
+   ENDCASE
+ WHEN swl_wind% : h$="This window shows the standing orders that are due to be added, and also those just added.|M"
+  IF x%<=172 THEN h$+="This column shows the date on which the transfer took place/will take place."
+  IF x%>172 AND x%<=544 THEN h$+="This column shows the name of the standing order."
+  IF x%>544 AND x%<=916 THEN h$+="This column shows the source of the transfer."
+  IF x%>916 AND x%<=1288 THEN h$+="This column shows the destination of the transfer."
+  IF x%>1288 THEN h$+="This column shows the amount of money transferred."
+ WHEN wpane%
+  CASE icon% OF
+   WHEN 0 : h$="This window shows the standing orders that are due to be added, and also those just added.|MThis column shows the source of the transfer."
+   WHEN 1 : h$="This window shows the standing orders that are due to be added, and also those just added.|MThis column shows the name of the standing order."
+   WHEN 2 : h$="This window shows the standing orders that are due to be added, and also those just added.|MThis column shows the destination of the transfer."
+   WHEN 3 : h$="This window shows the standing orders that are due to be added, and also those just added.|MThis column shows the amount of money transferred."
+   WHEN 4 : h$="This window shows the standing orders that are due to be added, and also those just added.|MThis column shows the date on which the transfer took place/will take place."
+   ENDCASE
+ WHEN print_wind%
+  CASE icon% OF
+   WHEN 1 : h$="This is the name of the account to be printed."
+   WHEN 2,3 : h$="This section sets the printing margins."
+   WHEN 4,5 : h$="This is the total number of lines that can be printed on a page."
+   WHEN 6 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 7 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 8,9 : h$="This is the number of lines left at the top of each page."
+   WHEN 10 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 11 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 12,13 : h$="This is the number of lines left at the base of each page."
+   WHEN 14 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 15 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 16,17 : h$="This is the number of columns left at the left of each page."
+   WHEN 18 : h$="Click SELECT to increase the number of columns by one.|MClick ADJUST to decrease the number of columns by one."
+   WHEN 19 : h$="Click SELECT to decrease the number of columns by one.|MClick ADJUST to increase the number of columns by one."
+   WHEN 20,21 : h$="This is the number of lines left to print on per page."
+   WHEN 22,23 : h$="This section controls the print options."
+   WHEN 24 : IF s THEN h$="Click SELECT to print no column headings on the page." ELSE h$="Click SELECT to print column headings on the page."
+   WHEN 25 : IF s THEN h$="Click SELECT to print no line numbers." ELSE h$="Click SELECT to print line numbers."
+   WHEN 26 : IF s THEN h$="Click SELECT to print no date on each page." ELSE h$="Click SELECT to print the current date on each page."
+   WHEN 27 : IF s THEN h$="Click SELECT to leave the file and account name off each page." ELSE h$="Click SELECT to print the file and account name on each page."
+   WHEN 28 : h$="Click SELECT to start printing."
+   WHEN 29 : h$="Click SELECT to cancel the operation and forget any changes."
+   WHEN 30 : h$="Click SELECT to save the current values to disc as the defaults."
+   WHEN 31,32 : h$="This section controls which lines of the account will be printed."
+   WHEN 33 : h$="Select this option to print all the lines in the account."
+   WHEN 34,35 : h$="Select this option to print a selected range of lines."
+   WHEN 36 : h$="Select this option to print a selected range of lines.|MEnter the first line to be printed here.|MClick SELECT to gain the caret."
+   WHEN 37 : h$="Select this option to print a selected range of lines.|MEnter the last line to be printed here.|MClick SELECT to gain the caret."
+   WHEN 38 : h$="Click SELECT to open the Printer Control window."
+   WHEN 39 : h$="Click SELECT to store the current values in memory."
+   WHEN 40,41 : h$="This is the number of columns left at the right of each page."
+   WHEN 42 : IF s THEN h$="Click SELECT to print no page numbers." ELSE h$="Click SELECT to print page numbers at the bottom of each page."
+   OTHERWISE : h$="This window allows accounts to be printed."
+   ENDCASE
+ WHEN printh_wind%
+  CASE icon% OF
+   WHEN 2,3 : h$="This section sets the printing margins."
+   WHEN 4,5 : h$="This is the total number of lines that can be printed on a page."
+   WHEN 6 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 7 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 8,9 : h$="This is the number of lines left at the top of each page."
+   WHEN 10 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 11 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 12,13 : h$="This is the number of lines left at the base of each page."
+   WHEN 14,15 : h$="This is the number of columns left at the left of each page."
+   WHEN 16 : h$="Click SELECT to increase the number of columns by one.|MClick ADJUST to decrease the number of columns by one."
+   WHEN 17 : h$="Click SELECT to decrease the number of columns by one.|MClick ADJUST to increase the number of columns by one."
+   WHEN 18,19 : h$="This is the number of lines left to print on per page."
+   WHEN 0,20 : h$="This section controls the print options."
+   WHEN 21 : IF s THEN h$="Click SELECT to print no column headings on the page." ELSE h$="Click SELECT to print column headings on the page."
+   WHEN 22 : IF s THEN h$="Click SELECT to print no date on each page." ELSE h$="Click SELECT to print the current date on each page."
+   WHEN 1 : IF s THEN h$="Click SELECT to leave the file name off each page." ELSE h$="Click SELECT to print the file name on each page."
+   WHEN 23 : h$="Click SELECT to start printing."
+   WHEN 24 : h$="Click SELECT to cancel the operation and forget any changes."
+   WHEN 25 : h$="Click SELECT to save the current values to disc as the defaults."
+   WHEN 26 : h$="Click SELECT to open the Printer Control window."
+   WHEN 27 : h$="Click SELECT to store the current values in memory."
+   WHEN 28,29 : h$="This is the number of columns left at the right of each page."
+   OTHERWISE : h$="This window allows headers to be printed."
+   ENDCASE
+ WHEN printt_wind%
+  CASE icon% OF
+   WHEN 0,1 : h$="This section sets the printing margins."
+   WHEN 2,3 : h$="This is the total number of lines that can be printed on a page."
+   WHEN 4 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 5 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 6,7 : h$="This is the number of lines left at the top of each page."
+   WHEN 8 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 9 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 10,11 : h$="This is the number of lines left at the base of each page."
+   WHEN 12 : h$="Click SELECT to increase the number of lines by one.|MClick ADJUST to decrease the number of lines by one."
+   WHEN 13 : h$="Click SELECT to decrease the number of lines by one.|MClick ADJUST to increase the number of lines by one."
+   WHEN 14,15 : h$="This is the number of columns left at the left of each page."
+   WHEN 16 : h$="Click SELECT to increase the number of columns by one.|MClick ADJUST to decrease the number of columns by one."
+   WHEN 17 : h$="Click SELECT to decrease the number of columns by one.|MClick ADJUST to increase the number of columns by one."
+   WHEN 18,19 : h$="This is the number of lines left to print on per page."
+   WHEN 20,21 : h$="This section controls the print options."
+   WHEN 22 : IF s THEN h$="Click SELECT to print no column headings on the page." ELSE h$="Click SELECT to print column headings on the page."
+   WHEN 23 : IF s THEN h$="Click SELECT to print no transaction numbers." ELSE h$="Click SELECT to print transaction numbers."
+   WHEN 24 : IF s THEN h$="Click SELECT to print no date on each page." ELSE h$="Click SELECT to print the current date on each page."
+   WHEN 25 : IF s THEN h$="Click SELECT to leave the file name off each page." ELSE h$="Click SELECT to print the file name on each page."
+   WHEN 26 : h$="Click SELECT to start printing."
+   WHEN 27 : h$="Click SELECT to cancel the operation and forget any changes."
+   WHEN 28 : h$="Click SELECT to save the current values to disc as the defaults."
+   WHEN 29,30 : h$="This section controls which transactions will be printed."
+   WHEN 31 : h$="Select this option to print all the transactions in the file."
+   WHEN 32,33 : h$="Select this option to print a selected range of lines."
+   WHEN 34 : h$="Select this option to print a selected range of transactions.|MEnter the first transaction to be printed here.|MClick SELECT to gain the caret."
+   WHEN 35 : h$="Select this option to print a selected range of transactions.|MEnter the last transaction to be printed here.|MClick SELECT to gain the caret."
+   WHEN 36 : h$="Click SELECT to open the Printer Control window."
+   WHEN 37 : h$="Click SELECT to store the current values in memory."
+   WHEN 38,39 : h$="This is the number of columns left at the right of each page."
+   WHEN 40 : IF s THEN h$="Click SELECT to print no page numbers." ELSE h$="Click SELECT to print page numbers at the bottom of each page."
+   OTHERWISE : h$="This window allows transactions to be printed."
+   ENDCASE
+ WHEN printcon_wind%
+  CASE icon% OF
+   WHEN 0 : h$="This window allows the printer control codes to be set up.|MClick SELECT to gain the caret."
+   WHEN 1 : h$="This code is sent to the printer first, at the start of a print run.|MClick SELECT to gain the caret."
+   WHEN 2 : h$="This code is sent to the printer last, at the end of a print run.|MClick SELECT to gain the caret."
+   WHEN 3 : h$="This code turns Pica pitch on.|MClick SELECT to gain the caret."
+   WHEN 4 : h$="This code turns Elite pitch on.|MClick SELECT to gain the caret."
+   WHEN 5 : h$="This code turns bold on.|MClick SELECT to gain the caret."
+   WHEN 6 : h$="This code turns bold off.|MClick SELECT to gain the caret."
+   WHEN 7 : h$="This code turns italic on.|MClick SELECT to gain the caret."
+   WHEN 8 : h$="This code turns italic off.|MClick SELECT to gain the caret."
+   WHEN 9 : h$="This code turns underline on.|MClick SELECT to gain the caret."
+   WHEN 10 : h$="This code turns underline off.|MClick SELECT to gain the caret."
+   WHEN 11 : h$="This code is sent at the end of each line to return the printhead to the start of the next line.|MClick SELECT to gain the caret."
+   WHEN 12 : h$="This code is sent at the end of each page, to eject the paper.|MClick SELECT to gain the caret."
+   WHEN 13 : h$="This code is used to print a '£' sign.|MClick SELECT to gain the caret."
+   WHEN 14 : h$="This code turns italic on."
+   WHEN 15 : h$="This code turns underline off."
+   WHEN 16 : h$="This code turns bold off."
+   WHEN 17 : h$="This code is sent at the end of each line to return the printhead to the start of the next line."
+   WHEN 18 : h$="This code turns italic off."
+   WHEN 19 : h$="This code is sent at the end of each page, to eject the paper."
+   WHEN 20 : h$="This code turns bold on."
+   WHEN 21 : h$="Click SELECT to store the values in memory"
+   WHEN 22 : h$="Click SELECT to save the values to disc as default."
+   WHEN 23 : h$="Click SELECT to forget any changes made."
+   WHEN 24 : h$="This code is sent to the printer first, at the start of a print run."
+   WHEN 25 : h$="This code turns Pica pitch on."
+   WHEN 26 : h$="This code is sent to the printer last, at the end of a print run."
+   WHEN 27 : h$="This code turns Elite pitch on."
+   WHEN 28 : h$="This code is used to print a '£' sign."
+   WHEN 29 : h$="This code turns underline on."
+   OTHERWISE : h$="This window allows the printer control codes to be set up."
+   ENDCASE
+ WHEN loadcsv_wind%
+  CASE field_sep$ OF
+   WHEN "," : t$="Comma"
+   WHEN CHR$(9) : t$="Tab"
+   ENDCASE
+  CASE icon% OF
+   WHEN 0,1 : h$="This section controls how the file is loaded."
+   WHEN 2 : h$="Select this option to load the file as a list of transactions."
+   WHEN 3 : h$="Select this option to load the file as an account."
+   WHEN 4 : h$="Select this option to load the file as an account.|MThis is the account that the entries will be added to."
+   WHEN 5 : h$="Select this option to load the file as an account.|MClick SELECT here to get a list of accounts."
+   WHEN 6,7,8,9,12,13,16,17,20,21,24,25 : h$="This section controls the mapping of fields in the file to columns in the window."
+   WHEN 10,14,18,22,26 : h$="This section controls the mapping of fields in the file to columns in the window.|MClick SELECT to raise the field by one.|MClick ADJUST to lower the field by one."
+   WHEN 11,15,19,23,27 : h$="This section controls the mapping of fields in the file to columns in the window.|MClick SELECT to lower the field by one.|MClick ADJUST to raise the field by one."
+   WHEN 28 : h$="Click SELECT to start the import."
+   WHEN 29 : h$="Click SELECT to cancel the operation."
+   OTHERWISE : h$="This window controls the loading of "+t$+" Separated Variable files."
+   ENDCASE
+ WHEN loadacc_wind%
+  CASE icon% OF
+   WHEN 0 : h$="This shows the account to which the file will be loaded."
+   WHEN 1 : h$="Click SELECT here to get a list of accounts."
+   WHEN 2 : h$="Click SELECT to start the import."
+   WHEN 3 : h$="Click SELECT to cancel the import."
+   WHEN 5 : IF s THEN h$="Click SELECT to ignore any dates in the description fields of the Account file." ELSE h$="Click SELECT to extract dates from the description field of the Account file."
+   WHEN 6,7 : h$="This section controls how the initial balance of the Account file is treated."
+   WHEN 8 : h$="Select this option to ignore the new initial balance."
+   WHEN 9 : h$="Select this option to add the new initial balance to the existing one."
+   WHEN 10 : h$="Select this option to enter the value of the new initial balance as a transaction."
+   WHEN 11 : h$="Select this option to enter the value of the new initial balance as a transaction.|MEnter the date of the transaction here.|MClick SELECT to gain the caret."
+   WHEN 12 : h$="Select this option to enter the value of the new initial balance as a transaction.|MEnter the date of the transaction here."
+   WHEN 13 : h$="Select this option to replace the existing initial balance with the one loaded."
+   OTHERWISE : h$="This window controls the loading of Account files as accounts."
+   ENDCASE
+ WHEN date_wind%
+  CASE icon% OF
+   WHEN 1 : h$="Click SELECT to use the current date from the system clock."
+   WHEN 2 : h$="Click SELECT to use another date for the current date."
+   WHEN 3 : h$="This is the date to be used as the current date.|MEnter dates in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret."
+   WHEN 4 : h$="Click SELECT to set the current date."
+   OTHERWISE : h$="This window allows you to control the current date."
+   ENDCASE
+ OTHERWISE
+  SYS "Wimp_GetMenuState",1,q%,window%,icon%
+  s1%=!q% : s2%=q%!4 : s3%=q%!8 : s4%=q%!12
+  CASE menuup% OF
+   WHEN imenu%
+    CASE s1% OF
+     WHEN 0 : h$="Move the pointer right to see information about Accounts+."
+     WHEN 1 : h$="Click SELECT to set the user preferences.|MThis affects how some of the program's features will work."
+     WHEN 2 : h$="Click SELECT to set the printer control codes."
+     WHEN 3 : h$="Click SELECT to see the !Help file."
+     WHEN 4 : h$="Clcik SELECT to quit Accounts+."
+     ENDCASE
+   WHEN mmenu%
+    CASE s1% OF
+     WHEN 0
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to use the miscellaneous options."
+       WHEN 0 : h$="Move the pointer right to see information about Accounts+."
+       WHEN 1 : h$="Move the pointer right to see information about the current file."
+       WHEN 2 : h$="Move the pointer right to set the User Title."
+       WHEN 3 : h$="Move the pointer right to set the current date."
+       WHEN 4 : h$="Click SELECT to clear the current file."
+       ENDCASE
+     WHEN 1 : h$="Click SELECT to save the file with the current file name.|MMove the pointer right to save the file with a new file name."
+     WHEN 2
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to carry out operations on the transactions."
+       WHEN 0 : h$="Click SELECT to search for some text."
+       WHEN 1 : h$="Move the pointer right to go to any transaction."
+       WHEN 2 : h$="Click SELECT to sort the transactions into date order."
+       WHEN 3 : h$="Click SELECT to update the transactions to use any new headers and accounts."
+       WHEN 4
+        CASE s3% OF
+         WHEN -1 : h$="Move the pointer right to export the transactions to another application."
+         WHEN 0 : h$="Move the pointer right to export the transactions as a CSV file."
+         WHEN 1 : h$="Move the pointer right to export the transactions as a TSV file."
+         WHEN 2 : h$="Move the pointer right to export the transactions as an ASCII Text file."
+         ENDCASE
+       WHEN 5 : h$="Click SELECT to print out the transactions."
+       ENDCASE
+     WHEN 3
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to carry out operations on the accounts."
+       WHEN 0
+        CASE s3% OF
+         WHEN -1 : h$="Move the pointer right to view the statment of an account."
+         OTHERWISE : h$="Click SELECT to view the statement of the '"+$FNget_menu_text(amenu%,s3%)+"' account."
+         ENDCASE
+       WHEN 1 : h$="Click SELECT to view the total balance of each account."
+       WHEN 2 : h$="Click SELECT to add new accounts, delete old ones, and change their names."
+       WHEN 3
+        CASE s3% OF
+         WHEN -1 : IF view_account%=-1 THEN h$="This item is shaded because you cannot export account details unless you are viewing an account." ELSE h$="Move the pointer right to export an account to another application."
+         WHEN 0 : h$="Move the pointer right to export the account as an Account file."
+         WHEN 1 : h$="Move the pointer right to export the account as a CSV file."
+         WHEN 2 : h$="Move the pointer right to export the account as a TSV file."
+         WHEN 3 : h$="Move the pointer right to export the account as an ASCII Text file."
+         ENDCASE
+       WHEN 4 : IF view_account%=-1 THEN h$="This item is shaded because you cannot print an account unless you are viewing it." ELSE h$="Click SELECT to print an account."
+       ENDCASE
+     WHEN 4
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to carry out operations on the standing orders."
+       WHEN 0 : h$="Click SELECT to edit the standing orders."
+       WHEN 1 : h$="Click SELECT to view the forthcoming standing orders."
+       WHEN 2 : h$="Click SELECT to update the standing orders."
+       ENDCASE
+     WHEN 5
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to carry out operations on the headers."
+       WHEN 0 : h$="Click SELECT to edit the headers."
+       WHEN 1 : h$="Click SELECT to view the header transactions."
+       WHEN 2
+        CASE s3% OF
+         WHEN -1 : h$="Move the pointer right to export the headers to another application."
+         WHEN 0 : h$="Move the pointer right to export the headers as a CSV file."
+         WHEN 1 : h$="Move the pointer right to export the headers as a TSV file."
+         WHEN 2 : h$="Move the pointer right to export the headers as an ASCII Text file."
+         ENDCASE
+       WHEN 3 : h$="Click SELECT to print the headers out."
+       ENDCASE
+     WHEN 6
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to edit transactions."
+       WHEN 0 : h$="Click SELECT to add the contents of the edit-bar after the last transaction."
+       WHEN 1 : IF select%=0 THEN h$="This item is shaded because there is not a selected transaction." ELSE h$="Click SELECT to insert the contents of the edit-bar above the selected transaction."
+       WHEN 2 : IF select%=0 THEN h$="This item is shaded because there is not a selected transaction." ELSE h$="Click SELECT to insert the contents of the edit-bar below the selected transaction."
+       ENDCASE
+     WHEN 7
+      CASE s2% OF
+       WHEN -1 : IF select%=0 THEN h$="This item is shaded because there is not a slected transaction." ELSE h$="Move the pointer right to carry out operations on the selected transaction."
+       WHEN 0 : h$="Click SELECT to cut the selected transaction to the edit-bar."
+       WHEN 1 : h$="Click SELECT to copy the selected transaction to the edit-bar."
+       WHEN 2 : h$="Click SELECT to replace the selected transaction with the contents of the edit-bar."
+       WHEN 3 : h$="Click SELECT to delete the selected transaction."
+       WHEN 4 : h$="Click SELECT to remove the transactions up to and including the selection, keeping the balances intact."
+       WHEN 5 : h$="Click SELECT to clear the selection."
+       ENDCASE
+     ENDCASE
+   WHEN vmenu%
+    CASE s1% OF
+     WHEN 0 : h$="Move the pointer right to change the initial balance of this account."
+     WHEN 1 : h$="Move the pointer right to go to any line in this account."
+     WHEN 2
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to view the statment of another account."
+       OTHERWISE : h$="Click SELECT to view the statement of the '"+$FNget_menu_text(amenu%,s2%)+"' account."
+       ENDCASE
+     WHEN 3 : h$="Click SELECT to view the total balance of each account."
+     WHEN 4 : h$="Click SELECT to add new accounts, delete old ones, and change their names."
+     WHEN 5
+      CASE s2% OF
+       WHEN -1 : h$="Move the pointer right to export this account to another application."
+       WHEN 0 : h$="Move the pointer right to export this account as an Account file."
+       WHEN 1 : h$="Move the pointer right to export this account as a CSV file."
+       WHEN 2 : h$="Move the pointer right to export this account as a TSV file."
+       WHEN 3 : h$="Move the pointer right to export this account as an ASCII Text file."
+       ENDCASE
+     WHEN 6 : h$="Click SELECT to print this account."
+     ENDCASE
+   WHEN amenu%
+    IF s1%>=0 THEN
+     CASE amenu_no% OF
+      WHEN 1,4 : h$="Click SELECT to enter the '"+$FNget_menu_text(amenu%,s1%)+"' account into the 'From' field."
+      WHEN 2,5 : h$="Click SELECT to enter the '"+$FNget_menu_text(amenu%,s1%)+"' account into the 'To' field."
+      WHEN 3 : h$="Click SELECT to view the statement of the '"+$FNget_menu_text(amenu%,s1%)+"' account."
+      WHEN 6 : h$="Click SELECT to enter the '"+$FNget_menu_text(amenu%,s1%)+"' account into the 'Search' field."
+      WHEN 7 : h$="Click SELECT to enter the '"+$FNget_menu_text(amenu%,s1%)+"' account into the 'Replace' field."
+      WHEN 8,9 : h$="Click SELECT to import the file into the '"+$FNget_menu_text(amenu%,s1%)+"' account."
+      ENDCASE
+    ENDIF
+   WHEN wmenu%
+    IF s1%>=0 THEN
+     CASE hmenu_no% OF
+      WHEN 1 : h$="Click SELECT to enter the '"+$FNget_menu_text(wmenu%,s1%)+"' header into the 'Search' field."
+      WHEN 2 : h$="Click SELECT to enter the '"+$FNget_menu_text(wmenu%,s1%)+"' header into the 'Replace' field."
+      ENDCASE
+    ENDIF
+   WHEN ymenu% : IF s1%>=0 THEN h$="Click SELECT to enter the '"+$FNget_menu_text(ymenu%,s1%)+"' header into the 'From' field."
+   WHEN zmenu% : IF s1%>=0 THEN h$="Click SELECT to enter the '"+$FNget_menu_text(zmenu%,s1%)+"' header into the 'To' field."
+   WHEN cmenu%
+    CASE c_menu% OF
+     WHEN 1 : h$="Click SELECT to choose a colour for the grid."
+     WHEN 2 : h$="Click SELECT to choose a colour for the text."
+     WHEN 3 : h$="Click SELECT to choose a colour for the window backgrounds."
+     WHEN 4 : h$="Click SELECT to choose a colour for the selections."
+     WHEN 5 : h$="Click SELECT to choose a colour for the selections in the account window."
+     WHEN 6 : h$="Click SELECT to choose a colour for the highlights."
+     ENDCASE
+   ENDCASE
+ ENDCASE
+PROCsend_help(h$)
+ENDPROC
+

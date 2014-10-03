@@ -1,0 +1,10 @@
+|!Run for !Help Reader
+|
+Set HelpReader$Dir <Obey$Dir>
+|
+RMEnsure SquashUtils 0.01 RMLoad <Obey$Dir>.SquashUtil
+RMEnsure SquashUtils 0.01 Error Application needs Squash Utils 0.01
+|
+WimpSlot -min 120k -max 120k
+|
+Run <Obey$Dir>.!RunImage

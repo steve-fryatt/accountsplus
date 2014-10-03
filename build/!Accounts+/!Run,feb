@@ -1,0 +1,21 @@
+| !Run file for Accounts+ V1.24
+|
+IconSprites <Obey$Dir>.!Sprites
+|
+RMEnsure UtilityModule 3.00 Error Accounts+ requires RISC OS 3.00 or greater to run.
+|
+RMEnsure BorderUtil 0.02 RMLoad <Obey$Dir>.BorderUtil
+|
+Set Alias$@RunType_0AD Run <Obey$Dir>.!Run %%*0
+Set File$Type_0AD Accounts
+|
+Set File$Type_1AC Account
+Set File$Type_DFE CSV
+Set File$Type_FFF Text
+|
+Set Accounts+$Dir <Obey$Dir>
+Set Accounts+$Font Homerton.Medium
+|
+WimpSlot -min 640K -max 640K
+|
+Run <Obey$Dir>.!RunImage %*0

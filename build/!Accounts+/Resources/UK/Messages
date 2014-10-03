@@ -1,0 +1,139 @@
+# Message file for Accounts+ V1.30
+# Created 8 - August - 1995
+
+# Errors and messages
+
+InvDay:The day of the month in this date is not in the valid range for the month shown.
+InvMonth:The month in this date is not valid.
+InvYear:The year in this date is not valid.
+DateFormat:This date is incorrectly entered.  Use '%0' to separate the parts.
+Delete?:Are you sure that you wish to delete transaction %0?  This action cannot be undone.
+Cut?:Are you sure that you wish to cut transaction %0?  This action cannot be undone.
+DeleteAcc?:Are you sure that you wish to delete this account?  This action cannot be undone.
+DeleteSO?:Are you sure that you wish to delete this standing order?  This action cannot be undone.
+DeleteHead?:Are you sure that you wish to delete this header?  This action cannot be undone.
+NotSaved:The current accounts are not saved.  Are you sure you want to quit?
+ClearFile?:The current accounts are not saved.  Are you sure you want to clear the file?  This action cannot be undone.
+Remove?:Are you sure you wish to remove the transactions up to and including transaction %0?  This action cannot be undone.
+LoadNew?:The current accounts are not saved.  Do you wish to load this new file?  This action cannot be undone.
+FileType:Accounts+ can only load Accounts files, Account files, CSV files and TSV files.  The file that you have tried to load is not one of these.
+ShutDown?:The current accounts are not saved.  Are you sure that you wish to shut down?
+TooManyTrans:There are too many transactions in the file.  Use remove transactions to create more space.
+IllegalReplace:This replace is illegal: there will be two standard entries in this transaction.
+TooManyEntries:An account has to show too many entries.  Change the date range, or use remove transactions.
+SOWarn:%0 standing orders have been carried out.
+SOMistake:More than %0 standing orders have been carried out.  Do you wish to continue adding more, or is there a mistake?
+Can'tDeleteAcc:You cannot delete this account: it is in use.
+IllegalTrans:This is an invalid transaction: it contains two standard entries.
+NoAccount:You have not specified an account to use.
+BadData:Unexpected data type: file import has been aborted.
+BadEOF:Unexpected end of file: file import has been aborted.
+NoPath:To save, drag the icon to a directory viewer
+
+# Message Box buttons
+
+OK:OK
+Cancel:Cancel
+Delete:Delete
+Cut:Cut
+Save:Save
+Quit:Quit
+Clear:Clear
+Remove:Remove
+Load:Load
+Shutdown:Shutdown
+Skip:Skip
+Continue:Continue
+
+# Info-Bar Messages
+
+TransSel:Selected: Transaction %0
+LineSel:Selected: Line %0
+NoSel:No Selection
+SelNotHere:Selected transaction not in account
+AddTo:Add transaction to end
+InsertA:Insert above: transaction %0
+InsertB:Insert below: transaction %0
+ReplaceTo:Replace to: Transaction %0
+CopyFrom:Copy from: Transaction %0
+CutFrom:Cut from: Transaction %0
+Goto:Goto: %0 %1
+UserTitle:New user title set
+InitBal:New initial balance: £%0
+Sorted:Transactions sorted
+SOrders:%0 standing orders added
+Updated:Transactions updated
+CSVLoaded:CSV File loaded
+AccLoaded:Account file loaded
+AccExp:Account exported as %0 file
+TranExp:Transactions exported as %0 file
+HeadExp:Headers exported as %0 file
+Clear:File cleared
+ViewNewAcc:View %0 account
+
+# Window & Menu Titles
+
+ViewAcc:View Account
+Accounts:Accounts
+GotoTrans:Goto Transaction
+GotoLine:Goto Line
+ImpCSV:Import CSV File
+ImpTSV:Import TSV File
+FileInfo:About this file
+
+# Icon names
+
+LineNo:Line numbers
+Heads:Headings
+Trans:Transactions
+Quotes:Quotes
+Dates:Dates
+Head:Headers
+ToExp:To export
+DateFile:Date & File
+
+# File names
+
+Accounts:Account
+AccountF:Account
+Text:TextFile
+CSV:CSVFile
+TSV:TSVFile
+
+# Field Names
+
+File:File
+Printed:Date printed
+From:From
+To:To
+Description:Description
+Amount:Amount
+In:In
+Out:Out
+IO:I/O
+FromTo:From/To
+Bal:Balance
+Debit:Debits
+Credit:Credits
+Type:Tpe
+Date:Date
+DateF:Date From
+DateT:Date To
+
+# Other Text
+
+Line:Line
+Transaction:Transaction
+Account:Account
+No:No
+Yes:Yes
+Initial:Initial Balance
+Offset:Offset Balance
+Total:Total Balance:
+Merged:Merged Account
+Field:Field
+None:None
+CSVN:CSV
+TSVN:TSV
+Txt:ASCII Text
+Page:Page
