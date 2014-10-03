@@ -8,8 +8,8 @@ REM This code may not be copied or altered without the author's permission.
 :
 REMTRACE TO "RAM:TraceFile" : TRACE ON
 debug%=FALSE
-version=1.32
-date$="27th February 1997"
+build_version$="1.32"
+build_date$="27th February 1997"
 :
 file_type_accounts%=&0AD
 file_type_account%=&1AC
@@ -1322,8 +1322,9 @@ PROCclose_templates
 :
 rcl%=@%
 @%=&0102020A
-$FNindirection(info%,7)=STR$(version)+" ("+date$+")"
-$FNindirection(welcome%,3)="Version: "+STR$(version)+"   ("+date$+")"
+$FNindirection(info%,6)=CHR$(169) + " Stephen Fryatt, 1992-" + MID$(build_date$, 8)
+$FNindirection(info%,7)=build_version$+" ("+build_date$+")"
+$FNindirection(welcome%,3)="Version: "+build_version$+"   ("+build_date$+")"
 @%=rcl%
 :
 SYS "OS_ConvertHex4",file_type_accounts%,b%,255
