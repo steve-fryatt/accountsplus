@@ -16,6 +16,9 @@ file_type_account%=&1AC
 file_type_text%=&FFF
 file_type_csv%=&DFE
 :
+LIBRARY "BASIC:Menu"
+LIBRARY "BASIC:Resources"
+:
 LIBRARY "src/HelpLib.bbt"
 :
 ON ERROR SYS "Hourglass_Smash" : PRINT TAB(0,0) REPORT$+" at line "+STR$(ERL) : END
@@ -1169,10 +1172,16 @@ SYS "Wimp_CreateSubMenu",,w%,x%,y%
 ENDPROC
 :
 DEF PROCinitiate
-LOCAL loop%
+LOCAL loop%, resources$
 SYS "Hourglass_On"
 :
-DIM b% 4300,q% 256,az% 256
+DIM b% 4300,q% 256,az% 256, a% 255
+
+REM Locate the application resources.
+
+resources$ = FNresources_find_territory_folder("<Accounts+$Dir>.Resources")
+
+
 DIM message_list% 38
 !message_list%=&502
 message_list%!4=&400C0
@@ -1190,16 +1199,11 @@ SYS "Wimp_Initialise",300,!b%,"Accounts+",message_list% TO wimp%
 :
 os_350%=(wimp%>=350)
 :
-SYS "Territory_Number" TO territory%
-SYS "Territory_NumberToName",territory%,b%,256
-territory$="<Accounts+$Dir>.Resources."+FNstring(b%)+"."
-SYS "XOS_File",5,LEFT$(territory$) TO type%
-IF type%<2 OR type%>3 THEN territory$="<Accounts+$Dir>.Resources.UK."
 :
 DIM messages% 16
-SYS "MessageTrans_FileInfo",,territory$+"Messages" TO flags%,,length%
+SYS "MessageTrans_FileInfo",,resources$+"Messages" TO flags%,,length%
 IF flags% AND 1 THEN m_block%=0 ELSE DIM m_block% length%
-SYS "MessageTrans_OpenFile",messages%,territory$+"Messages",m_block%
+SYS "MessageTrans_OpenFile",messages%,resources$+"Messages",m_block%
 :
 accounts%=10
 per_account%=500
@@ -1230,7 +1234,7 @@ banner%=FNload_sprites("<Accounts+$Dir>.Banner")
 ind_size%=11000
 :
 DIM ind_data% ind_size%
-PROCopen_templates(territory$+"Templates")
+PROCopen_templates(resources$+"Templates")
 to%=FNload_template("Intro",b%,ind_data%,ind_size%)
 b%!64=banner%
 SYS "Wimp_CreateWindow",,b% TO welcome%
@@ -1369,24 +1373,24 @@ PROCdrag_init
 DIM time_b% 8
 DIM time_format% 128, time_string% 128
 :
-DIM imenu% 200,mmenu% 300,amenu% 300,gmenu% 300,emenu% 300,smenu% 300,vmenu% 300,bmenu% 300
-DIM omenu% 300,wmenu% 999,xmenu% 300,hmenu% 300,ymenu% 999,zmenu% 999,cmenu% 500,fmenu% 300
+
+PROCmenu_initialise
+
+b%!0 = info%
+b%!4 = info%
+b%!8 = finfo_wind%
+b%!12 = set_title%
+b%!16 = date_wind%
+PROCmenu_load_templates(resources$ + "Menus", b%)
+imenu% = b%!0
+gmenu% = b%!4
+cmenu% = b%!8
+
+
+DIM mmenu% 300,amenu% 300,emenu% 300,smenu% 300,vmenu% 300,bmenu% 300
+DIM omenu% 300,wmenu% 999,xmenu% 300,hmenu% 300,ymenu% 999,zmenu% 999,fmenu% 300
 DIM tmenu% 300
 mw%=0 : me%=0
-:
-PROCinit_menu(imenu%,mw%,me%,"Accounts+")
-PROCst_menu_item(imenu%,mw%,me%,"Info...",0,1,0,0,info%,0)
-PROCst_menu_item(imenu%,mw%,me%,"Preferences...",0,0,0,0,-1,0)
-PROCst_menu_item(imenu%,mw%,me%,"Printer... ‹^PRINT",0,0,0,0,-1,0)
-PROCst_menu_item(imenu%,mw%,me%,"Help...        ^F1",0,1,0,0,-1,0)
-PROCst_menu_item(imenu%,mw%,me%,"Quit",0,0,0,1,-1,0)
-:
-PROCinit_menu(gmenu%,mw%,me%,"Misc")
-PROCst_menu_item(gmenu%,mw%,me%,"Info...",0,0,0,0,info%,1)
-PROCst_menu_item(gmenu%,mw%,me%,"File info... ‹F1",0,0,0,0,finfo_wind%,1)
-PROCst_menu_item(gmenu%,mw%,me%,"User title    ^T",0,0,0,0,set_title%,1)
-PROCst_menu_item(gmenu%,mw%,me%,"Set date",0,1,0,0,date_wind%,1)
-PROCst_menu_item(gmenu%,mw%,me%,"Clear file",0,0,0,1,-1,0)
 :
 PROCinit_menu(xmenu%,mw%,me%,"Export")
 PROCst_menu_item(xmenu%,mw%,me%,"Account     ‹F3",0,0,0,0,exp_wind%,1)
@@ -1456,24 +1460,6 @@ PROCst_menu_item(vmenu%,mw%,me%,"View balances...  F7",0,0,0,0,-1,0)
 PROCst_menu_item(vmenu%,mw%,me%,"Edit accounts... ‹F7",0,1,0,0,-1,0)
 PROCst_menu_item(vmenu%,mw%,me%,"Export",0,0,1,0,xmenu%,0)
 PROCst_menu_item(vmenu%,mw%,me%,"Print...   PRINT",0,0,1,1,-1,0)
-:
-PROCinit_menu(cmenu%,mw%,me%,"Colours")
-PROCmenu_item(cmenu%,mw%,me%,"0",0,0,0,0,-1,0,0,FNm_flags(7,0),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"1",0,0,0,0,-1,0,0,FNm_flags(7,1),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"2",0,0,0,0,-1,0,0,FNm_flags(7,2),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"3",0,0,0,0,-1,0,0,FNm_flags(7,3),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"4",0,0,0,0,-1,0,0,FNm_flags(0,4),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"5",0,0,0,0,-1,0,0,FNm_flags(0,5),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"6",0,0,0,0,-1,0,0,FNm_flags(0,6),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"7",0,0,0,0,-1,0,0,FNm_flags(0,7),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"8",0,0,0,0,-1,0,0,FNm_flags(0,8),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"9",0,0,0,0,-1,0,0,FNm_flags(7,9),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"10",0,0,0,0,-1,0,0,FNm_flags(0,10),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"11",0,0,0,0,-1,0,0,FNm_flags(0,11),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"12",0,0,0,0,-1,0,0,FNm_flags(7,12),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"13",0,0,0,0,-1,0,0,FNm_flags(0,13),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"14",0,0,0,0,-1,0,0,FNm_flags(7,14),0,0,0)
-PROCmenu_item(cmenu%,mw%,me%,"15",0,0,0,1,-1,0,0,FNm_flags(7,15),0,0,0)
 :
 colours%()=7,7,7,7,0,0,0,0,0,7,0,0,7,0,7,7
 :
