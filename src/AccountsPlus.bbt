@@ -1374,6 +1374,12 @@ DIM time_b% 8
 DIM time_format% 128, time_string% 128
 :
 
+REM Configure the menus.
+
+DIM mmenu% 300,amenu% 300,emenu% 300,smenu% 300
+DIM wmenu% 999,hmenu% 300,ymenu% 999,zmenu% 999
+mw%=0 : me%=0
+
 PROCmenu_initialise
 
 b%!0 = info%
@@ -1381,47 +1387,29 @@ b%!4 = info%
 b%!8 = finfo_wind%
 b%!12 = set_title%
 b%!16 = date_wind%
+b%!20 = goto_wind%
+b%!24 = exp_wind%
+b%!28 = exp_wind%
+b%!32 = exp_wind%
+b%!36 = amenu%
+b%!40 = exp_wind%
+b%!44 = exp_wind%
+b%!48 = exp_wind%
+b%!52 = exp_wind%
+b%!56 = inb_wind%
+b%!60 = goto_wind%
+b%!64 = amenu%
 PROCmenu_load_templates(resources$ + "Menus", b%)
 imenu% = b%!0
 gmenu% = b%!4
-cmenu% = b%!8
+tmenu% = b%!8
+fmenu% = b%!12
+bmenu% = b%!16
+xmenu% = b%!20
+omenu% = b%!24
+vmenu% = b%!28
+cmenu% = b%!32
 
-
-DIM mmenu% 300,amenu% 300,emenu% 300,smenu% 300,vmenu% 300,bmenu% 300
-DIM omenu% 300,wmenu% 999,xmenu% 300,hmenu% 300,ymenu% 999,zmenu% 999,fmenu% 300
-DIM tmenu% 300
-mw%=0 : me%=0
-:
-PROCinit_menu(xmenu%,mw%,me%,"Export")
-PROCst_menu_item(xmenu%,mw%,me%,"Account     ‹F3",0,0,0,0,exp_wind%,1)
-PROCst_menu_item(xmenu%,mw%,me%,"CSV         ^F3",0,0,0,0,exp_wind%,1)
-PROCst_menu_item(xmenu%,mw%,me%,"TSV        ‹^F3",0,0,0,0,exp_wind%,1)
-PROCst_menu_item(xmenu%,mw%,me%,"ASCII Text",0,0,0,1,exp_wind%,1)
-:
-PROCinit_menu(fmenu%,mw%,me%,"Export")
-PROCst_menu_item(fmenu%,mw%,me%,"CSV",0,0,0,0,exp_wind%,1)
-PROCst_menu_item(fmenu%,mw%,me%,"TSV",0,0,0,0,exp_wind%,1)
-PROCst_menu_item(fmenu%,mw%,me%,"ASCII Text",0,0,0,1,exp_wind%,1)
-:
-PROCinit_menu(tmenu%,mw%,me%,"Transactions")
-PROCst_menu_item(gmenu%,mw%,me%,"Search & replace... F4",0,0,0,0,-1,0)
-PROCst_menu_item(gmenu%,mw%,me%,"Goto transaction    F5",0,0,0,0,goto_wind%,1)
-PROCst_menu_item(gmenu%,mw%,me%,"Sort by dates       F6",0,0,0,0,-1,0)
-PROCst_menu_item(gmenu%,mw%,me%,"Update transactions",0,1,0,0,-1,0)
-PROCst_menu_item(bmenu%,mw%,me%,"Export",0,0,0,0,fmenu%,0)
-PROCst_menu_item(bmenu%,mw%,me%,"Print...        ^PRINT",0,0,0,1,-1,0)
-:
-PROCinit_menu(bmenu%,mw%,me%,"Accounts")
-PROCst_menu_item(bmenu%,mw%,me%,"View account",0,0,0,0,amenu%,0)
-PROCst_menu_item(bmenu%,mw%,me%,"View balances... F7",0,0,0,0,-1,0)
-PROCst_menu_item(bmenu%,mw%,me%,"Edit...         ‹F7",0,1,0,0,-1,0)
-PROCst_menu_item(bmenu%,mw%,me%,"Export",0,0,1,0,xmenu%,0)
-PROCst_menu_item(bmenu%,mw%,me%,"Print...   PRINT",0,0,1,1,-1,0)
-:
-PROCinit_menu(omenu%,mw%,me%,"S.Orders")
-PROCst_menu_item(omenu%,mw%,me%,"Edit...        ‹F6",0,0,0,0,-1,0)
-PROCst_menu_item(omenu%,mw%,me%,"Forthcoming... ^F6",0,1,0,0,-1,0)
-PROCst_menu_item(omenu%,mw%,me%,"Update",0,0,0,1,-1,0)
 :
 PROCinit_menu(hmenu%,mw%,me%,"Headers")
 PROCst_menu_item(hmenu%,mw%,me%,"Edit...             ‹F8",0,0,0,0,-1,0)
@@ -1451,15 +1439,6 @@ PROCst_menu_item(mmenu%,mw%,me%,"S.Orders",0,0,0,0,omenu%,0)
 PROCst_menu_item(mmenu%,mw%,me%,"Headers",0,0,0,0,hmenu%,0)
 PROCst_menu_item(mmenu%,mw%,me%,"Edit",0,0,0,0,emenu%,0)
 PROCst_menu_item(mmenu%,mw%,me%,"Selection",0,0,1,1,smenu%,0)
-:
-PROCinit_menu(vmenu%,mw%,me%,"Account")
-PROCst_menu_item(vmenu%,mw%,me%,"Initial balance",0,0,0,0,inb_wind%,1)
-PROCst_menu_item(vmenu%,mw%,me%,"Goto line        ‹F5",0,1,0,0,goto_wind%,1)
-PROCst_menu_item(vmenu%,mw%,me%,"View account",0,0,0,0,amenu%,0)
-PROCst_menu_item(vmenu%,mw%,me%,"View balances...  F7",0,0,0,0,-1,0)
-PROCst_menu_item(vmenu%,mw%,me%,"Edit accounts... ‹F7",0,1,0,0,-1,0)
-PROCst_menu_item(vmenu%,mw%,me%,"Export",0,0,1,0,xmenu%,0)
-PROCst_menu_item(vmenu%,mw%,me%,"Print...   PRINT",0,0,1,1,-1,0)
 :
 colours%()=7,7,7,7,0,0,0,0,0,7,0,0,7,0,7,7
 :

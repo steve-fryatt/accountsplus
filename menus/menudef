@@ -39,7 +39,6 @@ menu(icon_bar_menu, "Accounts+")
 }
 
 
-
 /**
  * Main -> Misc Menu
  */
@@ -67,6 +66,154 @@ menu(main_misc_menu, "Misc")
 		}
 	}
 	item("Clear file");
+}
+
+
+/**
+ * Main -> Transactions Menu
+ */
+
+menu(main_transactions_menu, "Transactions")
+{
+	item("Search & replace... F4");
+	item("Goto transaction    F5") {
+		dotted;
+		d_box(goto_window) {
+			warning;
+		}
+	}
+	item("Sort by dates       F6");
+	item("Update transactions") {
+		dotted;
+	}
+	item("Export") {
+		submenu(main_transactions_export_menu);
+	}
+	item("Print...        ^PRINT");
+}
+
+
+/**
+ * Main -> Transactions -> Export Menu
+ */
+
+menu(main_transactions_export_menu, "Export")
+{
+	item("CSV") {
+		d_box(export) {
+			warning;
+		}
+	}
+	item("TSV") {
+		d_box(export) {
+			warning;
+		}
+	}
+	item("ASCII Text") {
+		d_box(export) {
+			warning;
+		}
+	}
+}
+
+
+/**
+ * Main -> Accounts Menu
+ */
+
+menu(main_accounts_menu, "Accounts")
+{
+	item("View account") {
+		d_box(accounts_menu);
+	}
+	item("View balances... F7");
+	item("Edit...         ‹F7") {
+		dotted;
+	}
+	item("Export") {
+		shaded;
+		submenu(main_accounts_export_menu);
+	}
+	item("Print...   PRINT") {
+		shaded;
+	}
+}
+
+
+/**
+ * Main -> Accounts -> Export Menu
+ */
+
+menu(main_accounts_export_menu, "Export")
+{
+	item("Account     ‹F3") {
+		d_box(export) {
+			warning;
+		}
+	}
+	item("CSV         ^F3") {
+		d_box(export) {
+			warning;
+		}
+	}
+	item("TSV        ‹^F3") {
+		d_box(export) {
+			warning;
+		}
+	}
+	item("ASCII Text") {
+		d_box(export) {
+			warning;
+		}
+	}
+}
+
+
+/**
+ * Main -> Standing Orders Menu
+ */
+
+menu(main_sorders_menu, "S.Orders")
+{
+	item("Edit...        ‹F6");
+	item("Forthcoming... ^F6") {
+		dotted;
+	}
+	item("Update");
+}
+
+
+/**
+ * Account Window Menu
+ */
+
+menu(account_window_menu, "Account")
+{
+	item("Initial balance") {
+		d_box(initial_balance) {
+			warning;
+		}
+	}
+	item("Goto line        ‹F5") {
+		dotted;
+		d_box(goto_window) {
+			warning;
+		}
+	}
+	item("View account") {
+		d_box(accounts_menu);
+	}
+	item("View balances...  F7");
+	item("Edit accounts... ‹F7") {
+		dotted;
+	}
+	item("Export") {
+		shaded;
+		submenu(main_accounts_export_menu);
+	}
+	item("Print...   PRINT") {
+		shaded;
+	}
 }
 
 
