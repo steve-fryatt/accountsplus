@@ -1324,12 +1324,9 @@ to%=FNload_template("NewDate",b%,to%,ind_size%-(to%-ind_data%))
 SYS "Wimp_CreateWindow",,b% TO date_wind%
 PROCclose_templates
 :
-rcl%=@%
-@%=&0102020A
 $FNindirection(info%,6)=CHR$(169) + " Stephen Fryatt, 1992-" + MID$(build_date$, 8)
 $FNindirection(info%,7)=build_version$+" ("+build_date$+")"
 $FNindirection(welcome%,3)="Version: "+build_version$+"   ("+build_date$+")"
-@%=rcl%
 :
 SYS "OS_ConvertHex4",file_type_accounts%,b%,255
 b%?4=13
