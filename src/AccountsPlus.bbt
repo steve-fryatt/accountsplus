@@ -122,7 +122,7 @@ CASE buttons% OF
      WHEN 7 : PROCopen_window(bal_wind%) : PROCopen_window(bpane%)
      WHEN 8 : PROCset_menu_title(amenu%,FNmess_trans("ViewAcc"))
               PROCset_menu_width(amenu%,wide_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=3
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=3
      WHEN 9 : PROCselect_line(0)
      WHEN 10 : IF FNpreference(2) THEN
                 mess%=1 : PROCmessage("Delete?|<S>","Cancel","","Delete")
@@ -150,10 +150,10 @@ CASE buttons% OF
               PROCredraw_icon(pane2%,0)
      WHEN 7 : PROCset_menu_title(amenu%,FNmess_trans("Accounts"))
               PROCset_menu_width(amenu%,narrow_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=1
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=1
      WHEN 8 : PROCset_menu_title(amenu%,FNmess_trans("Accounts"))
               PROCset_menu_width(amenu%,narrow_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=2
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=2
      WHEN 9 : PROCinsert_line_below
      WHEN 10 : PROCreplace_line
      WHEN 11 : PROCcopy_line
@@ -170,7 +170,7 @@ CASE buttons% OF
     CASE icon% OF
      WHEN 8 : PROCset_menu_title(amenu%,FNmess_trans("ViewAcc"))
               PROCset_menu_width(amenu%,wide_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=3
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=3
      WHEN 9 : PROCopen_window(bal_wind%) : PROCopen_window(bpane%)
      WHEN 10 :
      WHEN 11 : $FNindirection(inb_wind%,1)=FNpoint(initial%(view_account%)) : PROCopen_as_menu(inb_wind%,x%,y%)
@@ -335,17 +335,17 @@ CASE buttons% OF
                PROCset_icon_state(ppane%,37,0,ABS(NOT FNicon_selected(ppane%,33)),0)
                IF FNicon_shaded(ppane%,35) AND FNfind_caret(ppane%,35) THEN PROCend_caret(ppane%,56)
      WHEN 38,40 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,38))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=1
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=1
      WHEN 41,43 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,41))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=2
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=2
      WHEN 44,46 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,44))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=3
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=3
      WHEN 47,49 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,47))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=4
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=4
      WHEN 50,52 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,50))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=5
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=5
      WHEN 53,55 : PROCset_cmenu_tick(FNget_icon_colour(ppane%,53))
-                  PROCdisplay_menu(cmenu%,x%,y%) : c_menu%=6
+                  PROCmenu_create(cmenu%,x%,y%) : c_menu%=6
      WHEN 69,70 : PROCset_icon_state(ppane%,58,0,ABS(NOT FNicon_selected(ppane%,70)),0)
                   IF FNicon_shaded(ppane%,58) AND FNfind_caret(ppane%,58) THEN PROCend_caret(ppane%,71)
      ENDCASE
@@ -356,10 +356,10 @@ CASE buttons% OF
      WHEN 11 : PROCsearch(TRUE,FALSE,FALSE)
      WHEN 17 : PROCset_menu_title(amenu%,"Accounts")
                PROCset_menu_width(amenu%,narrow_amenu%)
-               PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=6
+               PROCmenu_create(amenu%,x%,y%) : amenu_no%=6
      WHEN 18 : PROCset_menu_title(amenu%,"Accounts")
                PROCset_menu_width(amenu%,narrow_amenu%)
-               PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=7
+               PROCmenu_create(amenu%,x%,y%) : amenu_no%=7
      ENDCASE
    WHEN found_wind%
     CASE icon% OF
@@ -383,10 +383,10 @@ CASE buttons% OF
                IF FNfind_caret(so_wind%,3) THEN PROCend_caret(so_wind%,8)
      WHEN 18 : PROCset_menu_title(amenu%,"Accounts")
                PROCset_menu_width(amenu%,narrow_amenu%)
-               PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=4
+               PROCmenu_create(amenu%,x%,y%) : amenu_no%=4
      WHEN 19 : PROCset_menu_title(amenu%,"Accounts")
                PROCset_menu_width(amenu%,narrow_amenu%)
-               PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=5
+               PROCmenu_create(amenu%,x%,y%) : amenu_no%=5
      WHEN 20 : IF FNpreference(6) THEN
                 mess%=5 : PROCmessage("DeleteSO?","Cancel","","Delete")
                ELSE
@@ -439,7 +439,7 @@ CASE buttons% OF
               PROCredraw_icon(loadcsv_wind%,20)
      WHEN 5 : PROCset_menu_title(amenu%,"Accounts")
               PROCset_menu_width(amenu%,narrow_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=8
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=8
      WHEN 10 : $FNindirection(loadcsv_wind%,9)=FNincrement_field_number(9,1)
      WHEN 11 : $FNindirection(loadcsv_wind%,9)=FNincrement_field_number(9,-1)
      WHEN 14 : $FNindirection(loadcsv_wind%,13)=FNincrement_field_number(13,1)
@@ -458,7 +458,7 @@ CASE buttons% OF
     CASE icon% OF
      WHEN 1 : PROCset_menu_title(amenu%,"Accounts")
               PROCset_menu_width(amenu%,narrow_amenu%)
-              PROCdisplay_menu(amenu%,x%,y%) : amenu_no%=9
+              PROCmenu_create(amenu%,x%,y%) : amenu_no%=9
      WHEN 2 : PROCload_account
      WHEN 3 : PROCclose_window(loadacc_wind%)
      WHEN 8 : PROCset_icon_state(loadacc_wind%,8,1,0,0)
@@ -489,22 +489,22 @@ CASE buttons% OF
               PROCset_icon_state(date_wind%,3,0,0,0)
      WHEN 4 : other_date$=$FNindirection(date_wind%,3)
               system_date%=FNicon_selected(date_wind%,1)
-              IF system_date% THEN PROCdisplay_menu(-1,0,0)
+              IF system_date% THEN PROCmenu_create(-1,0,0)
               PROCget_date
      ENDCASE
   ENDCASE
  WHEN 2
   CASE window% OF
    WHEN -2
-    PROCdisplay_bar_menu(imenu%,5,2,x%)
+    PROCmenu_create_iconbar(imenu%, x%)
    WHEN main%,pane%,pane2%
     PROCset_menu_width(amenu%,wide_amenu%)
     PROCset_menu_title(amenu%,"View Account")
-    PROCdisplay_menu(mmenu%,x%,y%)
+    PROCmenu_create(mmenu%,x%,y%)
    WHEN acc_view%,apane%
     PROCset_menu_width(amenu%,wide_amenu%)
     PROCset_menu_title(amenu%,"View Account")
-    PROCdisplay_menu(vmenu%,x%,y%)
+    PROCmenu_create(vmenu%,x%,y%)
    ENDCASE
  WHEN 1
   CASE window% OF
@@ -530,8 +530,8 @@ CASE buttons% OF
      ENDCASE
    WHEN pane2%
     CASE icon% OF
-     WHEN 7 : IF no_y% THEN PROCdisplay_menu(ymenu%,x%,y%) : hmenu_no%=1
-     WHEN 8 : IF no_z% THEN PROCdisplay_menu(zmenu%,x%,y%) : hmenu_no%=1
+     WHEN 7 : IF no_y% THEN PROCmenu_create(ymenu%,x%,y%) : hmenu_no%=1
+     WHEN 8 : IF no_z% THEN PROCmenu_create(zmenu%,x%,y%) : hmenu_no%=1
      ENDCASE
    WHEN acc_view%
     IF FNpreference(27) THEN PROCaccount_mouse_select(y%,1)
@@ -625,13 +625,13 @@ CASE buttons% OF
     CASE icon% OF
      WHEN 6 : PROCset_icon_state(search_wind%,6,1,0,0)
      WHEN 7 : PROCset_icon_state(search_wind%,7,1,0,0)
-     WHEN 17 : IF no_w% THEN PROCdisplay_menu(wmenu%,x%,y%) : hmenu_no%=1
-     WHEN 18 : IF no_w% THEN PROCdisplay_menu(wmenu%,x%,y%) : hmenu_no%=2
+     WHEN 17 : IF no_w% THEN PROCmenu_create(wmenu%,x%,y%) : hmenu_no%=1
+     WHEN 18 : IF no_w% THEN PROCmenu_create(wmenu%,x%,y%) : hmenu_no%=2
      ENDCASE
    WHEN so_wind%
     CASE icon% OF
-     WHEN 18 : IF no_y% THEN PROCdisplay_menu(ymenu%,x%,y%) : hmenu_no%=2
-     WHEN 19 : IF no_z% THEN PROCdisplay_menu(zmenu%,x%,y%) : hmenu_no%=2
+     WHEN 18 : IF no_y% THEN PROCmenu_create(ymenu%,x%,y%) : hmenu_no%=2
+     WHEN 19 : IF no_z% THEN PROCmenu_create(zmenu%,x%,y%) : hmenu_no%=2
      WHEN 25 : PROCset_icon_state(so_wind%,25,1,0,0)
                PROCset_icon_state(so_wind%,3,0,0,0)
                PROCset_icon_state(so_wind%,24,0,0,0)
@@ -738,7 +738,7 @@ CASE key% OF
      ENDCASE
    WHEN date_wind%: other_date$=$FNindirection(date_wind%,3)
                     system_date%=FNicon_selected(date_wind%,1)
-                    IF system_date% THEN PROCdisplay_menu(-1,0,0)
+                    IF system_date% THEN PROCmenu_create(-1,0,0)
                     PROCget_date
    ENDCASE
  WHEN &1B
@@ -865,7 +865,7 @@ ENDPROC
 DEF PROCmenu_selection(s1%,s2%,s3%,s4%)
 SYS "Wimp_GetPointerInfo",,q%
 stay_up%=(q%!8=1)
-CASE menuup% OF
+CASE FNmenu_current_handle OF
  WHEN imenu%
   CASE s1% OF
    WHEN 0 : PROCopen_as_menu(info%,size_x%/2,size_y%/2) : stay_up%=FALSE
@@ -994,7 +994,7 @@ CASE menuup% OF
    WHEN 9 : $FNindirection(loadacc_wind%,0)=$FNindirection(acc_wind%,s1%+1) : PROCredraw_icon(loadacc_wind%,0)
    ENDCASE
  ENDCASE
-IF stay_up% THEN PROCdisplay_menu(menuup%,0,0)
+IF stay_up% THEN PROCmenu_create(FNmenu_current_handle,0,0)
 ENDPROC
 :
 DEF PROCrecieve_message(code%)
@@ -1039,7 +1039,7 @@ CASE w% OF
  WHEN inb_wind%    : $FNindirection(inb_wind%,1)=FNpoint(initial%(view_account%))
  WHEN finfo_wind%  : PROCfile_info
  WHEN goto_wind%   : $FNindirection(goto_wind%,0)=""
-                     IF menuup%=mmenu% THEN
+                     IF FNmenu_current_handle=mmenu% THEN
                       g_type%=1 : $g_title%=FNmess_trans("GotoTrans")
                      ELSE
                       g_type%=2 : $g_title%=FNmess_trans("GotoLine")
@@ -1051,7 +1051,7 @@ CASE w% OF
  WHEN exp_wind%
   CASE s1% OF
    WHEN 5
-    CASE menuup% OF
+    CASE FNmenu_current_handle OF
      WHEN vmenu% : $FNindirection(exp_wind%,6)=FNmess_trans("Account")+":"
       CASE s2% OF
        WHEN 0 : $FNindirection(exp_wind%,0)=sprite_account$
@@ -1344,7 +1344,6 @@ SYS "OS_ConvertHex4",file_type_csv%,b%,255
 b%?4=13
 sprite_csv$="file_"+MID$($b%,2)
 :
-menuup%=0
 size%=0
 edit_account%=-1
 view_account%=-1
@@ -1376,69 +1375,45 @@ DIM time_format% 128, time_string% 128
 
 REM Configure the menus.
 
-DIM mmenu% 300,amenu% 300,emenu% 300,smenu% 300
-DIM wmenu% 999,hmenu% 300,ymenu% 999,zmenu% 999
+DIM amenu% 300
+DIM wmenu% 999,ymenu% 999,zmenu% 999
 mw%=0 : me%=0
 
 PROCmenu_initialise
 
 b%!0 = info%
-b%!4 = info%
-b%!8 = finfo_wind%
-b%!12 = set_title%
-b%!16 = date_wind%
-b%!20 = goto_wind%
-b%!24 = exp_wind%
+b%!4 = save%
+b%!8 = info%
+b%!12 = finfo_wind%
+b%!16 = set_title%
+b%!20 = date_wind%
+b%!24 = goto_wind%
 b%!28 = exp_wind%
 b%!32 = exp_wind%
-b%!36 = amenu%
-b%!40 = exp_wind%
+b%!36 = exp_wind%
+b%!40 = amenu%
 b%!44 = exp_wind%
 b%!48 = exp_wind%
 b%!52 = exp_wind%
-b%!56 = inb_wind%
-b%!60 = goto_wind%
-b%!64 = amenu%
+b%!56 = exp_wind%
+b%!60 = inb_wind%
+b%!64 = goto_wind%
+b%!68 = amenu%
 PROCmenu_load_templates(resources$ + "Menus", b%)
 imenu% = b%!0
-gmenu% = b%!4
-tmenu% = b%!8
-fmenu% = b%!12
-bmenu% = b%!16
-xmenu% = b%!20
-omenu% = b%!24
-vmenu% = b%!28
-cmenu% = b%!32
+mmenu% = b%!4
+REM gmenu% = b%!8
+REM tmenu% = b%!12
+REM fmenu% = b%!16
+bmenu% = b%!20
+REM xmenu% = b%!24
+REM omenu% = b%!28
+REM hmenu% = b%!32
+emenu% = b%!36
+REM smenu% = b%!40
+vmenu% = b%!44
+cmenu% = b%!48
 
-:
-PROCinit_menu(hmenu%,mw%,me%,"Headers")
-PROCst_menu_item(hmenu%,mw%,me%,"Edit...             ‹F8",0,0,0,0,-1,0)
-PROCst_menu_item(hmenu%,mw%,me%,"View transactions... F8",0,1,0,0,-1,0)
-PROCst_menu_item(hmenu%,mw%,me%,"Export",0,0,0,0,fmenu%,0)
-PROCst_menu_item(hmenu%,mw%,me%,"Print...         ‹PRINT",0,0,0,1,-1,0)
-:
-PROCinit_menu(emenu%,mw%,me%,"Edit")
-PROCst_menu_item(emenu%,mw%,me%,"Add to end        F1",0,1,0,0,-1,0)
-PROCst_menu_item(emenu%,mw%,me%,"Insert above ‹INSERT",0,0,1,0,-1,0)
-PROCst_menu_item(emenu%,mw%,me%,"Insert below  INSERT",0,0,1,1,-1,0)
-:
-PROCinit_menu(smenu%,mw%,me%,"Selection")
-PROCst_menu_item(smenu%,mw%,me%,"Cut selection      ^X",0,0,0,0,-1,0)
-PROCst_menu_item(smenu%,mw%,me%,"Copy selection     ^C",0,0,0,0,-1,0)
-PROCst_menu_item(smenu%,mw%,me%,"Replace selection  ^V",0,1,0,0,-1,0)
-PROCst_menu_item(smenu%,mw%,me%,"Delete selection   ^K",0,0,0,0,-1,0)
-PROCst_menu_item(smenu%,mw%,me%,"Remove transactions",0,1,0,0,-1,0)
-PROCst_menu_item(smenu%,mw%,me%,"Clear selection    ^Z",0,0,0,1,-1,0)
-:
-PROCinit_menu(mmenu%,mw%,me%,"Accounts+")
-PROCst_menu_item(mmenu%,mw%,me%,"Misc",0,0,0,0,gmenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Save      F3",0,0,0,0,save%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Transactions",0,0,0,0,tmenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Accounts",0,0,0,0,bmenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"S.Orders",0,0,0,0,omenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Headers",0,0,0,0,hmenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Edit",0,0,0,0,emenu%,0)
-PROCst_menu_item(mmenu%,mw%,me%,"Selection",0,0,1,1,smenu%,0)
 :
 colours%()=7,7,7,7,0,0,0,0,0,7,0,0,7,0,7,7
 :
@@ -2683,7 +2658,7 @@ offset%=((line%-1)*-32)
 IF offset%>0 offest%=0
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 IF mess%=2 THEN line%-=1 :s$=FNmess_trans("Line") ELSE s$=FNmess_trans("Transaction")
 PROCinfo_bar_message("Goto|"+s$+"|"+STR$(line%),mess%)
 ENDPROC
@@ -2783,7 +2758,7 @@ $FNindirection(pane%,5)=account_name$
 PROCredraw_icon(pane%,5)
 $FNindirection(apane%,5)=account_name$
 PROCredraw_icon(apane%,5)
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 modified%=TRUE
 PROCmain_window_title
 PROCinfo_bar_message("UserTitle",3)
@@ -2792,7 +2767,7 @@ ENDPROC
 DEF PROCinitial_balance
 initial%(view_account%)=FNval($FNindirection(inb_wind%,1))
 PROCrecalc
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 modified%=TRUE
 PROCmain_window_title
 PROCinfo_bar_message("InitBal|"+FNpoint(initial%(view_account%)),2)
@@ -3950,7 +3925,7 @@ ELSE
  date%=FNencode_text_date(other_date$)
  date$=FNdecode_given_date(date%)
  other_date$=date$
- PROCdisplay_menu(-1,0,0)
+ PROCmenu_create(-1,0,0)
 ENDIF
 :
 IF date$="" OR FNno_date(date%) THEN date$="No Date" : date%=0
@@ -4323,7 +4298,7 @@ modified%=FALSE
 PROCmain_window_title
 CLOSE#file%
 SYS "OS_File",&12,$FNindirection(save%,1),file_type_accounts%
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 ENDPROC
 :
 DEF PROCsave_account
@@ -4375,7 +4350,7 @@ NEXT loop%
 CLOSE#file%
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_account%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCpreference(19,pref%)
 date_sep$=sep$
 PROCinfo_bar_message("AccExp|"+FNmess_trans("Account"),3)
@@ -4446,7 +4421,7 @@ NEXT loop%
 CLOSE#file%
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCinfo_bar_message("AccExp|"+FNmess_trans("Txt"),3)
 ENDPROC
 :
@@ -4506,7 +4481,7 @@ NEXT loop%
 CLOSE#file%
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_csv%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCinfo_bar_message("AccExp|"+FNmess_trans("CSVN"),3)
 ENDPROC
 :
@@ -4565,7 +4540,7 @@ NEXT loop%
 CLOSE#file%
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCinfo_bar_message("AccExp|"+FNmess_trans("TSVN"),3)
 ENDPROC
 :
@@ -4615,7 +4590,7 @@ FOR loop%=0 TO h_number%-1
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 PROCinfo_bar_message("HeadExp|"+FNmess_trans("Txt"),1)
 ENDPROC
@@ -4655,7 +4630,7 @@ FOR loop%=0 TO h_number%-1
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_csv%
 PROCinfo_bar_message("HeadExp|"+FNmess_trans("CSVN"),1)
 ENDPROC
@@ -4694,7 +4669,7 @@ FOR loop%=0 TO h_number%-1
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 PROCinfo_bar_message("HeadExp|"+FNmess_trans("TSVN"),1)
 ENDPROC
@@ -4750,7 +4725,7 @@ FOR loop%=1 TO size%
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 PROCinfo_bar_message("TranExp|"+FNmess_trans("Txt"),1)
 ENDPROC
@@ -4797,7 +4772,7 @@ FOR loop%=1 TO size%
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_csv%
 PROCinfo_bar_message("TranExp|"+FNmess_trans("CSVN"),1)
 ENDPROC
@@ -4843,7 +4818,7 @@ FOR loop%=1 TO size%
 NEXT loop%
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 SYS "OS_File",&12,$FNindirection(exp_wind%,1),file_type_text%
 PROCinfo_bar_message("TranExp|"+FNmess_trans("TSVN"),1)
 ENDPROC
@@ -5396,7 +5371,7 @@ NEXT loop%
 BPUT#file%,pica$+end$;
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCclose_window(print_wind%)
 ENDPROC
 :
@@ -5537,7 +5512,7 @@ NEXT loop%
 BPUT#file%,formfeed$+end$;
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCclose_window(printh_wind%)
 ENDPROC
 :
@@ -5707,7 +5682,7 @@ NEXT loop%
 BPUT#file%,pica$+end$;
 CLOSE#file%
 SYS "Hourglass_Off"
-PROCdisplay_menu(-1,0,0)
+PROCmenu_create(-1,0,0)
 PROCclose_window(printt_wind%)
 ENDPROC
 :
@@ -6340,17 +6315,6 @@ SYS "Wimp_GetCaretPosition",,q%
 IF i%=-1 THEN q%!4=-1
 =((!q%=w%) AND (q%!4=i%))
 :
-:
-DEF PROCdisplay_bar_menu(menu%,items%,dots%,x%)
-menuup%=menu%
-SYS "Wimp_CreateMenu",,menu%,x%-64,96+(items%*44)+(dots%*24)
-ENDPROC
-:
-DEF PROCdisplay_menu(menu%,x%,y%)
-menuup%=menu%
-SYS "Wimp_CreateMenu",,menu%,x%-64,y%
-ENDPROC
-:
 DEF PROCset_menu_title(menu%,title$)
 $menu%=title$:menu%?12=7
 ENDPROC
@@ -6389,19 +6353,6 @@ menu%!16=(width%+1)*16:menu%!20=44
 menu%!24=0:end%=menu%+28
 ENDPROC
 :
-DEF PROCst_menu_item(menu%,RETURN width%,RETURN end%,text$,tick%,dot%,shade%,last%,link%,warn%)
-LOCAL f%,d%
-IF LEN(text$)<12 THEN
-f%=FNst_menu_flags(shade%)
-PROCmenu_item(menu%,width%,end%,text$,tick%,dot%,shade%,last%,link%,write%,warn%,f%,0,0,0)
-ELSE
-DIM d% LEN(text$)
-$d%=text$
-f%=FNmenu_flags(1,0,0,0,0,1,0,0,shade%,7,0,0)
-PROCmenu_item(menu%,width%,end%,text$,tick%,dot%,shade%,last%,link%,write%,warn%,f%,d%,-1,LEN(text$)+1)
-ENDIF
-ENDPROC
-:
 DEF PROCmenu_item(menu%,RETURN width%,RETURN end%,text$,tick%,dot%,shade%,last%,link%,write%,mess%,flag%,icon1%,icon2%,icon3%)
 LOCAL f%,ist%
 f%=tick%+(dot%<<1)+(write%<<2)+(mess%<<3)+(last%<<7)
@@ -6425,12 +6376,6 @@ ELSE
 flag%+=(font%<<24)
 ENDIF
 =flag%
-:
-DEF FNst_menu_flags(shade%)
-=FNmenu_flags(1,0,0,0,0,0,0,0,shade%,7,0,0)
-:
-DEF FNm_flags(fg%,bg%)
-=FNmenu_flags(1,0,0,0,0,0,0,0,0,fg%,bg%,0)
 :
 DEF PROCset_cmenu_tick(c%)
 LOCAL loop%

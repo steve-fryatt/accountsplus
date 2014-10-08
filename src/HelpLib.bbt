@@ -603,7 +603,7 @@ CASE window% OF
  OTHERWISE
   SYS "Wimp_GetMenuState",1,q%,window%,icon%
   s1%=!q% : s2%=q%!4 : s3%=q%!8 : s4%=q%!12
-  CASE menuup% OF
+  CASE FNmenu_current_handle OF
    WHEN imenu%
     CASE s1% OF
      WHEN 0 : h$="Move the pointer right to see information about Accounts+."

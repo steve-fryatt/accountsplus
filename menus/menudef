@@ -40,6 +40,40 @@ menu(icon_bar_menu, "Accounts+")
 
 
 /**
+ * Main Menu
+ */
+
+menu(main_menu ,"Accounts+")
+{
+	item("Misc") {
+		submenu(main_misc_menu);
+	}
+	item("Save      F3") {
+		d_box(save_box);
+	}
+	item("Transactions") {
+		submenu(main_transactions_menu);
+	}
+	item("Accounts") {
+		submenu(main_accounts_menu);
+	}
+	item("S.Orders") {
+		submenu(main_sorders_menu);
+	}
+	item("Headers") {
+		submenu(main_headers_menu);
+	}
+	item("Edit") {
+		submenu(main_edit_menu);
+	}
+	item("Selection") {
+		shaded;
+		submenu(main_selection_menu);
+	}
+}
+
+
+/**
  * Main -> Misc Menu
  */
 
@@ -180,6 +214,60 @@ menu(main_sorders_menu, "S.Orders")
 		dotted;
 	}
 	item("Update");
+}
+
+
+/**
+ * Main -> Headers Menu
+ */
+
+menu(main_headers_menu, "Headers")
+{
+	item("Edit...             ‹F8");
+	item("View transactions... F8") {
+		dotted;
+	}
+	item("Export") {
+		submenu(main_transactions_export_menu);
+	}
+	item("Print...         ‹PRINT");
+}
+
+
+/**
+ * Main -> Edit Menu
+ */
+
+menu(main_edit_menu, "Edit")
+{
+	item("Add to end        F1") {
+		dotted;
+	}
+	item("Insert above ‹INSERT") {
+		shaded;
+	}
+	item("Insert below  INSERT") {
+		shaded;
+	}
+}
+
+
+/**
+ * Main -> Selection Menu
+ */
+
+menu(main_selection_menu, "Selection")
+{
+	item("Cut selection      ^X");
+	item("Copy selection     ^C");
+	item("Replace selection  ^V") {
+		dotted;
+	}
+	item("Delete selection   ^K");
+	item("Remove transactions") {
+		dotted;
+	}
+	item("Clear selection    ^Z");
 }
 
 
