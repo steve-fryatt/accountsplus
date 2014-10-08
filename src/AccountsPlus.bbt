@@ -2587,7 +2587,7 @@ IF yh% MOD 32<>0 THENyh%-=(yh% MOD 32)
 yh%-=64
 offset%=b%!24
 offset%+=yh%
-IF offset%>0 offest%=0
+IF offset%>0 offset%=0
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
 ENDPROC
@@ -2601,7 +2601,7 @@ IF yh% MOD 32<>0 THENyh%-=(yh% MOD 32)
 yh%-=64
 offset%=b%!24
 offset%-=yh%
-IF offset%<-31520 offest%=-31520
+IF offset%<-31520 offset%=-31520
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
 ENDPROC
@@ -2626,7 +2626,7 @@ LOCAL offset%
 SYS "Wimp_GetWindowState",,b%
 offset%=b%!24
 offset%+=32
-IF offset%>0 offest%=0
+IF offset%>0 offset%=0
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
 ENDPROC
@@ -2637,7 +2637,7 @@ LOCAL offset%
 SYS "Wimp_GetWindowState",,b%
 offset%=b%!24
 offset%-=32
-IF offset%<-31520 offest%=-31520
+IF offset%<-31520 offset%=-31520
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
 ENDPROC
@@ -2652,7 +2652,7 @@ IF line%<1 THEN line%=1
 !b%=window%
 SYS "Wimp_GetWindowState",,b%
 offset%=((line%-1)*-32)
-IF offset%>0 offest%=0
+IF offset%>0 offset%=0
 b%!24=offset%
 SYS "Wimp_OpenWindow",,b%
 PROCmenu_create(-1,0,0)
