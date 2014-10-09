@@ -1,136 +1,84 @@
->!Help File for Accounts+ Version 1.30
-Released 20th July 1995
------------------------------------------------------------------------------
-
-All code is copyright Stephen Fryatt, 1995.
-This is the second release version of the Accounts+ Software.
-(C) Stephen Fryatt, 1995
-
-Please read 'Section G: Technical Details and Copyright' before use.
-This software requires RISC OS 3.11 or later to work correctly.
-
-Accounts+ is NOT FREEWARE.
-
-It MAY NOT be copied without my permission.
-
------------------------------------------------------------------------------
-Interactive Help for use with Acorn's !Help, or any other suitable
-application (for example 'Bubble Help') is provided.  If it is turned off,
-see 'Section F: The Preferences' for more details on how to turn it on.
------------------------------------------------------------------------------
-This !Help File can be viewed in a number of ways from Accounts+.  Select
-'App. '!Accounts+':Help' from the filer menu when outside the program.  If
-Accounts+ is loaded, either select 'Help' from the icon-bar menu, click on
-the Help icon in the bottom right of the edit-bar, or press Ctrl-F1.
------------------------------------------------------------------------------ 
+<document title="Accounts+">
+<define name="version" value="1.30">
+<define name="date" value="20 July 1995" length=30 align="right">
 
 
-Contents
-========
-
-     Section A:    Introducing Accounts+
-                   A.1: What is Accounts+?
-                   A.2: Loading Accounts+
-                   A.3: The Transaction Window
-                   A.4: The Menus
-                   A.5: Saving and Loading Accounts Files
-                   A.6: Importing Files
-
-     Section B:    Bank Accounts
-                   B.1: Creating and Editing Accounts
-                   B.2: Viewing Accounts
-                   B.3: Exporting Accounts
-                   B.4: Printing Accounts
-                   B.5: Controlling the Printer
-
-     Section C:    Headers
-                   C.1: What Are Headers?
-                   C.2: Creating Headers
-                   C.3: Viewing Headers
-                   C.4: Exporting Headers
-                   C.5: Printing Headers
-
-     Section D:    Transactions
-                   D.1: Entering Transactions
-                   D.2: Editing Transactions
-                   D.3: Copying Transactions
-                   D.4: Deleting and Removing Transactions
-                   D.5: Automatic Transactions
-                   D.6: Viewing Forthcoming Automatic Transactions
-                   D.7: Exporting Transactions
-                   D.8: Printing Transactions
-
-     Section E:    Miscellaneous Features
-                   E.1: Searching
-                   E.2: Goto
-                   E.3: Sorting By Date
-                   E.4: User Title
-                   E.5: Clear File
-                   E.6: Viewing Balances
-                   E.7: Initial Balances
-                   E.8: Updating Transactions
-                   E.9: Keyboard Shortcuts
-                   E.0: Dates
-
-     Section F:    The Preferences
-
-     Section G:    Technical Details and Copyright
 
 
-Section A: Introducing Accounts+
-================================
+
+<literal mode="Text">
+=============================================================================
+Accounts+ - Simple Accounts Manager                              Version $$version$$
+
+(c) Stephen Fryatt, 1995-2014                  $$date$$
+=============================================================================
+
+</literal>
 
 
-A.1: What is Accounts+?
------------------------
-
-Accounts+ is an accounting program that can be used to keep track of home
-accounts, over up to 10 bank accounts.  Details are entered as transactions
-between two places, and the software builds up 'bank statements' (see 'B.2:
-Viewing Accounts'), which can be viewed.  Standing orders can be
-automatically controlled (see 'D.5: Automatic Transactions'), and income from
-or expenditure to certain places can be calculated (see 'Section C:
-Headers').
-
-The most 'important' features are:
-
-  * Support for up to 10 interconnected bank accounts, between which
-    transfers of money can take place.
-  * Up to 30 transactions which can take place automatically, at any time
-    interval specified.
-  * Up to 30 expense headers definable, over any period of time required, to
-    calculate income or expenditure.
-  * Full integration of date information, allowing transactions to be ordered
-    by date quickly and easily.
-  * Support for import of CSV, TSV and Account files, maintaining
-    compatibility with other software.
-  * Export in any of CSV, TSV, ASCII, and Account formats, allowing data to
-    be used in other packages.
-  * Direct support for printers, allowing account details to be printed out
-    quickly in a neat, 'draft' format.
-  * Full, on-line, interactive help provided for all dialogue boxes and
-    windows.
 
 
-A.2: Loading Accounts+
-----------------------
 
-To load Accounts+, double-click on the !Accounts+ icon in a directory viewer.
-This loads Accounts+, and installs its icon on the right hand side of the
-icon-bar.  Click on this icon to open the Transaction Window (see 'A.3: The
-Transaction Window').
+<chapter title="License" file="License">
+
+<cite>Accounts+</cite> is licensed under the EUPL, Version&nbsp;1.1 only (the &ldquo;Licence&rdquo;); you may not use this work except in compliance with the Licence.
+
+You may obtain a copy of the Licence at <link ref="#url http://joinup.ec.europa.eu/software/page/eupl">http://joinup.ec.europa.eu/software/page/eupl</link>
+
+Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an &ldquo;<strong>as is</strong>&rdquo; basis, <strong>without warranties or conditions of any kind</strong>, either express or implied.
+
+See the Licence for the specific language governing permissions and limitations under the Licence.
+
+The source for <cite>Accounts+</cite> can be found alongside this binary download, at <link ref="#url http://www.stevefryatt.org.uk/software">http://www.stevefryatt.org.uk/software</link>
+
+The necessary libraries and build tools can be found at <link ref="#url http://www.stevefryatt.org.uk/software/build">http://www.stevefryatt.org.uk/software/build</link>
+
+</chapter>
+
+
+
+
+<chapter title="Getting Help" file="Help">
+
+Interactive Help for use with Acorn&rsquo;s <cite>Help</cite>, or any other suitable application (for example <cite>Bubble Help</cite>) is provided. If it is turned off, see <link ref="Prefs">The Preferences</link> for more details on how to turn it on.
+
+This manual can be viewed in a number of ways from <cite>Accounts+</cite>.  Select <menu>App. '!Accounts+':Help'</menu> from the Filer menu when outside the program. If <cite>Accounts+</cite> is loaded, either select <menu>Help</menu> from the iconbar menu, click on the <icon>help</icon> button in the bottom right of the edit-bar, or press <key>Ctrl</key>-<key>F1</key>.
+
+</chapter>
+
+
+
+
+<chapter title="Introducing Accounts+" file="Intro">
+
+<cite>Accounts+</cite> is an accounting program that can be used to keep track of home accounts, over up to 10 bank accounts. Details are entered as transactions between two places, and the software builds up &lsquo;bank statements&rsquo; (see 'B.2: Viewing Accounts'), which can be viewed.  Standing orders can be automatically controlled (see 'D.5: Automatic Transactions'), and income from or expenditure to certain places can be calculated (see 'Section C: Headers').
+
+The most &lsquo;important&rsquo; features are:
+
+<list>
+<li>Support for up to 10 interconnected bank accounts, between which transfers of money can take place.
+<li>Up to 30 transactions which can take place automatically, at any time interval specified.
+<li>Up to 30 expense headers definable, over any period of time required, to calculate income or expenditure.
+<li>Full integration of date information, allowing transactions to be ordered by date quickly and easily.
+<li>Support for import of CSV, TSV and Account files, maintaining compatibility with other software.
+<li>Export in any of CSV, TSV, ASCII, and Account formats, allowing data to be used in other packages.
+<li>Direct support for printers, allowing account details to be printed out quickly in a neat, &lsquo;draft&rsquo; format.
+<li>Full, on-line, interactive help provided for all dialogue boxes and windows.
+</list>
+
+
+<subhead title="Loading Accounts+">
+
+<cite>Accounts+</cite> requires RISC&nbsp;OS&nbsp;3.11 or later to work correctly. It will not work under the older RISC&nbsp;OS&nbsp;2 operating system. <cite>Accounts+</cite> was developed on RISC&nbsp;OS&nbsp;3.5, and is consequently RiscPC compatible.
+
+To load <cite>Accounts+</cite>, double-click on the <file>!Accounts+</file> icon in a directory viewer. This loads <cite>Accounts+</cite>, and installs its icon on the right hand side of the iconbar. Click on this icon to open the <window>Transaction</window> Window (see 'A.3: The Transaction Window').
 
 The loading window will open, and remain on screen until you click the mouse.
 
 
-A.3: The Transaction Window
----------------------------
+<subhead title="The Transaction Window">
 
-This is the main window of the program, in which all the editing is done. 
-Along the top of the window is a toolbar showing the status of the software
-and optionally giving access to features through a 'button-bar' (see 'Section
-F: The Preferences').  Along the bottom is an editing bar, allowing editing
-of individual transactions.
+This is the main window of the program, in which all the editing is done. Along the top of the window is a toolbar showing the status of the software and optionally giving access to features through a 'button-bar' (see 'Section F: The Preferences').  Along the bottom is an editing bar, allowing editing of individual transactions.
 
 From left to right, the buttons on the button-bar (if visible) are:
 
@@ -145,27 +93,18 @@ From left to right, the buttons on the button-bar (if visible) are:
      Clear Selection          (see 'D.2: Editing Transactions')
      Delete Transaction       (see 'D.4: Deleting and Removing Transactions')
 
-On the far right of the toolbar is the name of the accounts that are being
-edited (see 'E.4: User Title'), and to the left of this the total balance in
-all the accounts.  Finally, in the centre the current date - as used by
-standing orders (see 'D.5: Automatic Transactions', and 'E.0: Dates') - is
-displayed.
+On the far right of the toolbar is the name of the accounts that are being edited (see 'E.4: User Title'), and to the left of this the total balance in all the accounts.  Finally, in the centre the current date &ndash; as used by standing orders (see 'D.5: Automatic Transactions', and 'E.0: Dates') &ndash; is displayed.
 
-If the button-bar is not displayed, then a status-bar is shown instead.  This
-shows information about the selected transaction and other operations.  See
-'Section F: The Preferences' for more information on how to select these
-features.
+If the button-bar is not displayed, then a status-bar is shown instead. This shows information about the selected transaction and other operations. See 'Section F: The Preferences' for more information on how to select these features.
 
 The editing bar is explained in 'D.2: Editing Transactions'.
 
 Clicking MENU over the Transaction window will display the main menu.
 
 
-A.4: The Menus
---------------
+<subhead title="The Menus">
 
-Accounts+ contains a selection of menus.  These are outlined below, with
-references to where the relevant information can be found in this file.
+<cite>Accounts+</cite> contains a selection of menus.  These are outlined below, with references to where the relevant information can be found in this file.
 
 
 The Icon Bar menu
@@ -550,10 +489,13 @@ format.
 When the window is set up correctly, click on 'Import' to begin the importing
 process, or click 'Cancel' to cancel the operation.
 
+</chapter>
 
-Section B: Bank Accounts
-========================
 
+
+
+
+<chapter title="Bank Accounts" file="Accounts">
 
 B.1: Creating and Editing Accounts
 ----------------------------------
@@ -903,10 +845,13 @@ Form Feed        This code moves the print head to the end of a page.  IT
 Once the codes have been set, click on 'OK' to store them, or 'Save' to save
 them as defaults.  Click on 'Cancel' to forget any changes.
 
+</chapter>
 
-Section C: Headers
-==================
 
+
+
+
+<chapter title="Headers" file="Headers">
 
 C.1: What Are Headers?
 ----------------------
@@ -1116,10 +1061,13 @@ An example page containing the full works may look like this:
    Bonus       In             07/06/1992    33.17             -33.17
    Interest    In  07/02/1990              172.99            -172.99 
 
+</chapter>
 
-Section D: Transactions
-=======================
 
+
+
+
+<chapter title="Transactions" file="Trans">
 
 D.1: Entering Transactions
 --------------------------
@@ -1451,10 +1399,13 @@ When ready, click on 'Print' or press RETURN to print.  'Set values' will
 store the current settings in memory, while 'Save values' will save them to
 disc for future use.  'Cancel' will cancel the printing.
 
+</chapter>
 
-Section E: Miscellaneous Features
-=================================
 
+
+
+
+<chapter title="Miscellaneous Features" file="Misc">
 
 E.1: Searching
 --------------
@@ -1654,9 +1605,13 @@ is a user date.  It is advisable to turn off automatic standing orders (see
 
 See 'Section F: The Preferences' for more details on how dates work.
 
+</chapter>
 
-Section F: The Preferences
-==========================
+
+
+
+
+<chapter title="The Preferences" file="Prefs">
 
 The preferences allow Accounts+ to be set up to operate in the way you want. 
 To open the Preferences Window, select 'Preferences...' from the icon-bar
@@ -1833,18 +1788,13 @@ Transactions Window).  Two extra options will appear in the button-bar of the
 Account Window: allowing you to delete the selected line, and clear the
 selection.
 
-
-Section G: Technical Details and Copyright
-==========================================
+</chapter>
 
 
-RISC OS 3 and The Risc PC
--------------------------
 
-Accounts+ requires RISC OS 3.11 or later to work correctly.  It will not work
-under the older RISC OS 2 operating system.  Accounts+ was developed on RISC
-OS 3.5, and is consequently Risc PC compatible.
 
+
+<chapter title="Technical Details and Copyright" file="Tech">
 
 File Types
 ----------
@@ -1940,3 +1890,24 @@ distributed for a profit!
 The code may not be altered in any way.
 
 (C) Stephen Fryatt, 1995
+
+</chapter>
+
+
+
+
+<literal mode="Text">
+
+Updates and Contacting Me
+-------------------------
+
+  If you have any comments about Accounts+, or would like to report any bugs
+  that you find, you can email me at the address below.
+
+  Updates to Accounts+ and more programs for RISC OS computers can be found
+  on my website at http://www.stevefryatt.org.uk/software/
+
+  Stephen Fryatt
+  email: steve@stevefryatt.org.uk
+</literal>
+
