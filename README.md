@@ -9,7 +9,7 @@ Introduction
 
 Accounts+ is a simple Bank Account Manager which can track a number of bank accounts.
 
-It is not under active development, and there is currently no release in anything other than source form. Potential users are instead directed towards CashBook.
+It is not under active development, and there is currently no plan to release in anything other than source form. Potential users are instead directed towards CashBook.
 
 
 Building
