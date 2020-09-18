@@ -1195,8 +1195,12 @@ DIM b% 4300,q% 256,az% 256, a% 255
 
 REM Locate the application resources.
 
-resources$ = FNresources_find_territory_folder("<Accounts+$Dir>.Resources")
+PROCresources_initialise_paths("<Accounts+$Dir>.Resources", "UK", "Accounts+$Language")
 
+REM Load the messages file.
+
+resources$ = FNresources_find_file("Messages", &FFF)
+IF resources$ = "" THEN ERROR 255, "Unable to find Messages file"
 
 DIM message_list% 38
 !message_list%=&502
@@ -1217,9 +1221,9 @@ os_350%=(wimp%>=350)
 :
 :
 DIM messages% 16
-SYS "MessageTrans_FileInfo",,resources$+"Messages" TO flags%,,length%
+SYS "MessageTrans_FileInfo",,resources$ TO flags%,,length%
 IF flags% AND 1 THEN m_block%=0 ELSE DIM m_block% length%
-SYS "MessageTrans_OpenFile",messages%,resources$+"Messages",m_block%
+SYS "MessageTrans_OpenFile",messages%,resources$,m_block%
 :
 accounts%=10
 per_account%=500
@@ -1247,10 +1251,13 @@ sp_area%=FNload_sprites("<Accounts+$Dir>.Sprites")
 :
 banner%=FNload_sprites("<Accounts+$Dir>.Banner")
 :
+resources$ = FNresources_find_file("Templates", &FEC)
+IF resources$ = "" THEN ERROR 255, "Unable to find Templates file"
+:
 ind_size%=11000
 :
 DIM ind_data% ind_size%
-PROCopen_templates(resources$+"Templates")
+PROCopen_templates(resources$)
 to%=FNload_template("Intro",b%,ind_data%,ind_size%)
 b%!64=banner%
 SYS "Wimp_CreateWindow",,b% TO welcome%
@@ -1388,6 +1395,9 @@ DIM time_format% 128, time_string% 128
 
 REM Configure the menus.
 
+resources$ = FNresources_find_file("Menus", &FFD)
+IF resources$ = "" THEN ERROR 255, "Unable to find Menus file"
+
 DIM amenu% 300
 DIM wmenu% 999,ymenu% 999,zmenu% 999
 mw%=0 : me%=0
@@ -1412,7 +1422,7 @@ b%!56 = exp_wind%
 b%!60 = inb_wind%
 b%!64 = goto_wind%
 b%!68 = amenu%
-PROCmenu_load_templates(resources$ + "Menus", b%)
+PROCmenu_load_templates(resources$, b%)
 imenu% = b%!0
 mmenu% = b%!4
 REM gmenu% = b%!8
