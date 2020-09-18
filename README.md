@@ -1,5 +1,5 @@
-Accounts++
-========
+Accounts+
+=========
 
 A Simple Manager for multiple Bank Accounts.
 
