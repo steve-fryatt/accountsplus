@@ -21,7 +21,7 @@ Accounts+ - Simple Accounts Manager                              Version $$versi
 
 <chapter title="License" file="License">
 
-<cite>Accounts+</cite> is licensed under the EUPL, Version&nbsp;1.1 only (the &ldquo;Licence&rdquo;); you may not use this work except in compliance with the Licence.
+<cite>Accounts+</cite> is licensed under the EUPL, Version&nbsp;1.2 only (the &ldquo;Licence&rdquo;); you may not use this work except in compliance with the Licence.
 
 You may obtain a copy of the Licence at <link ref="#url http://joinup.ec.europa.eu/software/page/eupl">http://joinup.ec.europa.eu/software/page/eupl</link>
 
@@ -116,10 +116,10 @@ icon bar.  It contains items relating to the program.
   +----------------------+
   |      Accounts+       |
   +----------------------+
-  |  Info...            ‰|  Leads to the Program Information Box
+  |  Info...            ï¿½|  Leads to the Program Information Box
   |- - - - - - - - - - - |
   |  Preferences...      |  See 'Section F: The Preferences'
-  |  Printer... ‹^PRINT  |  See 'B.5: Controlling the Printer'
+  |  Printer... ï¿½^PRINT  |  See 'B.5: Controlling the Printer'
   |  Help...        ^F1  |  Opens the !Help Viewer (this window)
   |- - - - - - - - - - - |
   |  Quit                |  Quits Accounts+
@@ -136,14 +136,14 @@ file being edited.  Virtually every option can be accessed from here.
   +----------------+
   |   Accounts+    |
   +----------------+
-  |  Misc         ‰|  Leads to the Misc Menu (see below)
-  |  Save      F3 ‰|  See 'A.5: Saving and Loading Accounts Files'
-  |  Transactions ‰|  Leads to the Transactions Menu (see below)
-  |  Accounts     ‰|  Leads to the Accounts Menu (see below)
-  |  S.Orders     ‰|  Leads to the Standing Orders Menu (see below)
-  |  Headers      ‰|  Leads to the Headers Menu (see below)
-  |  Edit         ‰|  Leads to the Edit Menu (see below)
-  |  Selection    ‰|  Leads to the Selection Menu (see below)
+  |  Misc         ï¿½|  Leads to the Misc Menu (see below)
+  |  Save      F3 ï¿½|  See 'A.5: Saving and Loading Accounts Files'
+  |  Transactions ï¿½|  Leads to the Transactions Menu (see below)
+  |  Accounts     ï¿½|  Leads to the Accounts Menu (see below)
+  |  S.Orders     ï¿½|  Leads to the Standing Orders Menu (see below)
+  |  Headers      ï¿½|  Leads to the Headers Menu (see below)
+  |  Edit         ï¿½|  Leads to the Edit Menu (see below)
+  |  Selection    ï¿½|  Leads to the Selection Menu (see below)
   +----------------+
 
 
@@ -156,10 +156,10 @@ fit elsewhere.
   +--------------------+
   |        Misc        |
   +--------------------+
-  |  Info...          ‰|  Leads to the Program Information Box
-  |  File info... ‹F1 ‰|  Leads to the File Information Box
-  |  User title    ^T ‰|  See 'E.4: User Title'
-  |  Set Date         ‰|  See 'E.0: Dates'
+  |  Info...          ï¿½|  Leads to the Program Information Box
+  |  File info... ï¿½F1 ï¿½|  Leads to the File Information Box
+  |  User title    ^T ï¿½|  See 'E.4: User Title'
+  |  Set Date         ï¿½|  See 'E.0: Dates'
   |- - - - - - - - - - |
   |  Clear file        |  See 'E.5: Clear File'
   +--------------------+
@@ -175,12 +175,12 @@ Window').
   +--------------------------+
   |       Transactions       |
   +--------------------------+
-  |  Search & replace... F4 ‰|  See 'E.1: Searching'
-  |  Goto transaction    F5 ‰|  See 'E.2: Goto'
+  |  Search & replace... F4 ï¿½|  See 'E.1: Searching'
+  |  Goto transaction    F5 ï¿½|  See 'E.2: Goto'
   |  Sort by dates       F6  |  See 'E.3: Sort By Date'
   |  Update transactions     |  See 'E.8: Updating Transactions'
   |- - - - - - - - - - - - - |
-  |  Export                 ‰|  See 'D.7: Exporting Transactions'
+  |  Export                 ï¿½|  See 'D.7: Exporting Transactions'
   |  Print           ^PRINT  |  See 'D.8: Printing Transactions'
   +--------------------------+
 
@@ -194,12 +194,12 @@ accounts.
   +-----------------------+
   |       Accounts        |
   +-----------------------+
-  |  View account        ‰|  See 'B.2: Viewing Accounts'
+  |  View account        ï¿½|  See 'B.2: Viewing Accounts'
   |  View balances... F7  |  See 'E.6: Viewing Balances'
-  |  Edit...         ‹F7  |  See 'B.1: Creating and Editing Accounts'
+  |  Edit...         ï¿½F7  |  See 'B.1: Creating and Editing Accounts'
   |- - - - - - - - - - - -|
-  |  Export              ‰|  See 'B.3: Exporting Accounts'
-  |  Print...      PRINT ‰|  See 'B.4: Printing Accounts'
+  |  Export              ï¿½|  See 'B.3: Exporting Accounts'
+  |  Print...      PRINT ï¿½|  See 'B.4: Printing Accounts'
   +-----------------------+
 
 
@@ -211,7 +211,7 @@ This sub-menu of the main menu contains options relating to standing orders.
   +----------------------+
   |       S.Orders       |
   +----------------------+
-  |  Edit...        ‹F6  |  See 'D.5: Automatic Transactions'
+  |  Edit...        ï¿½F6  |  See 'D.5: Automatic Transactions'
   |  Forthcoming... ^F6  |  See 'D.6: Viewing Forthcoming Automatic
   |- - - - - - - - - - - |       Transactions'
   |  Update              |  See 'D.5: Automatic Transactions'
@@ -227,11 +227,11 @@ that deal with headers.
   +---------------------------+
   |          Headers          |
   +---------------------------+
-  |  Edit...             ‹F8  |  See 'C.2: Creating Headers'
+  |  Edit...             ï¿½F8  |  See 'C.2: Creating Headers'
   |  View transactions... F8  |  See 'C.3: Viewing Headers'
   |- - - - - - - - - - - - - -|
-  |  Export                  ‰|  See 'C.4: Exporting Headers'
-  |  Print...         ‹PRINT  |  See 'C.5: Printing Headers'
+  |  Export                  ï¿½|  See 'C.4: Exporting Headers'
+  |  Print...         ï¿½PRINT  |  See 'C.5: Printing Headers'
   +---------------------------+
 
 
@@ -246,7 +246,7 @@ transactions into the Transaction window (see 'A.3: The Transaction Window').
   +------------------------+
   |  Add to end        F1  |  See 'D.1: Entering Transactions'
   |- - - - - - - - - - - - |
-  |  Insert above ‹INSERT  |  See 'D.2: Editing Transactions'
+  |  Insert above ï¿½INSERT  |  See 'D.2: Editing Transactions'
   |  Insert below  INSERT  |  See 'D.2: Editing Transactions'
   +------------------------+
 
@@ -282,18 +282,18 @@ Exporting Accounts') and one for exporting transactions and headers (see
 The export accounts menu:  +------------------+
                            |      Export      |
                            +------------------+
-                           |  Account    ‹F3 ‰|
-                           |  CSV        ^F3 ‰|
-                           |  TSV       ‹^F3 ‰|
-                           |  ASCII Text     ‰|
+                           |  Account    ï¿½F3 ï¿½|
+                           |  CSV        ^F3 ï¿½|
+                           |  TSV       ï¿½^F3 ï¿½|
+                           |  ASCII Text     ï¿½|
                            +------------------+
 
 The export headers and transactions menu:  +--------------+
                                            |    Export    |
                                            +--------------+
-                                           |  CSV        ‰|
-                                           |  TSV        ‰|
-                                           |  ASCII Text ‰|
+                                           |  CSV        ï¿½|
+                                           |  TSV        ï¿½|
+                                           |  ASCII Text ï¿½|
                                            +--------------+
 
 The options available in these menus are self-explanatory.
@@ -308,14 +308,14 @@ This menu is accessed by clicking MENU over the View Account window (see
   +------------------------+
   |        Account         |
   +------------------------+
-  |  Initial balance      ‰|  See 'E.7: Initial Balances'
-  |  Goto line        ‹F5 ‰|  See 'E.2: Goto'
+  |  Initial balance      ï¿½|  See 'E.7: Initial Balances'
+  |  Goto line        ï¿½F5 ï¿½|  See 'E.2: Goto'
   |- - - - - - - - - - - - |
-  |  View account         ‰|  See 'B.2: Viewing Accounts'
+  |  View account         ï¿½|  See 'B.2: Viewing Accounts'
   |  View balances...  F7  |  See 'E.6: Viewing Balances'
-  |  Edit accounts... ‹F7  |  See 'B.1: Creating and Editing Accounts'
+  |  Edit accounts... ï¿½F7  |  See 'B.1: Creating and Editing Accounts'
   |- - - - - - - - - - - - |
-  |  Export               ‰|  See 'B.3: Exporting Accounts'
+  |  Export               ï¿½|  See 'B.3: Exporting Accounts'
   |  Print...       PRINT  |  See 'B.4: Printing Accounts'
   +------------------------+
 
@@ -727,7 +727,7 @@ Account window will open.
 
 At the top of this window is the name of the account to be printed.  Select
 the lines that you wish to print from the Print section: 'All' for all the
-lines, or 'From #¹ To #²' to print only the lines from line #¹ to line #²
+lines, or 'From #ï¿½ To #ï¿½' to print only the lines from line #ï¿½ to line #ï¿½
 inclusive.  The Margins section controls the space around the printed page,
 in either lines or columns.  'Page length' is the overall length of the page,
 including margins.  This is usually set to 62 or 64 for dot-matrix printers. 
@@ -781,7 +781,7 @@ features.  The codes required can be found in your printer's manual.
 Codes are entered into the white boxes.  To send an ASCII code, simply enter
 its value; to send a string, enclose it in double quotes, "like this".  Items
 in this list are separated by commas.  For example, the IBM proprinter code
-to print a pound sign ('£') is 'ESC ^ 156'.  This means send the ESC code
+to print a pound sign ('ï¿½') is 'ESC ^ 156'.  This means send the ESC code
 (ASCII 27), followed by a '^', followed by ASCII 156.  To enter this into the
 Control window, you would use '27,"^",156'.  Similarly, to turn underline on
 on the IBM proprinter, the sequence 'ESC - 1' is needed.  This would
@@ -833,14 +833,14 @@ Line Feed        This code is sent to the printer at the end of each line,
 Form Feed        This code moves the print head to the end of a page.  IT
                  MUST ALWAYS BE INCLUDED IN THE CONTROL LIST.
 
-'£' Mapping      Because ASCII is an American standard, the pound sign ('£')
+'ï¿½' Mapping      Because ASCII is an American standard, the pound sign ('ï¿½')
                  does not have a standard code number, and is left to the
                  printer and computer manufacturers to decide upon.  This
-                 means that each printer has a different code to print a '£'. 
-                 Use this box to enter a code sequence to print a '£', if it
+                 means that each printer has a different code to print a 'ï¿½'. 
+                 Use this box to enter a code sequence to print a 'ï¿½', if it
                  varies from the Epson '163' as used by Acorn computers. 
                  This code often involves switching character sets, printing
-                 the '£', and then switching back again.
+                 the 'ï¿½', and then switching back again.
 
 Once the codes have been set, click on 'OK' to store them, or 'Save' to save
 them as defaults.  Click on 'Cancel' to forget any changes.
@@ -1106,7 +1106,7 @@ If an inappropriate header is typed into a field (a 'From' header into the
 'To' field or vice versa), then the entry is made into a standard entry.
 
 'Amount' carries the amount of money transferred.  This can be entered in the
-form 123.45 (for £123.45) or 123 (for £123).  The 'Description' field
+form 123.45 (for ï¿½123.45) or 123 (for ï¿½123).  The 'Description' field
 contains a textual description of the transaction, useful if both 'From' and
 'To' are either accounts or headers.
 
@@ -1232,7 +1232,7 @@ months - the day is derived from the start date: see below).  'Every # days'
 will leave an interval of # days between each transaction.  Up to 2 digits
 can be entered into each box.
 
-Transfer describes the transaction that will take place.  Enter into the '£'
+Transfer describes the transaction that will take place.  Enter into the 'ï¿½'
 box the amount of money to be transferred (as '123.45' or '123').  In From,
 enter the source of the transaction (the 'From' field), and in To the
 destination (the 'To' field).  Clicking SELECT on the two menu buttons will
@@ -1379,8 +1379,8 @@ record.  To do this, select 'Transactions:Print...' from the main menu, or
 press Ctrl-PRINT.  The Print Transactions window will open.
 
 At the top of this window is the Print section.  Select 'All' to print all
-the transactions, or 'From #¹ to #²' to print all the transactions from #¹ to
-#².  Enter the required values into the boxes.  The Margins section controls
+the transactions, or 'From #ï¿½ to #ï¿½' to print all the transactions from #ï¿½ to
+#ï¿½.  Enter the required values into the boxes.  The Margins section controls
 the space around the page.  Use the up and down arrows to adjust the values. 
 'Top' is the number of lines left at the top of each page, and 'Base' the
 number of lines left below.  'Left' and 'Right' are the columns left to the
@@ -1525,7 +1525,7 @@ Transactions').
 To set the initial balance, select 'Initial balance' from the account menu,
 or click on the 'Initial Balance' button in the button-bar of the Account
 Window (see 'B.2: Viewing Accounts').  Type the new amount into the box (as
-123.45 for £123.45, or 123 for £123), and click on 'OK' or press RETURN to
+123.45 for ï¿½123.45, or 123 for ï¿½123), and click on 'OK' or press RETURN to
 set the new initial balance.
 
 

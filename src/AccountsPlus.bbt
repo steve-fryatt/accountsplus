@@ -1,10 +1,26 @@
 REM >!RunImage
-REM !Accounts+
-REM Accounting Software
 REM
-REM (C) Stephen Fryatt, 1995
+REM Copyright 1995-2014, Stephen Fryatt (info@stevefryatt.org.uk)
 REM
-REM This code may not be copied or altered without the author's permission.
+REM This file is part of Accounts+:
+REM
+REM   http://www.stevefryatt.org.uk/software/
+REM
+REM Licensed under the EUPL, Version 1.2 only (the "Licence");
+REM You may not use this work except in compliance with the
+REM Licence.
+REM
+REM You may obtain a copy of the Licence at:
+REM
+REM   http://joinup.ec.europa.eu/software/page/eupl
+REM
+REM Unless required by applicable law or agreed to in
+REM writing, software distributed under the Licence is
+REM distributed on an "AS IS" basis, WITHOUT WARRANTIES
+REM OR CONDITIONS OF ANY KIND, either express or implied.
+REM
+REM See the Licence for the specific language governing
+REM permissions and limitations under the Licence.
 :
 REMTRACE TO "RAM:TraceFile" : TRACE ON
 debug%=FALSE
@@ -2729,7 +2745,7 @@ LOCAL title$
 view_account%=a%
 PROCset_tool_state
 PROCset_account_extent(size%(a%))
-$FNindirection(apane%,4)="£"+FNpoint(total%(a%))
+$FNindirection(apane%,4)="ï¿½"+FNpoint(total%(a%))
 PROCredraw_icon(apane%,4)
 PROCscroll_top(acc_view%)
 PROCopen_window(acc_view%)
@@ -3074,12 +3090,12 @@ overall_balance%=0
 FOR loop%=0 TO accounts%-1
 overall_balance%+=total%(loop%)
 NEXT loop%
-$FNindirection(pane%,6)="£"+FNpoint(overall_balance%)
+$FNindirection(pane%,6)="ï¿½"+FNpoint(overall_balance%)
 PROCredraw_icon(pane%,6)
 PROCredraw_window(bal_wind%)
 IF view_account%>-1 THEN
  PROCset_account_extent(size%(view_account%))
- $FNindirection(apane%,4)="£"+FNpoint(total%(view_account%))
+ $FNindirection(apane%,4)="ï¿½"+FNpoint(total%(view_account%))
  PROCredraw_icon(apane%,4)
  PROCredraw_account
 ENDIF
@@ -5337,7 +5353,7 @@ ENDIF
  IF pound$<>"" THEN
   line2$=""
   FOR l%=1 TO LEN(line$)
-   IF MID$(line$,l%,1)="£" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
+   IF MID$(line$,l%,1)="ï¿½" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
   NEXT l%
   line$=line2$
  ENDIF
@@ -5500,7 +5516,7 @@ FOR loop%=0 TO h_number%-1
  IF pound$<>"" THEN
   line2$=""
   FOR l%=1 TO LEN(line$)
-   IF MID$(line$,l%,1)="£" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
+   IF MID$(line$,l%,1)="ï¿½" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
   NEXT l%
   line$=line2$
  ENDIF
@@ -5648,7 +5664,7 @@ ENDIF
  IF pound$<>"" THEN
   line2$=""
   FOR l%=1 TO LEN(line$)
-   IF MID$(line$,l%,1)="£" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
+   IF MID$(line$,l%,1)="ï¿½" THEN line2$+=pound$ ELSE line2$+=MID$(line$,l%,1)
   NEXT l%
   line$=line2$
  ENDIF

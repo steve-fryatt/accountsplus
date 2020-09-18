@@ -1,5 +1,27 @@
 REM >HelpLib
-REM For Accounts+ V1.29
+REM
+REM Copyright 1995-2014, Stephen Fryatt (info@stevefryatt.org.uk)
+REM
+REM This file is part of Accounts+:
+REM
+REM   http://www.stevefryatt.org.uk/software/
+REM
+REM Licensed under the EUPL, Version 1.2 only (the "Licence");
+REM You may not use this work except in compliance with the
+REM Licence.
+REM
+REM You may obtain a copy of the Licence at:
+REM
+REM   http://joinup.ec.europa.eu/software/page/eupl
+REM
+REM Unless required by applicable law or agreed to in
+REM writing, software distributed under the Licence is
+REM distributed on an "AS IS" basis, WITHOUT WARRANTIES
+REM OR CONDITIONS OF ANY KIND, either express or implied.
+REM
+REM See the Licence for the specific language governing
+REM permissions and limitations under the Licence.
+
 DEF PROChelp
 LOCAL window%,icon%,h$,s,t$,s1%,s2%,s3%,s4%,x%,y%,y$
 IF b%!32=pane2% AND b%!36=17 THEN
@@ -57,11 +79,11 @@ CASE window% OF
    ENDCASE
  WHEN pane2%
   CASE icon% OF
-   WHEN 0  : h$="Enter dates here, in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
-   WHEN 1  : h$="Enter the sources of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
-   WHEN 2  : h$="Enter the destinations of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
-   WHEN 3  : h$="Enter the amount of money here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
-   WHEN 4  : h$="Enter a description here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ‹TAB to move to the previous."
+   WHEN 0  : h$="Enter dates here, in the form DD"+date_sep$+"MM"+date_sep$+"YYYY"+y$+".|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ï¿½TAB to move to the previous."
+   WHEN 1  : h$="Enter the sources of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ï¿½TAB to move to the previous."
+   WHEN 2  : h$="Enter the destinations of transactions here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ï¿½TAB to move to the previous."
+   WHEN 3  : h$="Enter the amount of money here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ï¿½TAB to move to the previous."
+   WHEN 4  : h$="Enter a description here.|MClick SELECT to gain the caret.|MUse the cursor keys to move between characters, TAB to move to the next box, and ï¿½TAB to move to the previous."
    WHEN 5  : h$="Click SELECT to add the transaction above to the end of the list."
    WHEN 6  : IF s THEN h$="Click SELECT to allow dates to be entered in the box above." ELSE h$="Click SELECT to use today's date instead of the date entered above."
    WHEN 7,8  : h$="Click SELECT to get a list of accounts that can be entered in the box above.|MClick ADJUST to get a list of headers that can be entered in the box above."
@@ -539,7 +561,7 @@ CASE window% OF
    WHEN 10 : h$="This code turns underline off.|MClick SELECT to gain the caret."
    WHEN 11 : h$="This code is sent at the end of each line to return the printhead to the start of the next line.|MClick SELECT to gain the caret."
    WHEN 12 : h$="This code is sent at the end of each page, to eject the paper.|MClick SELECT to gain the caret."
-   WHEN 13 : h$="This code is used to print a '£' sign.|MClick SELECT to gain the caret."
+   WHEN 13 : h$="This code is used to print a 'ï¿½' sign.|MClick SELECT to gain the caret."
    WHEN 14 : h$="This code turns italic on."
    WHEN 15 : h$="This code turns underline off."
    WHEN 16 : h$="This code turns bold off."
@@ -554,7 +576,7 @@ CASE window% OF
    WHEN 25 : h$="This code turns Pica pitch on."
    WHEN 26 : h$="This code is sent to the printer last, at the end of a print run."
    WHEN 27 : h$="This code turns Elite pitch on."
-   WHEN 28 : h$="This code is used to print a '£' sign."
+   WHEN 28 : h$="This code is used to print a 'ï¿½' sign."
    WHEN 29 : h$="This code turns underline on."
    OTHERWISE : h$="This window allows the printer control codes to be set up."
    ENDCASE

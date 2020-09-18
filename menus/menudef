@@ -4,7 +4,7 @@
  *
  *   http://www.stevefryatt.org.uk/software/
  *
- * Licensed under the EUPL, Version 1.1 only (the "Licence");
+ * Licensed under the EUPL, Version 1.2 only (the "Licence");
  * You may not use this work except in compliance with the
  * Licence.
  *
@@ -31,7 +31,7 @@ menu(icon_bar_menu, "Accounts+")
 		d_box(program_info);
 	}
 	item("Choices...");
-	item("Printer... ‹^PRINT");
+	item("Printer... ï¿½^PRINT");
 	item("Help...        ^F1") {
 		dotted;
 	}
@@ -84,7 +84,7 @@ menu(main_misc_menu, "Misc")
 			warning;
 		}
 	}
-	item("File info... ‹F1") {
+	item("File info... ï¿½F1") {
 		d_box(file_info) {
 			warning;
 		}
@@ -161,7 +161,7 @@ menu(main_accounts_menu, "Accounts")
 		d_box(accounts_menu);
 	}
 	item("View balances... F7");
-	item("Edit...         ‹F7") {
+	item("Edit...         ï¿½F7") {
 		dotted;
 	}
 	item("Export") {
@@ -180,7 +180,7 @@ menu(main_accounts_menu, "Accounts")
 
 menu(main_accounts_export_menu, "Export")
 {
-	item("Account     ‹F3") {
+	item("Account     ï¿½F3") {
 		d_box(export) {
 			warning;
 		}
@@ -190,7 +190,7 @@ menu(main_accounts_export_menu, "Export")
 			warning;
 		}
 	}
-	item("TSV        ‹^F3") {
+	item("TSV        ï¿½^F3") {
 		d_box(export) {
 			warning;
 		}
@@ -209,7 +209,7 @@ menu(main_accounts_export_menu, "Export")
 
 menu(main_sorders_menu, "S.Orders")
 {
-	item("Edit...        ‹F6");
+	item("Edit...        ï¿½F6");
 	item("Forthcoming... ^F6") {
 		dotted;
 	}
@@ -223,14 +223,14 @@ menu(main_sorders_menu, "S.Orders")
 
 menu(main_headers_menu, "Headers")
 {
-	item("Edit...             ‹F8");
+	item("Edit...             ï¿½F8");
 	item("View transactions... F8") {
 		dotted;
 	}
 	item("Export") {
 		submenu(main_transactions_export_menu);
 	}
-	item("Print...         ‹PRINT");
+	item("Print...         ï¿½PRINT");
 }
 
 
@@ -243,7 +243,7 @@ menu(main_edit_menu, "Edit")
 	item("Add to end        F1") {
 		dotted;
 	}
-	item("Insert above ‹INSERT") {
+	item("Insert above ï¿½INSERT") {
 		shaded;
 	}
 	item("Insert below  INSERT") {
@@ -282,7 +282,7 @@ menu(account_window_menu, "Account")
 			warning;
 		}
 	}
-	item("Goto line        ‹F5") {
+	item("Goto line        ï¿½F5") {
 		dotted;
 		d_box(goto_window) {
 			warning;
@@ -292,7 +292,7 @@ menu(account_window_menu, "Account")
 		d_box(accounts_menu);
 	}
 	item("View balances...  F7");
-	item("Edit accounts... ‹F7") {
+	item("Edit accounts... ï¿½F7") {
 		dotted;
 	}
 	item("Export") {
