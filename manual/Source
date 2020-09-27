@@ -116,10 +116,10 @@ icon bar.  It contains items relating to the program.
   +----------------------+
   |      Accounts+       |
   +----------------------+
-  |  Info...            ï¿½|  Leads to the Program Information Box
+  |  Info...            ‰|  Leads to the Program Information Box
   |- - - - - - - - - - - |
   |  Preferences...      |  See 'Section F: The Preferences'
-  |  Printer... ï¿½^PRINT  |  See 'B.5: Controlling the Printer'
+  |  Printer... ‹^PRINT  |  See 'B.5: Controlling the Printer'
   |  Help...        ^F1  |  Opens the !Help Viewer (this window)
   |- - - - - - - - - - - |
   |  Quit                |  Quits Accounts+
@@ -136,14 +136,14 @@ file being edited.  Virtually every option can be accessed from here.
   +----------------+
   |   Accounts+    |
   +----------------+
-  |  Misc         ï¿½|  Leads to the Misc Menu (see below)
-  |  Save      F3 ï¿½|  See 'A.5: Saving and Loading Accounts Files'
-  |  Transactions ï¿½|  Leads to the Transactions Menu (see below)
-  |  Accounts     ï¿½|  Leads to the Accounts Menu (see below)
-  |  S.Orders     ï¿½|  Leads to the Standing Orders Menu (see below)
-  |  Headers      ï¿½|  Leads to the Headers Menu (see below)
-  |  Edit         ï¿½|  Leads to the Edit Menu (see below)
-  |  Selection    ï¿½|  Leads to the Selection Menu (see below)
+  |  Misc         ‰|  Leads to the Misc Menu (see below)
+  |  Save      F3 ‰|  See 'A.5: Saving and Loading Accounts Files'
+  |  Transactions ‰|  Leads to the Transactions Menu (see below)
+  |  Accounts     ‰|  Leads to the Accounts Menu (see below)
+  |  S.Orders     ‰|  Leads to the Standing Orders Menu (see below)
+  |  Headers      ‰|  Leads to the Headers Menu (see below)
+  |  Edit         ‰|  Leads to the Edit Menu (see below)
+  |  Selection    ‰|  Leads to the Selection Menu (see below)
   +----------------+
 
 
@@ -156,10 +156,10 @@ fit elsewhere.
   +--------------------+
   |        Misc        |
   +--------------------+
-  |  Info...          ï¿½|  Leads to the Program Information Box
-  |  File info... ï¿½F1 ï¿½|  Leads to the File Information Box
-  |  User title    ^T ï¿½|  See 'E.4: User Title'
-  |  Set Date         ï¿½|  See 'E.0: Dates'
+  |  Info...          ‰|  Leads to the Program Information Box
+  |  File info... ‹F1 ‰|  Leads to the File Information Box
+  |  User title    ^T ‰|  See 'E.4: User Title'
+  |  Set Date         ‰|  See 'E.0: Dates'
   |- - - - - - - - - - |
   |  Clear file        |  See 'E.5: Clear File'
   +--------------------+
@@ -175,12 +175,12 @@ Window').
   +--------------------------+
   |       Transactions       |
   +--------------------------+
-  |  Search & replace... F4 ï¿½|  See 'E.1: Searching'
-  |  Goto transaction    F5 ï¿½|  See 'E.2: Goto'
+  |  Search & replace... F4 ‰|  See 'E.1: Searching'
+  |  Goto transaction    F5 ‰|  See 'E.2: Goto'
   |  Sort by dates       F6  |  See 'E.3: Sort By Date'
   |  Update transactions     |  See 'E.8: Updating Transactions'
   |- - - - - - - - - - - - - |
-  |  Export                 ï¿½|  See 'D.7: Exporting Transactions'
+  |  Export                 ‰|  See 'D.7: Exporting Transactions'
   |  Print           ^PRINT  |  See 'D.8: Printing Transactions'
   +--------------------------+
 
@@ -194,12 +194,12 @@ accounts.
   +-----------------------+
   |       Accounts        |
   +-----------------------+
-  |  View account        ï¿½|  See 'B.2: Viewing Accounts'
+  |  View account        ‰|  See 'B.2: Viewing Accounts'
   |  View balances... F7  |  See 'E.6: Viewing Balances'
-  |  Edit...         ï¿½F7  |  See 'B.1: Creating and Editing Accounts'
+  |  Edit...         ŠF7  |  See 'B.1: Creating and Editing Accounts'
   |- - - - - - - - - - - -|
-  |  Export              ï¿½|  See 'B.3: Exporting Accounts'
-  |  Print...      PRINT ï¿½|  See 'B.4: Printing Accounts'
+  |  Export              ‰|  See 'B.3: Exporting Accounts'
+  |  Print...      PRINT ‰|  See 'B.4: Printing Accounts'
   +-----------------------+
 
 
@@ -211,7 +211,7 @@ This sub-menu of the main menu contains options relating to standing orders.
   +----------------------+
   |       S.Orders       |
   +----------------------+
-  |  Edit...        ï¿½F6  |  See 'D.5: Automatic Transactions'
+  |  Edit...        ‹F6  |  See 'D.5: Automatic Transactions'
   |  Forthcoming... ^F6  |  See 'D.6: Viewing Forthcoming Automatic
   |- - - - - - - - - - - |       Transactions'
   |  Update              |  See 'D.5: Automatic Transactions'
@@ -227,11 +227,11 @@ that deal with headers.
   +---------------------------+
   |          Headers          |
   +---------------------------+
-  |  Edit...             ï¿½F8  |  See 'C.2: Creating Headers'
+  |  Edit...             ‹F8  |  See 'C.2: Creating Headers'
   |  View transactions... F8  |  See 'C.3: Viewing Headers'
   |- - - - - - - - - - - - - -|
-  |  Export                  ï¿½|  See 'C.4: Exporting Headers'
-  |  Print...         ï¿½PRINT  |  See 'C.5: Printing Headers'
+  |  Export                  ‰|  See 'C.4: Exporting Headers'
+  |  Print...         ‹PRINT  |  See 'C.5: Printing Headers'
   +---------------------------+
 
 
@@ -246,7 +246,7 @@ transactions into the Transaction window (see 'A.3: The Transaction Window').
   +------------------------+
   |  Add to end        F1  |  See 'D.1: Entering Transactions'
   |- - - - - - - - - - - - |
-  |  Insert above ï¿½INSERT  |  See 'D.2: Editing Transactions'
+  |  Insert above ‹INSERT  |  See 'D.2: Editing Transactions'
   |  Insert below  INSERT  |  See 'D.2: Editing Transactions'
   +------------------------+
 
@@ -282,18 +282,18 @@ Exporting Accounts') and one for exporting transactions and headers (see
 The export accounts menu:  +------------------+
                            |      Export      |
                            +------------------+
-                           |  Account    ï¿½F3 ï¿½|
-                           |  CSV        ^F3 ï¿½|
-                           |  TSV       ï¿½^F3 ï¿½|
-                           |  ASCII Text     ï¿½|
+                           |  Account    ‹F3 ‰|
+                           |  CSV        ^F3 ‰|
+                           |  TSV       ‹^F3 ‰|
+                           |  ASCII Text     ‰|
                            +------------------+
 
 The export headers and transactions menu:  +--------------+
                                            |    Export    |
                                            +--------------+
-                                           |  CSV        ï¿½|
-                                           |  TSV        ï¿½|
-                                           |  ASCII Text ï¿½|
+                                           |  CSV        ‰|
+                                           |  TSV        ‰
+                                           |  ASCII Text ‰|
                                            +--------------+
 
 The options available in these menus are self-explanatory.
@@ -308,14 +308,14 @@ This menu is accessed by clicking MENU over the View Account window (see
   +------------------------+
   |        Account         |
   +------------------------+
-  |  Initial balance      ï¿½|  See 'E.7: Initial Balances'
-  |  Goto line        ï¿½F5 ï¿½|  See 'E.2: Goto'
+  |  Initial balance      ‰|  See 'E.7: Initial Balances'
+  |  Goto line        ‹F5 ‰|  See 'E.2: Goto'
   |- - - - - - - - - - - - |
-  |  View account         ï¿½|  See 'B.2: Viewing Accounts'
+  |  View account         ‰|  See 'B.2: Viewing Accounts'
   |  View balances...  F7  |  See 'E.6: Viewing Balances'
-  |  Edit accounts... ï¿½F7  |  See 'B.1: Creating and Editing Accounts'
+  |  Edit accounts... ‹F7  |  See 'B.1: Creating and Editing Accounts'
   |- - - - - - - - - - - - |
-  |  Export               ï¿½|  See 'B.3: Exporting Accounts'
+  |  Export               ‰|  See 'B.3: Exporting Accounts'
   |  Print...       PRINT  |  See 'B.4: Printing Accounts'
   +------------------------+
 
@@ -335,7 +335,7 @@ A.5: Saving and Loading Accounts Files
 
 To save Accounts files, select 'Save' from the main menu.  Type in a
 filename, and drag the icon to a directory viewer to save.  If a full
-pathname is present, click on 'OK', select 'Save', or press RETURN to save. 
+pathname is present, click on 'OK', select 'Save', or press RETURN to save.
 Pressing F3 can either open the save box, or save the file to the last
 pathname: see 'Section F: The Preferences' for more details.
 
@@ -376,7 +376,7 @@ window contains two sections: one controlling how the file is loaded, the
 other how the fields are mapped across.
 
 Import as controls how the file is loaded.  Select 'Transactions' to treat
-each line of the CSV file as one transaction from the Transaction Window. 
+each line of the CSV file as one transaction from the Transaction Window.
 Select 'Account' to treat each line a one line from an account.  Enter the
 account to which you wish to add the file into the box on the right by
 clicking SELECT on the menu icon and choosing an account name from the list.
@@ -414,7 +414,7 @@ transaction.  The fields of a CSV file are as shown here:
        \          \          \          \          \
         Field 1    Field 2    Field 3    Field 4    Field 5
 
-To set the fields, click on the up and down arrows to the right of the boxes. 
+To set the fields, click on the up and down arrows to the right of the boxes.
 If a field is set to 'None' then either a null string '', or zero '0' will be
 entered as appropriate instead.  Note that text can either be in double
 quotes "line this", or on its own like this.
@@ -514,7 +514,7 @@ the change, 'Cancel' to forget the change, or 'Delete' to delete the account.
 Note that it is not possible to delete an account used in a transaction.
 
 To create a new account, click on 'Add'.  This will create a new account
-called 'Untitled', assuming there are less than 10 accounts already present. 
+called 'Untitled', assuming there are less than 10 accounts already present.
 Click on 'OK' to close the Account Names window.
 
 
@@ -564,7 +564,7 @@ Only one account can be viewed at any one time.  If there are too many
 transactions for an account to handle (over 500), then you will be warned of
 this.  The last displayed transaction will be displayed in the highlight
 colour (usually red, see 'Section F: The Preferences' for details on how to
-change this colour), to indicate that there are more transactions not shown. 
+change this colour), to indicate that there are more transactions not shown.
 To solve this problem, remove some old transactions from the start of the
 file (see 'D.4: Deleting and Removing Transactions').
 
@@ -584,7 +584,7 @@ for the account that you wish to export, and then open the relevant save box.
 Account Files
 -------------
 
-Account files are used for loading into the older !Accounts software. 
+Account files are used for loading into the older !Accounts software.
 Account files can also be loaded back into Accounts+, but some data will be
 lost in the process.
 
@@ -629,7 +629,7 @@ and press RETURN or click 'OK'.  The name of the account to be exported is
 shown in the window.
 
 'Line numbers' toggles the line numbers on and off; 'Headings' toggles on and
-off the column headings: which will be saved as the first line if requested. 
+off the column headings: which will be saved as the first line if requested.
 'Quotes' determines whether or not text is enclosed in double quotes "like
 this".
 
@@ -682,7 +682,7 @@ in some text editors), and is the Tab code.
 ASCII Text Files
 ----------------
 
-ASCII Text  Files are used for saving formatted data to other applications. 
+ASCII Text  Files are used for saving formatted data to other applications.
 The data is tabulated using a fixed space font (such as the System font, or
 Corpus).
 
@@ -696,7 +696,7 @@ and press RETURN or click 'OK'.  The name of the account to be exported is
 shown in the window.
 
 'Line numbers' toggles the line numbers on and off; 'Headings' toggles on and
-off the column headings: which will be saved as the first line if requested. 
+off the column headings: which will be saved as the first line if requested.
 'Date & File' will save the date and file in the following format at the top
 of the file:
 
@@ -711,14 +711,14 @@ A whole example may well look like this:
      Date: 14/05/1995
 
      Date    From/To             Debits   Credits   Balance Description
-  11/04/1994 Payment                       500.00    500.00 Account Opened 
-  01/04/1995 Withdrawal           21.59              478.41 
+  11/04/1994 Payment                       500.00    500.00 Account Opened
+  01/04/1995 Withdrawal           21.59              478.41
 
 
 B.4: Printing Accounts
 ----------------------
 
-Accounts can be printed out to provide a paper record of the transactions. 
+Accounts can be printed out to provide a paper record of the transactions.
 To print, open the Account Window for the account that you wish to print, and
 then select either 'Accounts:Print...' from the main menu, 'Print...' from
 the account menu, click SELECT on the 'Print' button in the Account Window
@@ -727,10 +727,10 @@ Account window will open.
 
 At the top of this window is the name of the account to be printed.  Select
 the lines that you wish to print from the Print section: 'All' for all the
-lines, or 'From #ï¿½ To #ï¿½' to print only the lines from line #ï¿½ to line #ï¿½
+lines, or 'From #¹ To #²' to print only the lines from line #¹ to line #²
 inclusive.  The Margins section controls the space around the printed page,
 in either lines or columns.  'Page length' is the overall length of the page,
-including margins.  This is usually set to 62 or 64 for dot-matrix printers. 
+including margins.  This is usually set to 62 or 64 for dot-matrix printers.
 'Top' is the number of lines left at the top of the page, and 'Base' the
 number of lines left below.  Together, these calculate 'Lines', which is the
 resulting number of printable lines.  'Left' is the left margin, while
@@ -745,14 +745,14 @@ Account name' shows the User Title (see 'E.4: User Title') and the account
 name at the top of each page, and 'Date' will include the date as well.
 
 When these values are set, click on 'Print' to print the page, or 'Set
-values' to store them.  'Save values' will save the values as the defaults. 
+values' to store them.  'Save values' will save the values as the defaults.
 Click on 'Cancel' to forget any changes made to the settings.
 
 An example page containing the full works may look like this:
 
        File: Accounts                           Account: Current Account
                        Date printed: 02/06/1987
-                                                   
+
          Date    From/To        Debits  Credits  Balance Description
     1 07/04/1987 Savings                 200.00   567.98 Transfer in
     2 10/04/1987 Cheque          35.76            541.22 Food
@@ -762,7 +762,7 @@ An example page containing the full works may look like this:
     .     .        .               .        .        .       .
    59 31/05/1987 Wages                  1000.00  1387.14
    60 01/05/1987 Cheque          58.98           1328.16 Widgets
-   
+
                                   Page 1
 
 
@@ -781,7 +781,7 @@ features.  The codes required can be found in your printer's manual.
 Codes are entered into the white boxes.  To send an ASCII code, simply enter
 its value; to send a string, enclose it in double quotes, "like this".  Items
 in this list are separated by commas.  For example, the IBM proprinter code
-to print a pound sign ('ï¿½') is 'ESC ^ 156'.  This means send the ESC code
+to print a pound sign ('£') is 'ESC ^ 156'.  This means send the ESC code
 (ASCII 27), followed by a '^', followed by ASCII 156.  To enter this into the
 Control window, you would use '27,"^",156'.  Similarly, to turn underline on
 on the IBM proprinter, the sequence 'ESC - 1' is needed.  This would
@@ -833,14 +833,14 @@ Line Feed        This code is sent to the printer at the end of each line,
 Form Feed        This code moves the print head to the end of a page.  IT
                  MUST ALWAYS BE INCLUDED IN THE CONTROL LIST.
 
-'ï¿½' Mapping      Because ASCII is an American standard, the pound sign ('ï¿½')
+'£' Mapping      Because ASCII is an American standard, the pound sign ('£')
                  does not have a standard code number, and is left to the
                  printer and computer manufacturers to decide upon.  This
-                 means that each printer has a different code to print a 'ï¿½'. 
-                 Use this box to enter a code sequence to print a 'ï¿½', if it
-                 varies from the Epson '163' as used by Acorn computers. 
+                 means that each printer has a different code to print a '£'.
+                 Use this box to enter a code sequence to print a '£', if it
+                 varies from the Epson '163' as used by Acorn computers.
                  This code often involves switching character sets, printing
-                 the 'ï¿½', and then switching back again.
+                 the '£', and then switching back again.
 
 Once the codes have been set, click on 'OK' to store them, or 'Save' to save
 them as defaults.  Click on 'Cancel' to forget any changes.
@@ -856,7 +856,7 @@ them as defaults.  Click on 'Cancel' to forget any changes.
 C.1: What Are Headers?
 ----------------------
 
-Headers are a means of keeping track of how you spend and receive money. 
+Headers are a means of keeping track of how you spend and receive money.
 They can be used in transactions, in the same way as accounts, as either a
 source or destination for money.  The total amount of money paid to a header
 is noted, as well as the amount of money received from one.  The total
@@ -895,7 +895,7 @@ account.  Both these options can be selected together, allowing a header to
 appear in both fields.
 
 Between Dates sets the range of dates for which that particular header is
-calculated: for example, all the expenditure on the car for three months. 
+calculated: for example, all the expenditure on the car for three months.
 Date from is the date on or after which the header is used, while date to is
 the date on or before which it is used.  Obviously, if the date from is after
 the date to, the header will never be used.  Enter the dates in the form
@@ -1024,7 +1024,7 @@ C.5: Printing Headers
 ---------------------
 
 Headers can be printed out to provide a paper record of their values.  To
-print, select 'Headers:Print...' from the main menu, or press Shift-PRINT. 
+print, select 'Headers:Print...' from the main menu, or press Shift-PRINT.
 The Print Headers window will open.
 
 The Margins section of this window controls the space around the printed
@@ -1043,14 +1043,14 @@ name' shows the User Title (see 'E.4: User Title') and the account name at
 the top of each page, and 'Date' will include the date as well.
 
 When these values are set, click on 'Print' to print the page, or 'Set
-values' to store them.  'Save values' will save the values as the defaults. 
+values' to store them.  'Save values' will save the values as the defaults.
 Click on 'Cancel' to forget any changes made to the settings.
 
 An example page containing the full works may look like this:
 
                             File: Accounts
                        Date printed: 02/06/1987
-                                                   
+
    Header      Tpe Date From   Date To         In       Out  Balance
    Withdrawal  Out 07/02/1990                        587.99   587.99
    Connect     Out 07/02/1990                        235.23   235.23
@@ -1059,7 +1059,7 @@ An example page containing the full works may look like this:
       .         .      .          .           .         .        .
       .         .      .          .           .         .        .
    Bonus       In             07/06/1992    33.17             -33.17
-   Interest    In  07/02/1990              172.99            -172.99 
+   Interest    In  07/02/1990              172.99            -172.99
 
 </chapter>
 
@@ -1086,7 +1086,7 @@ will disappear.  Whenever the line is used, the current date will be
 substituted instead.
 
 The 'From' column indicates the source of the transaction.  This can be an
-account, a header (see 'C.1: What Are Headers?'), or a standard entry. 
+account, a header (see 'C.1: What Are Headers?'), or a standard entry.
 Standard entries are entries that are not used in any calculation - ie. they
 are not account or header names - and can be any text up to 20 characters in
 length.  Only one of the two entries of a transaction (either 'From' or 'To')
@@ -1101,12 +1101,12 @@ enter account names quickly into either the 'From' or 'To' fields, click
 SELECT on the menu button button below the field, and select an account name
 to be inserted.  To use a header, click ADJUST on the same button; only the
 appropriate  headers are shown below each field.  Header and account names
-can be typed into the fields by hand, but note that they are case sensitive. 
+can be typed into the fields by hand, but note that they are case sensitive.
 If an inappropriate header is typed into a field (a 'From' header into the
 'To' field or vice versa), then the entry is made into a standard entry.
 
 'Amount' carries the amount of money transferred.  This can be entered in the
-form 123.45 (for ï¿½123.45) or 123 (for ï¿½123).  The 'Description' field
+form 123.45 (for £123.45) or 123 (for £123).  The 'Description' field
 contains a textual description of the transaction, useful if both 'From' and
 'To' are either accounts or headers.
 
@@ -1232,7 +1232,7 @@ months - the day is derived from the start date: see below).  'Every # days'
 will leave an interval of # days between each transaction.  Up to 2 digits
 can be entered into each box.
 
-Transfer describes the transaction that will take place.  Enter into the 'ï¿½'
+Transfer describes the transaction that will take place.  Enter into the '£'
 box the amount of money to be transferred (as '123.45' or '123').  In From,
 enter the source of the transaction (the 'From' field), and in To the
 destination (the 'To' field).  Clicking SELECT on the two menu buttons will
@@ -1249,7 +1249,7 @@ present day.  If the field is left blank, then the transaction will be
 ignored (so this can be used to disable an automatic transaction without
 deleting it).
 
-Click on 'OK' to record the changes, or 'Cancel' to forget any changes made. 
+Click on 'OK' to record the changes, or 'Cancel' to forget any changes made.
 Click 'Delete' to delete the definition from the list.  When editing is
 complete, click 'OK' on the Standing Orders window to close it.
 
@@ -1257,7 +1257,7 @@ The automatic transactions can be updated automatically when Accounts+ is
 loaded, or at midnight - if the software is running at that time.  The
 transactions can also be brought up to date by selecting 'S.Orders:Update'
 from the main menu, or clicking ADJUST on the 'Standing Orders' button in the
-button-bar in the Transaction Window (see 'A.3: The Transaction Window'). 
+button-bar in the Transaction Window (see 'A.3: The Transaction Window').
 Depending on the preferences, you will be warned when standing orders are
 added (automatically or not), and the transactions will be sorted into date
 order again.  It is also possible to have Accounts+ confirm if more than a
@@ -1379,9 +1379,9 @@ record.  To do this, select 'Transactions:Print...' from the main menu, or
 press Ctrl-PRINT.  The Print Transactions window will open.
 
 At the top of this window is the Print section.  Select 'All' to print all
-the transactions, or 'From #ï¿½ to #ï¿½' to print all the transactions from #ï¿½ to
-#ï¿½.  Enter the required values into the boxes.  The Margins section controls
-the space around the page.  Use the up and down arrows to adjust the values. 
+the transactions, or 'From #¹ to #²' to print all the transactions from #¹ to
+#².  Enter the required values into the boxes.  The Margins section controls
+the space around the page.  Use the up and down arrows to adjust the values.
 'Top' is the number of lines left at the top of each page, and 'Base' the
 number of lines left below.  'Left' and 'Right' are the columns left to the
 left and right of the page respectively (these may change if 'Transaction
@@ -1459,7 +1459,7 @@ Transaction Window will jump to the transaction entered.
 
 To go to a line in the Account Window, select 'Goto line' from the account
 menu, click on the 'Goto' button in the button-bar in the Account Window (see
-'B.2: Viewing Accounts'), or press Shift-F5 to open the Goto Line window. 
+'B.2: Viewing Accounts'), or press Shift-F5 to open the Goto Line window.
 Type in the line number, and click on 'OK' or press RETURN to jump to the
 line entered.
 
@@ -1488,7 +1488,7 @@ E.4: User Title
 The User Title is a name of up to 20 characters which appears both in the
 Transaction window (see 'A.3: The Transaction Window'), and in the Account
 Window (see 'B.2: Viewing Accounts').  To change this (it is initially set as
-'Untitled'), select 'Misc:User title' from the main menu, or press Ctrl-T. 
+'Untitled'), select 'Misc:User title' from the main menu, or press Ctrl-T.
 Enter a new name into the box, click on 'OK' or press RETURN, and the new
 title will be displayed.
 
@@ -1525,7 +1525,7 @@ Transactions').
 To set the initial balance, select 'Initial balance' from the account menu,
 or click on the 'Initial Balance' button in the button-bar of the Account
 Window (see 'B.2: Viewing Accounts').  Type the new amount into the box (as
-123.45 for ï¿½123.45, or 123 for ï¿½123), and click on 'OK' or press RETURN to
+123.45 for £123.45, or 123 for £123), and click on 'OK' or press RETURN to
 set the new initial balance.
 
 
@@ -1613,7 +1613,7 @@ See 'Section F: The Preferences' for more details on how dates work.
 
 <chapter title="The Preferences" file="Prefs">
 
-The preferences allow Accounts+ to be set up to operate in the way you want. 
+The preferences allow Accounts+ to be set up to operate in the way you want.
 To open the Preferences Window, select 'Preferences...' from the icon-bar
 menu.  This window contains a scrolling list of options, divided into
 sections.  These are described below.
@@ -1637,7 +1637,7 @@ computer is fast enough, then an outline font is neater.
 If Accounts+ is running on a Risc PC, then the 'Desktop font' option will
 become available when 'Use outline font' is selected.  this option will cause
 Accounts+ to display text in the outline font used on the desktop, updating
-itself when required by the WIMP. 
+itself when required by the WIMP.
 
 The font used by Accounts+ if 'Desktop font' is not selected can be specified
 by setting the system variable <Accounts+$Font>.  This is best set in the
@@ -1662,7 +1662,7 @@ Another example might be:
 
 The colours can be set to change the appearance of the four windows.  To set
 a colour, click either on the menu button to the left of the coloured box, or
-over the coloured box itself, and select the desired colour from the menu. 
+over the coloured box itself, and select the desired colour from the menu.
 The colours are as follows:
 
      Grid colour        The colour of the grid shown in the windows (only
@@ -1775,9 +1775,9 @@ the current file name (as shown in the title-bar.  If this shows
 '<Untitled>', then this will not work.  When not selected, pressing F3 will
 open the save box.
 
-'Beep for message window' will cause a beep when the message window opens. 
+'Beep for message window' will cause a beep when the message window opens.
 'Provide interactive help' will cause Accounts+ to support the !Help
-application (or any others that imitate it, for example 'Bubble Help'). 
+application (or any others that imitate it, for example 'Bubble Help').
 'Show selection in account window' will highlight the selected line in the
 Account Window (when relevant).
 
@@ -1822,7 +1822,7 @@ Shift-Double-Click on them), and find the lines
   Set File$Type_0AD Accounts
 
 You must change the 0AD in each line to the new file type.  Again DO NOT
-CHANGE ANYTHING ELSE.  Save both files, and close the !Accounts+ directory. 
+CHANGE ANYTHING ELSE.  Save both files, and close the !Accounts+ directory.
 If you have already saved some Accounts files, you must change their file
 types now.  This can be done by clicking menu over them (you can select
 several together) and choosing 'Files:Set type'.  Type 'Accounts' into the
@@ -1908,6 +1908,6 @@ Updates and Contacting Me
   on my website at http://www.stevefryatt.org.uk/software/
 
   Stephen Fryatt
-  email: steve@stevefryatt.org.uk
+  email: info@stevefryatt.org.uk
 </literal>
 
